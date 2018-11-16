@@ -38,13 +38,15 @@ class ManagePlayersController extends AbstractController
 
         if ($addPlayerForm->isSubmitted())
         {
+
+
             /** @var  $formData Player */
             $formData = $addPlayerForm->getData();
             return $formData->getName();
         }
     }
 
-    public function savePlayer($playerName ,Player $player) : void
+    public function savePlayer($playerName, Player $player) : void
     {
         $player->setName($playerName);
         $player->setTablesOfMatches(null);
