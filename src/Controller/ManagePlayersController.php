@@ -20,11 +20,7 @@ class ManagePlayersController extends AbstractController
     {
             $player = new Player();
             $addPlayerForm = $this->createForm(ManagePlayersType::class, $player);
-            $playerName = $this->getFormData($request, $addPlayerForm);
-
-            if ($playerName) {
-                $this->savePlayer($playerName, $player);
-            }
+            $this->getFormData($request, $addPlayerForm, $player);
 
             return $this->render('manage players/index.html.twig', [
                 'addPlayerForm' => $addPlayerForm->createView(),
@@ -32,21 +28,19 @@ class ManagePlayersController extends AbstractController
             ]);
     }
 
-    public function getFormData(Request $request, FormInterface $addPlayerForm)
+    public function getFormData(Request $request, FormInterface $addPlayerForm, Player $player)
     {
         $addPlayerForm->handleRequest($request);
 
         if ($addPlayerForm->isSubmitted())
         {
-
-
             /** @var  $formData Player */
             $formData = $addPlayerForm->getData();
-            return $formData->getName();
+            $this->savePlayer($formData->getName(), $player);
         }
     }
 
-    public function savePlayer($playerName, Player $player) : void
+    public function savePlayer($playerName, Player $player)
     {
         $player->setName($playerName);
         $player->setTablesOfMatches(null);
@@ -61,9 +55,6 @@ class ManagePlayersController extends AbstractController
             ->getRepository(Player::class)
             ->findAll();
 
-        if (empty($players)) {
-            $players = [];
-        };
         return $players;
     }
 }
