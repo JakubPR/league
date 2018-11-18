@@ -32,7 +32,15 @@ class ManagePlayersController extends AbstractController
      */
     public function removePlayer($id)
     {
+        $player = $this->getDoctrine()
+            ->getRepository(Player::class)
+            ->find($id);
 
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($player);
+        $em->flush();
+
+        return $this->redirectToRoute('manage-players');
     }
 
     public function getFormData(Request $request, FormInterface $addPlayerForm, Player $player)
