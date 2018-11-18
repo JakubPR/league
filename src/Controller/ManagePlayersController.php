@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Repository\PlayerRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -26,6 +25,14 @@ class ManagePlayersController extends AbstractController
                 'addPlayerForm' => $addPlayerForm->createView(),
                 'allPlayers' => $this->getPlayers()
             ]);
+    }
+
+    /**
+     * @Route("/manage-players/remove/{id}", name="manage-players-remove")
+     */
+    public function removePlayer($id)
+    {
+
     }
 
     public function getFormData(Request $request, FormInterface $addPlayerForm, Player $player)

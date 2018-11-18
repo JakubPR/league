@@ -16,7 +16,7 @@
         <td>
             {{ player.name }}
         </td>
-        <td>remove</td>
+        <td><a href="{{ path('manage-players-remove', {'id': player.id}) }}">click</a></td>
     </tr>
         {% endfor %}
 </table>
