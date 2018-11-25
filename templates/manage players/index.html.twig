@@ -16,9 +16,10 @@
         <td>
             {{ player.name }}
         </td>
-        <td><a href="{{ path('manage-players-remove', {'id': player.id}) }}">click</a></td>
+        <td><a href="{{ path('manage-players-remove', {'id': player.id}) }}">click to remove</a></td>
     </tr>
         {% endfor %}
 </table>
+<a href="{{ path('welcome') }}">go back</a>
 </body>
 </html>
