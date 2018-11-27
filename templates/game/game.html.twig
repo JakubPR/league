@@ -4,7 +4,9 @@
 </head>
 <body>
 
-{{ dump(table.players) }}
+{% for player in table.players %}
+{{ player.name }}
+{% endfor %}
 
 <table style="width:20%">
 

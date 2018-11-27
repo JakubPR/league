@@ -2,16 +2,18 @@
 
 namespace App\Builder;
 
+use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\ScoreTable;
 use DateTime;
 
 class ScoreTableBuilder implements ScoreTableBuilderInterface
 {
     private $table;
-
-    public function __construct()
+    private $em;
+    public function __construct(EntityManagerInterface $em)
     {
         $this->table = new ScoreTable();
+        $this->em = $em;
     }
 
     public function setDate()
@@ -22,10 +24,12 @@ class ScoreTableBuilder implements ScoreTableBuilderInterface
 
     public function addPlayers()
     {
-        $this->table->setPlayers(['player']);
+        $players = $this->em->getRepository('App:Player')->findAll();
+
+        $this->table->setPlayers($players);
     }
 
-    public function getResult()
+    public function saveObject()
     {
         return $this->table;
     }
