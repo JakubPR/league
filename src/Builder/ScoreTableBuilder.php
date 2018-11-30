@@ -5,6 +5,7 @@ namespace App\Builder;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\ScoreTable;
 use DateTime;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 class ScoreTableBuilder implements ScoreTableBuilderInterface
 {
@@ -31,6 +32,14 @@ class ScoreTableBuilder implements ScoreTableBuilderInterface
 
     public function saveObject()
     {
-        return $this->table;
+        $this->em->persist($this->table);
+        $this->em->flush();
+        $this->saveToSession($this->table->getId());
+    }
+
+    public function saveToSession($tableId)
+    {
+        $session = $this->getRequest->getSession();
+        $session->set('tableId', $tableId);
     }
 }

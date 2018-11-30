@@ -21,8 +21,8 @@ class StartGameController extends AbstractController
     {
         $this->table->setDate();
         $this->table->addPlayers();
-
-        return $this->render('game/game.html.twig', ['table' => $this->table->saveObject()]);
+        $this->table->saveObject();
+        //redirect to route
     }
 
 }

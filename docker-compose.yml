@@ -3,7 +3,7 @@ services:
 
     mariadb:
       image: mariadb:10.1
-      container_name: ole-mariadb
+      container_name: ole2-mariadb
       working_dir: /application
       volumes:
         - .:/application
@@ -13,34 +13,34 @@ services:
         - MYSQL_USER=user
         - MYSQL_PASSWORD=password
       ports:
-        - "8768:3306"
+        - "8181:3306"
       networks:
         mov-network:
-          ipv4_address: 10.29.0.30
+          ipv4_address: 10.30.0.30
 
     webserver:
       image: nginx:alpine
-      container_name: ole-webserver
+      container_name: ole2-webserver
       working_dir: /application
       volumes:
           - .:/application
           - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       ports:
-       - "8765:80"
+       - "8282:80"
       networks:
         mov-network:
-          ipv4_address: 10.29.0.20
+          ipv4_address: 10.30.0.20
 
     php-fpm:
       build: phpdocker/php-fpm
-      container_name: ole-php-fpm
+      container_name: ole2-php-fpm
       working_dir: /application
       volumes:
         - .:/application
         - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.2/fpm/conf.d/99-overrides.
       networks:
         mov-network:
-          ipv4_address: 10.29.0.10
+          ipv4_address: 10.30.0.10
 
 networks:
 
@@ -49,4 +49,4 @@ networks:
      ipam:
        driver: default
        config:
-         - subnet: 10.29.0.0/24
+         - subnet: 10.30.0.0/24
