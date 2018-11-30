@@ -39,7 +39,9 @@ class ScoreTableBuilder implements ScoreTableBuilderInterface
 
     public function saveToSession($tableId)
     {
-        $session = $this->getRequest->getSession();
+        //$session = $this->getRequest->getSession();
+        $session = new Session();
+        $session->start();
         $session->set('tableId', $tableId);
     }
 }
