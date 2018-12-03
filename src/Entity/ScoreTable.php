@@ -24,7 +24,23 @@ class ScoreTable
     /**
      * @ORM\Column(type="array")
      */
-    private $Players = [];
+    private $player;
+
+    /**
+     * @return mixed
+     */
+    public function getPlayer()
+    {
+        return $this->player;
+    }
+
+    /**
+     * @param mixed $player
+     */
+    public function setPlayer($player): void
+    {
+        $this->player = $player;
+    }
 
     public function getId(): ?int
     {
@@ -43,15 +59,4 @@ class ScoreTable
         return $this;
     }
 
-    public function getPlayers(): ?array
-    {
-        return $this->Players;
-    }
-
-    public function setPlayers(array $Players): self
-    {
-        $this->Players = $Players;
-
-        return $this;
-    }
 }

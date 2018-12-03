@@ -8,21 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class StartGameController extends AbstractController
 {
-    private $table;
-
-    public function __construct(ScoreTableBuilder $table)
-    {
-        $this->table = $table;
-    }
     /**
      * @Route("/start", name="start-game")
      */
-    public function index()
+    public function index(ScoreTableBuilder $builder)
     {
-        $this->table->setDate();
-        $this->table->addPlayers();
-        $this->table->saveObject();
-        //redirect to route
+        $builder->buildTable();
     }
-
 }

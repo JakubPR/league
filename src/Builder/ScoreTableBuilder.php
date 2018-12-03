@@ -4,44 +4,29 @@ namespace App\Builder;
 
 use Doctrine\ORM\EntityManagerInterface;
 use App\Entity\ScoreTable;
-use DateTime;
-use Symfony\Component\HttpFoundation\Session\Session;
+use App\Entity\Player;
 
-class ScoreTableBuilder implements ScoreTableBuilderInterface
+class ScoreTableBuilder
 {
-    private $table;
     private $em;
+
     public function __construct(EntityManagerInterface $em)
     {
-        $this->table = new ScoreTable();
         $this->em = $em;
     }
 
-    public function setDate()
+    public function buildTable()
     {
-        $currentDateTime = new DateTime('now');
-        $this->table->setDate($currentDateTime);
-    }
+        $allPlayers = $this->em->getRepository(Player::class)->findAll();
+        $date = new \DateTime();
 
-    public function addPlayers()
-    {
-        $players = $this->em->getRepository('App:Player')->findAll();
-
-        $this->table->setPlayers($players);
-    }
-
-    public function saveObject()
-    {
-        $this->em->persist($this->table);
+        foreach ($allPlayers as $player)
+        {
+            $table = new ScoreTable();
+            $table->setDate($date);
+            $table->setPlayer($player);
+            $this->em->persist($table);
+        }
         $this->em->flush();
-        $this->saveToSession($this->table->getId());
-    }
-
-    public function saveToSession($tableId)
-    {
-        //$session = $this->getRequest->getSession();
-        $session = new Session();
-        $session->start();
-        $session->set('tableId', $tableId);
     }
 }

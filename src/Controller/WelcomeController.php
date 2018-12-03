@@ -13,8 +13,6 @@ class WelcomeController extends AbstractController
      */
     public function index()
     {
-        $session = new Session();
-        $session->start();
         return $this->render('welcome/welcome.html.twig');
     }
 }

@@ -994,7 +994,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="247" parent="241" name="players">
+    <column id="247" parent="241" name="player">
       <Position>3</Position>
       <Comment>(DC2Type:array)</Comment>
       <DataType>longtext|0s</DataType>
