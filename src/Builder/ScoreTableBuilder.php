@@ -9,24 +9,37 @@ use App\Entity\Player;
 class ScoreTableBuilder
 {
     private $em;
+    private $date;
 
     public function __construct(EntityManagerInterface $em)
     {
         $this->em = $em;
+        $this->date = new \DateTime();
     }
 
     public function buildTable()
     {
-        $allPlayers = $this->em->getRepository(Player::class)->findAll();
-        $date = new \DateTime();
+        $allPlayers = $this->getAllPlayers();
 
         foreach ($allPlayers as $player)
         {
             $table = new ScoreTable();
-            $table->setDate($date);
+
+            $table->setDate($this->date);
             $table->setPlayer($player);
             $this->em->persist($table);
         }
         $this->em->flush();
     }
+
+    public function getAllPlayers()
+    {
+        return $this->em->getRepository(Player::class)->findAll();
+    }
+
+    public function checkIfTableHasBeenCreatedToday()
+    {
+        return $this->em->getRepository(ScoreTable::class)->findOneBy(['date' => $this->date]);
+    }
+
 }

@@ -6,6 +6,7 @@ use App\Builder\ScoreTableBuilder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
+
 class StartGameController extends AbstractController
 {
     /**
@@ -13,6 +14,15 @@ class StartGameController extends AbstractController
      */
     public function index(ScoreTableBuilder $builder)
     {
-        $builder->buildTable();
+        $tableStatus = 'NOPE';
+
+        dump($builder->checkIfTableHasBeenCreatedToday());
+
+        if (!$builder->checkIfTableHasBeenCreatedToday()) {
+            $builder->buildTable();
+            $tableStatus = 'Done!';
+        }
+
+        return $this->render('render_table/index.html.twig', ['tableStatus' => $tableStatus]);
     }
 }
