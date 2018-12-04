@@ -19,32 +19,24 @@ class ScoreTableRepository extends ServiceEntityRepository
         parent::__construct($registry, ScoreTable::class);
     }
 
-    // /**
-    //  * @return ScoreTable[] Returns an array of ScoreTable objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findLastAddedId()
     {
-        return $this->createQueryBuilder('s')
-            ->andWhere('s.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('s.id', 'ASC')
-            ->setMaxResults(10)
+        return $this->createQueryBuilder('st')
+            ->orderBy('st.gameId', 'DESC')
+             ->setMaxResults(1)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
-    /*
     public function findOneBySomeField($value): ?ScoreTable
     {
         return $this->createQueryBuilder('s')
             ->andWhere('s.exampleField = :val')
             ->setParameter('val', $value)
             ->getQuery()
-            ->getOneOrNullResult()
+            ->setMaxResults(1)
+            ->getOneOrNullResult();
         ;
     }
-    */
+
 }

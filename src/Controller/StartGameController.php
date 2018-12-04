@@ -16,13 +16,12 @@ class StartGameController extends AbstractController
     {
         $tableStatus = 'NOPE';
 
-        dump($builder->checkIfTableHasBeenCreatedToday());
-
         if (!$builder->checkIfTableHasBeenCreatedToday()) {
             $builder->buildTable();
             $tableStatus = 'Done!';
         }
 
-        return $this->render('render_table/index.html.twig', ['tableStatus' => $tableStatus]);
+//        return $this->render('render_table/index.html.twig', ['tableStatus' => $tableStatus]);
+        return $this->redirectToRoute('render_table', ['tableStatus' => $tableStatus]);
     }
 }

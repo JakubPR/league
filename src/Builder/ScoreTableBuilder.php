@@ -27,6 +27,7 @@ class ScoreTableBuilder
 
             $table->setDate($this->date);
             $table->setPlayer($player);
+            $table->setScore(0);
             $this->em->persist($table);
         }
         $this->em->flush();

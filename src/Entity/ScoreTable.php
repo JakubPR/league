@@ -27,16 +27,41 @@ class ScoreTable
     private $player;
 
     /**
-     * @return mixed
+     * @ORM\Column(type="integer")
      */
+    private $score;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $gameId;
+
+    public function getGameId()
+    {
+        return $this->gameId;
+    }
+
+    public function setGameId($gameId): void
+    {
+        $this->gameId = $gameId;
+    }
+
+
+    public function getScore()
+    {
+        return $this->score;
+    }
+
+    public function setScore($score): void
+    {
+        $this->score = $score;
+    }
+
     public function getPlayer()
     {
         return $this->player;
     }
 
-    /**
-     * @param mixed $player
-     */
     public function setPlayer($player): void
     {
         $this->player = $player;
