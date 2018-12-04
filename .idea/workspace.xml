@@ -3,14 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/RenderTableController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RenderTableController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/StartGameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/StartGameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/ScoreTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ScoreTable.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/render_table/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/render_table/index.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +67,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller/WelcomeController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="195">
+                <state relative-caret-position="225">
                   <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
                 </state>
               </provider>
@@ -81,7 +76,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Entity/ScoreTable.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="722">
+                <state relative-caret-position="885">
                   <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
                 </state>
               </provider>
@@ -90,8 +85,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="293">
-                  <caret line="26" selection-start-line="26" selection-end-line="26" />
+                <state relative-caret-position="457">
+                  <caret line="60" column="44" lean-forward="true" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
                   <folding>
                     <element signature="e#31#71#0#PHP" expanded="true" />
                   </folding>
@@ -102,8 +97,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Repository/ScoreTableRepository.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="405">
-                  <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+                <state relative-caret-position="360">
+                  <caret line="24" selection-start-line="24" selection-end-line="24" />
                   <folding>
                     <element signature="e#34#60#0#PHP" expanded="true" />
                   </folding>
@@ -132,14 +127,14 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" selection-start-line="19" selection-end-line="20" />
+                <state relative-caret-position="375">
+                  <caret line="25" selection-start-line="25" selection-end-line="25" />
                   <folding>
-                    <element signature="e#34#60#0#PHP" expanded="true" />
+                    <element signature="e#34#99#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -172,13 +167,13 @@
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/Controller/WelcomeController.php" />
-        <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
         <option value="$PROJECT_DIR$/src/Controller/StartGameController.php" />
         <option value="$PROJECT_DIR$/templates/render_table/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/ScoreTable.php" />
-        <option value="$PROJECT_DIR$/src/Controller/RenderTableController.php" />
-        <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
+        <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
+        <option value="$PROJECT_DIR$/src/Controller/RenderTableController.php" />
+        <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
       </list>
     </option>
   </component>
@@ -261,7 +256,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -333,6 +327,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -385,12 +380,13 @@
       <workItem from="1543577859138" duration="2733000" />
       <workItem from="1543586046893" duration="6726000" />
       <workItem from="1543829647769" duration="12145000" />
-      <workItem from="1543917365318" duration="9532000" />
+      <workItem from="1543917365318" duration="10751000" />
+      <workItem from="1543936186576" duration="1436000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68120000" />
+    <option name="totallyTimeSpent" value="70775000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -405,7 +401,7 @@
     <frame x="1366" y="27" width="1920" height="1173" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14529915" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14690171" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -419,7 +415,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.2984496" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.2994186" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.29308325" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -580,13 +576,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/render_table/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/StartGameController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -594,20 +583,6 @@
           <folding>
             <element signature="e#34#68#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/WelcomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/ScoreTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -625,10 +600,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/WelcomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="58" selection-start-line="15" selection-start-column="58" selection-end-line="15" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/ScoreTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="885">
+          <caret line="59" column="31" selection-start-line="59" selection-start-column="31" selection-end-line="59" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/render_table/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#34#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="457">
+          <caret line="60" column="44" lean-forward="true" selection-start-line="60" selection-start-column="44" selection-end-line="60" selection-end-column="44" />
           <folding>
             <element signature="e#31#71#0#PHP" expanded="true" />
           </folding>
@@ -637,18 +643,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/ScoreTableRepository.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="26" lean-forward="true" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-          <folding>
-            <element signature="e#34#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="20" />
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#34#60#0#PHP" expanded="true" />
           </folding>
