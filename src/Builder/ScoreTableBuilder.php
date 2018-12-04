@@ -51,17 +51,17 @@ class ScoreTableBuilder
 
     public function calculateNewGameId()
     {
-        /** @var ScoreTable $tableData */
-        $tableData = $this->getLastAddedGameId();
-
-        if (!$tableData) {
-            return 1;
-        }
-        return $tableData[0]->getGameId()+1;
+        return $this->getLastAddedGameId() +1;
     }
 
     public function getLastAddedGameId()
     {
-        return $this->repo->findLastAddedId();
+        /** @var ScoreTable $tableData */
+        $tableData = $this->repo->findLastAddedId();
+
+        if (!$tableData) {
+            return 1;
+        }
+        return $tableData[0]->getGameId();
     }
 }
