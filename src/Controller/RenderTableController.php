@@ -11,6 +11,7 @@ use Symfony\Component\Routing\Annotation\Route as Route;
 class RenderTableController extends AbstractController
 {
     private $repo;
+    private $isShuffled;
 
     public function __construct(ScoreTableRepository $repo)
     {
@@ -26,8 +27,6 @@ class RenderTableController extends AbstractController
         $tableStatus = $request->get('tableStatus');
         $tableId = $tableBuilder->getLastAddedGameId();
         $tableData = $shuffleData = $this->getTableDataForCurrentGame($tableId);
-
-        shuffle($shuffleData);
 
         return $this->render('render_table/index.html.twig', [
             'tableStatus' => $tableStatus,
