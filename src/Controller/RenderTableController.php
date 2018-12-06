@@ -25,13 +25,17 @@ class RenderTableController extends AbstractController
     {
         $tableStatus = $request->get('tableStatus');
         $tableId = $tableBuilder->getLastAddedGameId();
-        $tableData = $this->getTableDataForCurrentGame($tableId);
+        $tableData = $shuffleData = $this->getTableDataForCurrentGame($tableId);
+
+        shuffle($shuffleData);
 
         return $this->render('render_table/index.html.twig', [
             'tableStatus' => $tableStatus,
             'tableId' => $tableId,
-            'tableData' => $tableData
+            'tableData' => $tableData,
+            'shuffleData' =>$shuffleData
         ]);
+        // TODO: tylko raz losuje pary.
     }
 
     public function getTableDataForCurrentGame($tableId)

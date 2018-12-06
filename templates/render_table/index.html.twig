@@ -13,5 +13,13 @@
     </tr>
 </table>
 
+    <table>
+        {% for tableRow in shuffleData %}
+        <tr>
+            <td> {{ tableRow.player.name }} </td>
+            <td> {{ tableRow.score }} </td>
+            {% endfor %}
+        </tr>
+    </table
 {% endblock %}
 
