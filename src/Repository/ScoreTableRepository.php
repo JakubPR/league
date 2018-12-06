@@ -21,4 +21,13 @@ class ScoreTableRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function findAllCurrentData($tableId)
+    {
+        return $this->createQueryBuilder('td')
+            ->where('td.gameId ='.$tableId)
+            ->orderBy('td.score', 'ASC')
+            ->getQuery()
+            ->getResult();
+    }
 }
