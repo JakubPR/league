@@ -33,7 +33,6 @@ class RenderTableController extends AbstractController
 
         return $this->render('render_table/index.html.twig', [
             'tableStatus' => $tableStatus,
-            'tableId' => $tableId,
             'tableData' => $tableData,
             'shuffleData' => $shuffleData
         ]);

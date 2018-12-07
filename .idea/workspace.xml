@@ -129,8 +129,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="317">
-                  <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+                <state relative-caret-position="294">
+                  <caret line="29" column="92" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
                   <folding>
                     <element signature="e#34#65#0#PHP" expanded="true" />
                     <element signature="e#1055#1085#0#PHP" expanded="true" />
@@ -388,12 +388,12 @@
       <workItem from="1543939579217" duration="25000" />
       <workItem from="1543939630810" duration="3192000" />
       <workItem from="1544105681077" duration="5343000" />
-      <workItem from="1544183429908" duration="7034000" />
+      <workItem from="1544183429908" duration="7781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88241000" />
+    <option name="totallyTimeSpent" value="88988000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -672,8 +672,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="41" column="35" selection-start-line="41" selection-start-column="35" selection-end-line="41" selection-end-column="35" />
+        <state relative-caret-position="294">
+          <caret line="29" column="92" selection-start-line="29" selection-start-column="92" selection-end-line="29" selection-end-column="92" />
           <folding>
             <element signature="e#34#65#0#PHP" expanded="true" />
             <element signature="e#1055#1085#0#PHP" expanded="true" />
