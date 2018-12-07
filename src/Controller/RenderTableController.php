@@ -27,9 +27,7 @@ class RenderTableController extends AbstractController
     public function index(Request $request, ScoreTableBuilder $tableBuilder, SessionManager $sessionManager)
     {
         $tableStatus = $request->get('tableStatus');
-        $tableId = $tableBuilder->getLastAddedGameId();
-        $tableData = $this->getTableDataForCurrentGame($tableId);
-
+        $tableData = $this->getTableDataForCurrentGame($tableBuilder->getLastAddedGameId());
         $shuffleData = $this->shuffleOnce($tableData);
 
 
