@@ -23,7 +23,6 @@ class ScoreTableBuilder
     public function buildTable()
     {
         $allPlayers = $this->getAllPlayers();
-
         $gameId = $this->calculateNewGameId();
 
         foreach ($allPlayers as $player)
