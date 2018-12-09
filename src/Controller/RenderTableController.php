@@ -39,6 +39,16 @@ class RenderTableController extends AbstractController
 
     public function shuffleOnce($tableData)
     {
+        $numberOfRecords = count($this->sessionManager->getShuffledData());
+        $duels = [];
+            for ($i=0; $i<($numberOfRecords/2); $i++)
+            {
+                $duels[$i] = $i;
+            }
+            dump($duels);
+
+       // dump($this->sessionManager->getShuffledData());
+
         if (!$this->sessionManager->checkShuffle()) {
             $shuffledData = $tableData;
             shuffle($shuffledData);
