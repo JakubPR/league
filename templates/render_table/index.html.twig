@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-
     {{ tableStatus }}
-    {#{{ tableId }}#}
-
 <table>
     {% for tableRow in tableData %}
         <tr>
@@ -12,14 +9,12 @@
     {% endfor %}
     </tr>
 </table>
-
     <table>
-        {% for tableRow in shuffleData %}
-        <tr>
-            <td> {{ tableRow.player.name }} </td>
-            <td> {{ tableRow.score }} </td>
-            {% endfor %}
-        </tr>
-    </table
+        {% for  key, user in shuffleData %}
+            <tr>
+                <td>{{ user[0].player.name }} vs {{ user[1].player.name }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
 

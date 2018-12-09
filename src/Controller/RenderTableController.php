@@ -34,14 +34,14 @@ class RenderTableController extends AbstractController
 
         return $this->render('render_table/index.html.twig', [
             'tableStatus' => $tableStatus,
-            'tableData' => $tableData
-            //'shuffleData' => $sessionManager->getShuffledData()
+            'tableData' => $tableData,
+            'shuffleData' => $sessionManager->getShuffledData()
         ]);
     }
 
     public function shuffleOnce($tableData)
     {
-        if ($this->sessionManager->checkShuffle()) {
+        if (!$this->sessionManager->checkShuffle()) {
             $shuffledData = $tableData;
             shuffle($shuffledData);
             $shuffledData = array_chunk($shuffledData,2);
