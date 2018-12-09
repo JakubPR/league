@@ -28,23 +28,22 @@ class RenderTableController extends AbstractController
     {
         $tableStatus = $request->get('tableStatus');
         $tableData = $this->getTableDataForCurrentGame($tableBuilder->getLastAddedGameId());
-        $shuffleData = $this->shuffleOnce($tableData);
-
+        $this->shuffleOnce($tableData);
 
         return $this->render('render_table/index.html.twig', [
             'tableStatus' => $tableStatus,
             'tableData' => $tableData,
-            'shuffleData' => $shuffleData
+            'shuffleData' => $sessionManager->getShuffledData()
         ]);
-        // TODO: shuffle nie działa
     }
 
     public function shuffleOnce($tableData)
     {
-        if (!$this->sessionManager->checkShuffle())
-        {
+        if (!$this->sessionManager->checkShuffle()) {
+            $shuffledData = $tableData;
+            shuffle($shuffledData);
+            $this->sessionManager->setShuffledData($shuffledData);
             $this->sessionManager->setShuffledYes();
-            shuffle($tableData);
         }
         return $tableData;
     }

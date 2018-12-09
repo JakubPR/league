@@ -38,4 +38,14 @@ class SessionManager
     {
         return $this->session->get('shuffled');
     }
+
+    public function setShuffledData($data)
+    {
+        $this->session->set('shuffledData', $data);
+    }
+
+    public function getShuffledData()
+    {
+        return $this->session->get('shuffledData');
+    }
 }
