@@ -30,8 +30,6 @@ class RenderTableController extends AbstractController
         $tableData = $this->getTableDataForCurrentGame($tableBuilder->getLastAddedGameId());
         $this->shuffleOnce($tableData);
 
-        dump($sessionManager->getShuffledData());
-
         return $this->render('render_table/index.html.twig', [
             'tableStatus' => $tableStatus,
             'tableData' => $tableData,

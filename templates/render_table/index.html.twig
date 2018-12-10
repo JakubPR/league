@@ -10,9 +10,11 @@
     </tr>
 </table>
     <table>
-        {% for  key, user in shuffleData %}
+        {% for pair in shuffleData %}
             <tr>
-                <td>{{ user[0].player.name }} vs {{ user[1].player.name }}</td>
+                {% for single in pair %}
+                    <td>{{ single.player.name }}</td>
+                {% endfor %}
             </tr>
         {% endfor %}
     </table>
