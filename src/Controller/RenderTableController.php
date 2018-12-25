@@ -37,7 +37,8 @@ class RenderTableController extends AbstractController
         $tableData = $this->getTableDataForCurrentGame($this->tableBuilder->getLastAddedGameId());
         $this->shuffleOnce($tableData);
 
-        dump($sessionManager->getShuffledData());
+        $pairsCount = count($sessionManager->getShuffledData());
+        $pair = $sessionManager->getShuffledData()[0];
 
         // $pairsCount = count($sessionManager->getShuffledData());
 
