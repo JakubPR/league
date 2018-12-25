@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    {{ tableStatus }}
+<table>
+    {% for tableRow in tableData %}
+        <tr>
+        <td> {{ tableRow.player.name }} </td>
+        <td> {{ tableRow.score }} </td>
+    {% endfor %}
+    </tr>
+</table>
+{% endblock %}
+
