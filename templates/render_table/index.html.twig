@@ -19,5 +19,14 @@
             </tr>
         {% endfor %}
     </table>
+    <br>
+    <form action="{{ path('get_score') }}" method="post">
+    <table>
+        {{ pair[0].player.name }} <input type="text" name= {{ pair[0].id }}>
+        vs
+        {{ pair[1].player.name }} <input type="text" name= {{ pair[1].id }}>
+            <input class="input_button" type="submit" value="Submit" />
+    </table>
+    </form>
 {% endblock %}
 
