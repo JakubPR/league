@@ -10,6 +10,7 @@ class StatusTable
     public static $statuses = [
         'createNewGame' => 0,
         'shuffledTable' => 0,
+        'numberOfGames' => 0,
     ];
 
     public $em;

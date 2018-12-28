@@ -26,7 +26,7 @@ class ScoreTableRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('td')
             ->where('td.gameId ='.$tableId)
-            ->orderBy('td.score', 'DESC')
+            ->orderBy('td.points', 'DESC')
             ->getQuery()
             ->getResult();
     }

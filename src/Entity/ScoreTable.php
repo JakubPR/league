@@ -29,7 +29,7 @@ class ScoreTable
     /**
      * @ORM\Column(type="integer")
      */
-    private $score;
+    private $points;
 
     /**
      * @ORM\Column(type="integer")
@@ -47,14 +47,14 @@ class ScoreTable
     }
 
 
-    public function getScore()
+    public function getPoints()
     {
-        return $this->score;
+        return $this->points;
     }
 
-    public function setScore($score): void
+    public function setPoints($points): void
     {
-        $this->score = $score;
+        $this->points = $points;
     }
 
     public function getPlayer()

@@ -66,9 +66,9 @@ class RenderTableController extends AbstractController
         $results = $request->request->all();
 
         $i = 1;
-        foreach ($results as $id => $score)
+        foreach ($results as $id => $points)
         {
-            ${"player$i"} = ['id' => $id, 'score' => $score];
+            ${"player$i"} = ['id' => $id, 'points' => $points];
             $i++;
         }
 
@@ -79,10 +79,10 @@ class RenderTableController extends AbstractController
 
     public function setTablePoints($player1, $player2)
     {
-        if ($player1['score'] > $player2['score']) {
+        if ($player1['points'] > $player2['points']) {
             $player1 += ['table_points' => 2];
             $player2 += ['table_points' => 0];
-        } elseif ($player1['score'] < $player2['score']) {
+        } elseif ($player1['points'] < $player2['points']) {
             $player1 += ['table_points' => 0];
             $player2 += ['table_points' => 2];
         } else {
@@ -101,10 +101,10 @@ class RenderTableController extends AbstractController
             /** @var $row \App\Entity\ScoreTable **/
             if ($row->getId() === $player1['id'])
             {
-                $row->setScore($row->getScore() + $player1['table_points']);
+                $row->setPoints($row->getPoints() + $player1['table_points']);
                 $this->saveNewData($row);
             } elseif ($row->getId() === $player2['id']) {
-                $row->setScore($row->getScore() + $player2['table_points']);
+                $row->setPoints($row->getPoints() + $player2['table_points']);
                 $this->saveNewData($row);
             }
         }
