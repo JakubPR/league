@@ -37,11 +37,6 @@ class RenderTableController extends AbstractController
         $tableData = $this->getTableDataForCurrentGame($this->tableBuilder->getLastAddedGameId());
         $this->shuffleOnce($tableData);
 
-        $pairsCount = count($sessionManager->getShuffledData());
-        $pair = $sessionManager->getShuffledData()[0];
-
-        // $pairsCount = count($sessionManager->getShuffledData());
-
         if (!empty($sessionManager->getShuffledData())) {
             $pair = $sessionManager->getShuffledData()[0];
 
@@ -82,9 +77,9 @@ class RenderTableController extends AbstractController
     {
         if ($player1['score'] > $player2['score']) {
             $player1 += ['table_points' => 2];
-            $player2 += ['table_points' => -2];
+            $player2 += ['table_points' => 0];
         } elseif ($player1['score'] < $player2['score']) {
-            $player1 += ['table_points' => -2];
+            $player1 += ['table_points' => 0];
             $player2 += ['table_points' => 2];
         } else {
             $player1 += ['table_points' => 1];
@@ -102,7 +97,7 @@ class RenderTableController extends AbstractController
             /** @var $row \App\Entity\ScoreTable **/
             if ($row->getId() === $player1['id'])
             {
-                $row->setScore($row->getScore()+$player1['table_points']);
+                $row->setScore($row->getScore() + $player1['table_points']);
                 $this->saveNewData($row);
             } elseif ($row->getId() === $player2['id']) {
                 $row->setScore($row->getScore() + $player2['table_points']);
@@ -123,7 +118,6 @@ class RenderTableController extends AbstractController
     public function saveNewData($row)
     {
         /** @var $row ScoreTable */
-        dump($row);
         $this->em->persist($row);
         $this->em->flush();
     }
