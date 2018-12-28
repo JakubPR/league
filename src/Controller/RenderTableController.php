@@ -18,9 +18,13 @@ class RenderTableController extends AbstractController
     private $tableBuilder;
     private $em;
 
-    public function __construct(
-        ScoreTableRepository $repo, SessionManager $sessionManager, ScoreTableBuilder $tableBuilder, EntityManagerInterface $em)
-    {
+    public function __construct
+    (
+        ScoreTableRepository $repo,
+        SessionManager $sessionManager,
+        ScoreTableBuilder $tableBuilder,
+        EntityManagerInterface $em
+    ){
         $this->repo = $repo;
         $this->sessionManager = $sessionManager;
         $this->tableBuilder = $tableBuilder;
