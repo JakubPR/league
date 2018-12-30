@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <br>
+    <form action="{{ path('get_number') }}" method="post">
+        <input type="text" name=number>
+        <input class="input_button" type="submit" value="Submit" />
+    </form>
+{% endblock %}
+
