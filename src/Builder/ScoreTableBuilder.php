@@ -31,7 +31,7 @@ class ScoreTableBuilder
 
             $table->setDate($this->date);
             $table->setPlayer($player);
-            $table->setScore(0);
+            $table->setPoints(0);
             $table->setGameId($gameId);
             $this->em->persist($table);
         }
