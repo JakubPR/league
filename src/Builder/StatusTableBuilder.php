@@ -5,7 +5,7 @@ namespace App\Builder;
 use App\Entity\StatusManager;
 use Doctrine\ORM\EntityManagerInterface;
 
-class StatusTable
+class StatusTableBuilder
 {
     public static $statuses = [
         'createNewGame' => 0,
@@ -24,7 +24,7 @@ class StatusTable
     {
         if (empty($this->em->getRepository('App:StatusManager')->findAll()))
         {
-            foreach (StatusTable::$statuses as $name => $value) {
+            foreach (StatusTableBuilder::$statuses as $name => $value) {
                 $status = new StatusManager();
                 $status->setName($name);
                 $status->setStatus($value);
