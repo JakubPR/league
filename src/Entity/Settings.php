@@ -19,41 +19,35 @@ class Settings
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $status;
+    private $state;
 
     /**
      * @ORM\Column(type="string", nullable=true)
      */
     private $name;
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getStatus(): ?int
+    public function getState(): int
     {
-        return $this->status;
+        return $this->state;
     }
 
-    public function setStatus(?int $status): self
+    public function setState(int $state): self
     {
-        $this->status = $status;
+        $this->state = $state;
 
         return $this;
     }
 
-    /**
-     * @return mixed
-     */
     public function getName()
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
     public function setName($name): void
     {
         $this->name = $name;

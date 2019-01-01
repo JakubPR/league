@@ -27,7 +27,7 @@ class ConfigurationSettings
             foreach (ConfigurationSettings::$states as $name => $value) {
                 $status = new Settings();
                 $status->setName($name);
-                $status->setStatus($value);
+                $status->setState($value);
                 $this->em->persist($status);
             }
             $this->em->flush();
@@ -37,7 +37,7 @@ class ConfigurationSettings
     public function changeStatus(string $statusName, int $statusVariable)
     {
         $statusToChange = $this->getStatusByName($statusName);
-        $statusToChange->setStatus($statusVariable);
+        $statusToChange->setState($statusVariable);
 
         $this->em->persist($statusToChange);
         $this->em->flush();
@@ -46,7 +46,7 @@ class ConfigurationSettings
     public function getStatusState(string $statusName)
     {
        $status =  $this->getStatusByName($statusName);
-       return $status->getStatus();
+       return $status->getState();
     }
 
     public function getStatusByName(string $statusName) : Settings
