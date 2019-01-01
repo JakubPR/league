@@ -36,10 +36,21 @@ class StatusTableBuilder
 
     public function changeStatus(string $statusName, int $statusVariable)
     {
-        $statusToChange = $this->em->getRepository('App:StatusManager')->findOneBy(['name' => $statusName]);
+        $statusToChange = $this->getStatusByName($statusName);
         $statusToChange->setStatus($statusVariable);
 
         $this->em->persist($statusToChange);
         $this->em->flush();
+    }
+
+    public function getStatusState(string $statusName)
+    {
+       $status =  $this->getStatusByName($statusName);
+       return $status->getStatus();
+    }
+
+    public function getStatusByName(string $statusName) : StatusManager
+    {
+        return $this->em->getRepository('App:StatusManager')->findOneBy(['name' => $statusName]);
     }
 }
