@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-use App\Builder\StatusTableBuilder;
+use App\Builder\ConfigurationSettings;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route as Route;
@@ -19,7 +19,7 @@ class NumberOfGamesController extends AbstractController
     /**
      * @Route("/numberofgames/getnumber", name="get_number")
      **/
-    function saveNumberOfGames(Request $request, StatusTableBuilder $statusTable)
+    function saveNumberOfGames(Request $request, ConfigurationSettings $statusTable)
     {
         $statusTable->changeStatus('numberOfGames',$request->get('number'));
         return $this->redirectToRoute('welcome');

@@ -2,12 +2,12 @@
 
 namespace App\Builder;
 
-use App\Entity\StatusManager;
+use App\Entity\Settings;
 use Doctrine\ORM\EntityManagerInterface;
 
-class StatusTableBuilder
+class ConfigurationSettings
 {
-    public static $statuses = [
+    public static $states = [
         'createNewGame' => 0,
         'shuffledTable' => 0,
         'numberOfGames' => 0,
@@ -22,10 +22,10 @@ class StatusTableBuilder
 
     public function buildStatusTable()
     {
-        if (empty($this->em->getRepository('App:StatusManager')->findAll()))
+        if (empty($this->em->getRepository('App:Settings')->findAll()))
         {
-            foreach (StatusTableBuilder::$statuses as $name => $value) {
-                $status = new StatusManager();
+            foreach (ConfigurationSettings::$states as $name => $value) {
+                $status = new Settings();
                 $status->setName($name);
                 $status->setStatus($value);
                 $this->em->persist($status);
@@ -49,8 +49,8 @@ class StatusTableBuilder
        return $status->getStatus();
     }
 
-    public function getStatusByName(string $statusName) : StatusManager
+    public function getStatusByName(string $statusName) : Settings
     {
-        return $this->em->getRepository('App:StatusManager')->findOneBy(['name' => $statusName]);
+        return $this->em->getRepository('App:Settings')->findOneBy(['name' => $statusName]);
     }
 }
