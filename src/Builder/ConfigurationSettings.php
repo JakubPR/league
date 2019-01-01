@@ -34,10 +34,10 @@ class ConfigurationSettings
         }
     }
 
-    public function changeStatus(string $statusName, int $statusVariable)
+    public function changeStatusState(string $statusName, int $stateVariable)
     {
         $statusToChange = $this->getStatusByName($statusName);
-        $statusToChange->setState($statusVariable);
+        $statusToChange->setState($stateVariable);
 
         $this->em->persist($statusToChange);
         $this->em->flush();
