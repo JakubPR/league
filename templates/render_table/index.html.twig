@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     {{ tableStatus }}
+    <p>Number Of Games: {{ numberOfGames }}</p>
+    <p>Game ranking:</p>
 <table>
     {% for tableRow in tableData %}
         <tr>
@@ -9,7 +11,7 @@
     {% endfor %}
     </tr>
 </table>
-    <br>
+    <p>Incoming duels:</p>
     <table>
         {% for pair in shuffleData %}
             <tr>

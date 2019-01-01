@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Builder\ConfigurationSettings;
 use App\Builder\SessionManager;
 use App\Builder\ScoreTableBuilder;
 use App\Entity\ScoreTable;
@@ -35,8 +36,9 @@ class RenderTableController extends AbstractController
      * @Route("/render/table", name="render_table")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, SessionManager $sessionManager)
+    public function index(Request $request, SessionManager $sessionManager, ConfigurationSettings $settings)
     {
+        $numberOfGames = $settings->getStatusState('numberOfGames');
         $tableStatus = $request->get('tableStatus');
         $tableData = $this->getTableDataForCurrentGame($this->tableBuilder->getLastAddedGameId());
         $this->shuffleOnce($tableData);
@@ -46,6 +48,7 @@ class RenderTableController extends AbstractController
 
             return $this->render('render_table/index.html.twig', [
                 'tableStatus' => $tableStatus,
+                'numberOfGames' => $numberOfGames,
                 'tableData' => $tableData,
                 'shuffleData' => $sessionManager->getShuffledData(),
                 'pair' => $pair
