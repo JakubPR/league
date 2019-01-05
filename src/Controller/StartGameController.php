@@ -16,7 +16,7 @@ class StartGameController extends AbstractController
      */
     public function index(ScoreTableBuilder $builder, SessionManager $sessionManager, ConfigurationSettings $configuration)
     {
-        $tableStatus = 'NOPE';
+//        $tableStatus = 'NOPE';
         $sessionManager->setShuffledNo();
 
         if ($configuration->getStatusState('numberOfGames') === 0) {
