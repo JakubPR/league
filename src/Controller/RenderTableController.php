@@ -11,6 +11,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route as Route;
+use App\Builder\PairsTableBuilder;
 
 class RenderTableController extends AbstractController
 {
@@ -18,18 +19,22 @@ class RenderTableController extends AbstractController
     private $sessionManager;
     private $tableBuilder;
     private $em;
+    private $pairsTable;
 
     public function __construct
     (
         ScoreTableRepository $repo,
         SessionManager $sessionManager,
         ScoreTableBuilder $tableBuilder,
-        EntityManagerInterface $em
+        EntityManagerInterface $em,
+        PairsTableBuilder $pairsTable
+
     ){
         $this->repo = $repo;
         $this->sessionManager = $sessionManager;
         $this->tableBuilder = $tableBuilder;
         $this->em = $em;
+        $this->pairsTable = $pairsTable;
     }
 
     /**
@@ -38,6 +43,8 @@ class RenderTableController extends AbstractController
      */
     public function index(Request $request, SessionManager $sessionManager, ConfigurationSettings $settings)
     {
+        dump($this->pairsTable->preparePairsTable());
+
         $numberOfGames = $settings->getStatusState('numberOfGames');
         $tableStatus = $request->get('tableStatus');
         $tableData = $this->getTableDataForCurrentGame($this->tableBuilder->getLastAddedGameId());

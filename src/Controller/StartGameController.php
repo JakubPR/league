@@ -20,15 +20,10 @@ class StartGameController extends AbstractController
         $sessionManager->setShuffledNo();
 
         if ($configuration->getStatusState('numberOfGames') === 0) {
+            $configuration->changeStatusState('shuffledTable', 0);
             $builder->buildTable();
         }
 
-//        if (!$builder->checkIfTableHasBeenCreatedToday()) {
-//            $builder->buildTable();
-//
-//            $tableStatus = 'Done!';
-//        }
-//        return $this->redirectToRoute('render_table', ['tableStatus' => $tableStatus]);
         return $this->redirectToRoute('render_table');
     }
 }

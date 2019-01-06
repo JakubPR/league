@@ -17,12 +17,12 @@ class ShuffledPairs
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="object")
      */
     private $player1;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="object")
      */
     private $player2;
 
@@ -31,29 +31,29 @@ class ShuffledPairs
      */
     private $played;
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getPlayer1(): ?string
+    public function getPlayer1(): ScoreTable
     {
         return $this->player1;
     }
 
-    public function setPlayer1(string $player1): self
+    public function setPlayer1(ScoreTable $player1)
     {
         $this->player1 = $player1;
 
         return $this;
     }
 
-    public function getPlayer2(): ?string
+    public function getPlayer2(): ScoreTable
     {
         return $this->player2;
     }
 
-    public function setPlayer2(string $player2): self
+    public function setPlayer2(ScoreTable $player2)
     {
         $this->player2 = $player2;
 
@@ -65,7 +65,7 @@ class ShuffledPairs
         return $this->played;
     }
 
-    public function setPlayed(int $played): self
+    public function setPlayed(int $played)
     {
         $this->played = $played;
 
