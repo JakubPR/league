@@ -21,8 +21,8 @@ class PairsTableBuilder
 
     public function preparePairsTable()
     {
-//        $this->saveDataToPairsTable();
         $this->removeDataFromTable();
+        $this->saveDataToPairsTable();
     }
 
     private function getTableDataForCurrentGame() : array
@@ -52,6 +52,7 @@ class PairsTableBuilder
             $this->em->persist($newPair);
         }
         $this->em->flush();
+
     }
 
     private function getDataFromPairsTable(): array

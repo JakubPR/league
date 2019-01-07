@@ -43,8 +43,6 @@ class RenderTableController extends AbstractController
      */
     public function index(Request $request, SessionManager $sessionManager, ConfigurationSettings $settings)
     {
-        dump($this->pairsTable->preparePairsTable());
-
         $numberOfGames = $settings->getStatusState('numberOfGames');
         $tableStatus = $request->get('tableStatus');
         $tableData = $this->getTableDataForCurrentGame($this->tableBuilder->getLastAddedGameId());
