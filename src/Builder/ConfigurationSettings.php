@@ -7,10 +7,14 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class ConfigurationSettings
 {
+    const CREATE_NEW_GAME = 'createNewGame';
+    const SHUFFLED_TABLE = 'shuffledTable';
+    const NUMBER_OF_GAMES = 'numberOfGames';
+
     public static $states = [
-        'createNewGame' => 0,
-        'shuffledTable' => 0,
-        'numberOfGames' => 0,
+        self::CREATE_NEW_GAME => 0,
+        self::SHUFFLED_TABLE => 0,
+        self::NUMBER_OF_GAMES => 0,
     ];
 
     public $em;
