@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use App\Builder\ConfigurationSettings;
+use App\Builder\SettingsTableBuilder;
 use Symfony\Component\Routing\Annotation\Route;
 
 class WelcomeController extends AbstractController
@@ -11,9 +11,9 @@ class WelcomeController extends AbstractController
     /**
      * @Route("/", name="welcome")
      */
-    public function index(ConfigurationSettings $statusTableBuilder)
+    public function index(SettingsTableBuilder $settingsTable)
     {
-        $statusTableBuilder->buildStatusTable();
+        $settingsTable->buildStatusTable();
         return $this->render('welcome/welcome.html.twig');
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Builder\ConfigurationSettings;
+use App\Builder\SettingsTableBuilder;
 use App\Builder\SessionManager;
 use App\Builder\ScoreTableBuilder;
 use App\Entity\ScoreTable;
@@ -41,9 +41,9 @@ class RenderTableController extends AbstractController
      * @Route("/render/table", name="render_table")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, SessionManager $sessionManager, ConfigurationSettings $settings)
+    public function index(Request $request, SessionManager $sessionManager, SettingsTableBuilder $settingsTable)
     {
-        $numberOfGames = $settings->getStatusState('numberOfGames');
+        $numberOfGames = $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES);
         $tableStatus = $request->get('tableStatus');
         $tableData = $this->getTableDataForCurrentGame($this->tableBuilder->getLastAddedGameId());
         $this->shuffleOnce($tableData);

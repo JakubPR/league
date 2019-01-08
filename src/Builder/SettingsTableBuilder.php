@@ -5,7 +5,7 @@ namespace App\Builder;
 use App\Entity\Settings;
 use Doctrine\ORM\EntityManagerInterface;
 
-class ConfigurationSettings
+class SettingsTableBuilder
 {
     const CREATE_NEW_GAME = 'createNewGame';
     const SHUFFLED_TABLE = 'shuffledTable';
@@ -28,7 +28,7 @@ class ConfigurationSettings
     {
         if (empty($this->em->getRepository('App:Settings')->findAll()))
         {
-            foreach (ConfigurationSettings::$states as $name => $value) {
+            foreach (SettingsTableBuilder::$states as $name => $value) {
                 $status = new Settings();
                 $status->setName($name);
                 $status->setState($value);
