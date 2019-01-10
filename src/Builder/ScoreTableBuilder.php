@@ -43,11 +43,6 @@ class ScoreTableBuilder
         return $this->em->getRepository(Player::class)->findAll();
     }
 
-    public function checkIfTableHasBeenCreatedToday()
-    {
-        return $this->repo->findOneBy(['date' => $this->date]);
-    }
-
     public function calculateNewGameId()
     {
         return $this->getLastAddedGameId() +1;
@@ -55,12 +50,14 @@ class ScoreTableBuilder
 
     public function getLastAddedGameId()
     {
-        /** @var ScoreTable $tableData */
         $tableData = $this->repo->findLastAddedId();
 
-        if (!$tableData) {
+        /** @var ScoreTable $tableData */
+        $gameId = $tableData[0]->getGameId();
+
+        if (!$gameId) {
             return 1;
         }
-        return $tableData[0]->getGameId();
+        return $gameId;
     }
 }

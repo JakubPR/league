@@ -38,15 +38,15 @@ class Player
         return $this;
     }
 
-    public function getTablesOfMatches(): ?array
-    {
-        return $this->TablesOfMatches;
-    }
-
-    public function setTablesOfMatches(?array $TablesOfMatches): self
-    {
-        $this->TablesOfMatches = $TablesOfMatches;
-
-        return $this;
-    }
+//    public function getTablesOfMatches(): ?array
+//    {
+//        return $this->TablesOfMatches;
+//    }
+//
+//    public function setTablesOfMatches(?array $TablesOfMatches): self
+//    {
+//        $this->TablesOfMatches = $TablesOfMatches;
+//
+//        return $this;
+//    }
 }

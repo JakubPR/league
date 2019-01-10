@@ -5,41 +5,39 @@ namespace App\Builder;
 use App\Entity\ShuffledPairs;
 use App\Repository\ScoreTableRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Builder\SettingsTableBuilder;
 
 class PairsTableBuilder
 {
     private $scoreTableRepo;
+    private $scoreTable;
     private $tableBuilder;
+    private $settingsTable;
     private $em;
 
-    function __construct(ScoreTableBuilder $tableBuilder, ScoreTableRepository $scoreTableRepo, EntityManagerInterface $em)
-    {
-        $this->tableBuilder = $tableBuilder;
+    function __construct
+    (
+        ScoreTableBuilder $scoreTable,
+        EntityManagerInterface $em,
+        SettingsTableBuilder $settingsTable,
+        ScoreTableRepository $scoreTableRepo
+    ){
+        $this->tableBuilder = $scoreTable;
+        $this->scoreTable = $scoreTable;
         $this->scoreTableRepo = $scoreTableRepo;
         $this->em = $em;
-    }
-
-    public function preparePairsTable()
-    {
-        $this->removeDataFromTable();
-        $this->saveDataToPairsTable();
-    }
-
-    private function getTableDataForCurrentGame() : array
-    {
-        $lastGameId = $this->tableBuilder->getLastAddedGameId();
-        return $this->scoreTableRepo->findAllCurrentData($lastGameId);
+        $this->settingsTable = $settingsTable;
     }
 
     private function shuffleAndChunkData() : array
     {
-        $tableData = $this->getTableDataForCurrentGame();
+        $tableData = $this->scoreTableRepo->findAllCurrentData($this->scoreTable->getLastAddedGameId());
         shuffle($tableData);
         $shuffledData = array_chunk($tableData,2);
         return $shuffledData;
     }
 
-    private function saveDataToPairsTable(): void
+    public function setDataToPairsTable()
     {
         $dataToSave = $this->shuffleAndChunkData();
 
@@ -52,15 +50,14 @@ class PairsTableBuilder
             $this->em->persist($newPair);
         }
         $this->em->flush();
-
     }
 
-    private function getDataFromPairsTable(): array
+    public function getDataFromPairsTable()
     {
         return $this->em->getRepository('App:ShuffledPairs')->findAll();
     }
 
-    private function removeDataFromTable()
+    public function deleteDataFromPairsTable()
     {
         if (!empty($this->getDataFromPairsTable()))
         {

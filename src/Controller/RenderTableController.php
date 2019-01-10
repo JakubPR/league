@@ -41,18 +41,16 @@ class RenderTableController extends AbstractController
      * @Route("/render/table", name="render_table")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(Request $request, SessionManager $sessionManager, SettingsTableBuilder $settingsTable)
+    public function index(SessionManager $sessionManager, SettingsTableBuilder $settingsTable, PairsTableBuilder $pairsTable, ScoreTableBuilder $scoreTable)
     {
         $numberOfGames = $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES);
-        $tableStatus = $request->get('tableStatus');
-        $tableData = $this->getTableDataForCurrentGame($this->tableBuilder->getLastAddedGameId());
-        $this->shuffleOnce($tableData);
+        $tableData = $this->getTableDataForCurrentGame($scoreTable->getLastAddedGameId());
 
-        if (!empty($sessionManager->getShuffledData())) {
-            $pair = $sessionManager->getShuffledData()[0];
+        if ($settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES) != 0) {
+            $pair = $pairsTable->getDataFromPairsTable();
+
 
             return $this->render('render_table/index.html.twig', [
-                'tableStatus' => $tableStatus,
                 'numberOfGames' => $numberOfGames,
                 'tableData' => $tableData,
                 'shuffleData' => $sessionManager->getShuffledData(),
@@ -61,7 +59,6 @@ class RenderTableController extends AbstractController
         }
 
         return $this->render('render_table/endgame.html.twig', [
-            'tableStatus' => $tableStatus,
             'tableData' => $tableData
         ]);
     }

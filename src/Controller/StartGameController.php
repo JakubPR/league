@@ -18,8 +18,8 @@ class StartGameController extends AbstractController
     public function index(ScoreTableBuilder $scoreTableBuilder, PairsTableBuilder $pairsTableBuilder, SettingsTableBuilder $settingsTable)
     {
         if ($settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES) === 0) {
+            $pairsTableBuilder->setDataToPairsTable();
             $scoreTableBuilder->buildTable();
-            $pairsTableBuilder->preparePairsTable();
         }
         return $this->redirectToRoute('render_table');
     }

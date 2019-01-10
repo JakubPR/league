@@ -22,7 +22,7 @@ class ScoreTableRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-    public function findAllCurrentData($tableId)
+    public function findAllCurrentData(int $tableId)
     {
         return $this->createQueryBuilder('td')
             ->where('td.gameId ='.$tableId)

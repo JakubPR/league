@@ -36,7 +36,7 @@ class ScoreTable
      */
     private $gameId;
 
-    public function getGameId()
+    public function getGameId(): int
     {
         return $this->gameId;
     }
@@ -67,7 +67,7 @@ class ScoreTable
         $this->player = $player;
     }
 
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
