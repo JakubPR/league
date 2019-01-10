@@ -22,7 +22,7 @@ class ScoreTable
     private $date;
 
     /**
-     * @ORM\Column(type="array")
+     * @ORM\Column(type="object")
      */
     private $player;
 
@@ -41,7 +41,7 @@ class ScoreTable
         return $this->gameId;
     }
 
-    public function setGameId($gameId): void
+    public function setGameId(int $gameId)
     {
         $this->gameId = $gameId;
     }
@@ -52,27 +52,27 @@ class ScoreTable
         return $this->points;
     }
 
-    public function setPoints($points): void
+    public function setPoints(int $points)
     {
         $this->points = $points;
     }
 
-    public function getPlayer()
+    public function getPlayer(): Player
     {
         return $this->player;
     }
 
-    public function setPlayer($player): void
+    public function setPlayer(Player $player)
     {
         $this->player = $player;
     }
 
-    public function getId(): ?int
+    public function getId(): int
     {
         return $this->id;
     }
 
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): \DateTimeInterface
     {
         return $this->date;
     }
