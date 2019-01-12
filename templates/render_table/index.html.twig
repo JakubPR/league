@@ -5,29 +5,33 @@
 <table>
     {% for tableRow in tableData %}
         <tr>
-        <td> {{ tableRow.player.name }} </td>
-        <td> {{ tableRow.points }} </td>
+            <td> {{ tableRow.player.name }} </td>
+            <td> {{ tableRow.points }} </td>
     {% endfor %}
-    </tr>
+        </tr>
 </table>
     <p>Incoming duels:</p>
     <table>
-        {% for pair in shuffleData %}
+    <tr>
+        <th>Name</th>
+        <th> vs </th>
+        <th>Name</th>
+    </tr>
+        {% for pair in pairs %}
             <tr>
-                {% for single in pair %}
-                    <td>{{ single.player.name }}</td>
-                {% endfor %}
-            </tr>
+                <td> {{ pair.player1.name }}</td>
+                <td> : </td>
+                <td> {{ pair.player1.name }}</td>
         {% endfor %}
+            </tr>
     </table>
     <br>
     <form action="{{ path('get_score') }}" method="post">
     <table>
-        {{ pair[0].player.name }} <input type="text" name= {{ pair[0].id }}>
+        {{ duel.player1.name }} <input type="text" name= {{ duel.player2.id }}>
         vs
-        {{ pair[1].player.name }} <input type="text" name= {{ pair[1].id }}>
+        {{ duel.player2.name }} <input type="text" name= {{ duel.player1.id }}>
             <input class="input_button" type="submit" value="Submit" />
     </table>
     </form>
 {% endblock %}
-

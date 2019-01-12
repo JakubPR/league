@@ -47,14 +47,14 @@ class RenderTableController extends AbstractController
         $tableData = $this->getTableDataForCurrentGame($scoreTable->getLastAddedGameId());
 
         if ($settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES) != 0) {
-            $pair = $pairsTable->getDataFromPairsTable();
-
+            $pairs = $pairsTable->getDataFromPairsTable();
+            $duel = $pairsTable->getPairWithoutDuel();
 
             return $this->render('render_table/index.html.twig', [
                 'numberOfGames' => $numberOfGames,
                 'tableData' => $tableData,
-                'shuffleData' => $sessionManager->getShuffledData(),
-                'pair' => $pair
+                'pairs' => $pairs,
+                'duel' => $duel
             ]);
         }
 

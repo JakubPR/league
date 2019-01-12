@@ -2,6 +2,7 @@
 
 namespace App\Builder;
 
+use App\Entity\ScoreTable;
 use App\Entity\ShuffledPairs;
 use App\Repository\ScoreTableRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -43,9 +44,10 @@ class PairsTableBuilder
 
         foreach ($dataToSave as $array => $pair)
         {
+            /** @var  $pair ScoreTable */
             $newPair = New ShuffledPairs();
-            $newPair->setPlayer1($pair[0]);
-            $newPair->setPlayer2($pair[1]);
+            $newPair->setPlayer1($pair[0]->getPlayer());
+            $newPair->setPlayer2($pair[1]->getPlayer());
             $newPair->setPlayed(0);
             $this->em->persist($newPair);
         }
@@ -54,7 +56,12 @@ class PairsTableBuilder
 
     public function getDataFromPairsTable()
     {
-        return $this->em->getRepository('App:ShuffledPairs')->findAll();
+        return $this->em->getRepository(ShuffledPairs::class)->findAll();
+    }
+
+    public function getPairWithoutDuel()
+    {
+        return $this->em->getRepository(ShuffledPairs::class)->findOneBy(['played' => 0]);
     }
 
     public function deleteDataFromPairsTable()

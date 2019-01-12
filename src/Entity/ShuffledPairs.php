@@ -36,24 +36,24 @@ class ShuffledPairs
         return $this->id;
     }
 
-    public function getPlayer1(): ScoreTable
+    public function getPlayer1(): Player
     {
         return $this->player1;
     }
 
-    public function setPlayer1(ScoreTable $player1)
+    public function setPlayer1(Player $player1)
     {
         $this->player1 = $player1;
 
         return $this;
     }
 
-    public function getPlayer2(): ScoreTable
+    public function getPlayer2(): Player
     {
         return $this->player2;
     }
 
-    public function setPlayer2(ScoreTable $player2)
+    public function setPlayer2(Player $player2)
     {
         $this->player2 = $player2;
 
