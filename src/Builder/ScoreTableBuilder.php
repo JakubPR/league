@@ -60,4 +60,9 @@ class ScoreTableBuilder
         }
         return $gameId;
     }
+
+    public function getTableDataForCurrentGame()
+    {
+        return $this->em->getRepository(ScoreTable::class)->findLastAddedId();
+    }
 }

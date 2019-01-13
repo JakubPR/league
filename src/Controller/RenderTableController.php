@@ -6,7 +6,6 @@ use App\Builder\ScoreTablePointsDistribution;
 use App\Builder\SettingsTableBuilder;
 use App\Builder\SessionManager;
 use App\Builder\ScoreTableBuilder;
-use App\Entity\ScoreTable;
 use App\Repository\ScoreTableRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -29,7 +28,6 @@ class RenderTableController extends AbstractController
         ScoreTableBuilder $tableBuilder,
         EntityManagerInterface $em,
         PairsTableBuilder $pairsTable
-
     ){
         $this->repo = $repo;
         $this->sessionManager = $sessionManager;
@@ -42,10 +40,10 @@ class RenderTableController extends AbstractController
      * @Route("/render/table", name="render_table")
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(SessionManager $sessionManager, SettingsTableBuilder $settingsTable, PairsTableBuilder $pairsTable, ScoreTableBuilder $scoreTable)
+    public function index(SettingsTableBuilder $settingsTable, PairsTableBuilder $pairsTable, ScoreTableBuilder $scoreTable)
     {
         $numberOfGames = $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES);
-        $tableData = $this->getTableDataForCurrentGame($scoreTable->getLastAddedGameId());
+        $tableData = $scoreTable->getTableDataForCurrentGame();
 
         if ($settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES) != 0) {
             $pairs = $pairsTable->getDataFromPairsTable();
@@ -67,9 +65,15 @@ class RenderTableController extends AbstractController
     /**
      * @Route("/render/getscore", name="get_score")
      **/
-    public function getScore(Request $request, ScoreTablePointsDistribution $distributor)
+    public function getScore(Request $request)
     {
-        $distributor->updateScoreTable($request->request->all());
-        return $this->redirectToRoute('render_table');
+        dump($request->request->all());die;
+
+//        Cannot autowire argument $distributor of
+//        "App\Controller\RenderTableController::getScore()":
+//        it references class "App\Builder\ScoreTablePointsDistribution"
+//        but no such service exists.
+
+        //return $this->redirectToRoute('render_table');
     }
 }
