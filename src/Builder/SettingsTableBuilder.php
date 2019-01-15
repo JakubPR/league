@@ -17,7 +17,7 @@ class SettingsTableBuilder
         self::NUMBER_OF_GAMES => 0,
     ];
 
-    public $em;
+    private $em;
 
     public function __construct(EntityManagerInterface $em)
     {

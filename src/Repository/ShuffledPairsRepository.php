@@ -18,4 +18,14 @@ class ShuffledPairsRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ShuffledPairs::class);
     }
+
+    public function findPairById(int $pairId)
+    {
+        return $this->createQueryBuilder('td')
+            ->where('td.gameId ='.$pairId)
+            ->orderBy('td.points', 'DESC')
+            ->getQuery()
+            ->getResult();
+    }
+
 }

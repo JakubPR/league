@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Builder\ScoreTablePointsDistribution;
+use App\Builder\TablePointsDistribution;
 use App\Builder\SettingsTableBuilder;
 use App\Builder\SessionManager;
 use App\Builder\ScoreTableBuilder;
@@ -20,15 +20,18 @@ class RenderTableController extends AbstractController
     private $tableBuilder;
     private $em;
     private $pairsTable;
+    private $distribution;
 
     public function __construct
     (
+        TablePointsDistribution $distribution,
         ScoreTableRepository $repo,
         SessionManager $sessionManager,
         ScoreTableBuilder $tableBuilder,
         EntityManagerInterface $em,
         PairsTableBuilder $pairsTable
     ){
+        $this->distribution = $distribution;
         $this->repo = $repo;
         $this->sessionManager = $sessionManager;
         $this->tableBuilder = $tableBuilder;
@@ -67,13 +70,7 @@ class RenderTableController extends AbstractController
      **/
     public function getScore(Request $request)
     {
-        dump($request->request->all());die;
-
-//        Cannot autowire argument $distributor of
-//        "App\Controller\RenderTableController::getScore()":
-//        it references class "App\Builder\ScoreTablePointsDistribution"
-//        but no such service exists.
-
+        $this->distribution->updateScoreTable($request->request->all());
         //return $this->redirectToRoute('render_table');
     }
 }
