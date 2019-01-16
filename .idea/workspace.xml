@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Builder/ScoreTablePointsDistribution.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/RenderTableController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RenderTableController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,14 +81,14 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
+    <splitter split-orientation="horizontal" split-proportion="0.5166531">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="338">
-                  <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+                <state relative-caret-position="146">
+                  <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="63" />
                   <folding>
                     <element signature="e#34#74#0#PHP" expanded="true" />
                   </folding>
@@ -100,8 +99,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+                <state relative-caret-position="266">
+                  <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
                   <folding>
                     <element signature="e#31#55#0#PHP" expanded="true" />
                   </folding>
@@ -116,11 +115,20 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="338">
-                  <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+                <state relative-caret-position="400">
+                  <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="39" />
                   <folding>
-                    <element signature="e#31#60#0#PHP" expanded="true" />
+                    <element signature="e#31#71#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="400">
+                  <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -128,7 +136,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Entity/ShuffledPairs.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="261">
+                <state relative-caret-position="912">
                   <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
                 </state>
               </provider>
@@ -180,14 +188,14 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/Controller/StartGameController.php" />
         <option value="$PROJECT_DIR$/src/Entity/ScoreTable.php" />
-        <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/ShuffledPairs.php" />
         <option value="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" />
-        <option value="$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php" />
         <option value="$PROJECT_DIR$/templates/render_table/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
         <option value="$PROJECT_DIR$/src/Builder/ScoreTablePointsDistribution.php" />
         <option value="$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" />
+        <option value="$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php" />
+        <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
+        <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
         <option value="$PROJECT_DIR$/src/Controller/RenderTableController.php" />
         <option value="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" />
       </list>
@@ -396,18 +404,19 @@
       <workItem from="1547157609541" duration="1694000" />
       <workItem from="1547326983957" duration="5195000" />
       <workItem from="1547408833656" duration="6163000" />
-      <workItem from="1547592120118" duration="2478000" />
+      <workItem from="1547592120118" duration="3481000" />
+      <workItem from="1547668975039" duration="3463000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61399000" />
+    <option name="totallyTimeSpent" value="65865000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1015" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20170757" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20384204" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -537,34 +546,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ScoreTableRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="31" column="5" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="e#34#60#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/SettingsRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="5" selection-start-column="5" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/ScoreTable.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -589,20 +574,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/ScoreTable.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="49" column="31" selection-start-line="49" selection-start-column="31" selection-end-line="49" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ScoreTableRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="19" column="10" selection-start-line="19" selection-start-column="10" selection-end-line="19" selection-end-column="10" />
+          <folding>
+            <element signature="e#34#60#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1512">
-          <caret line="63" column="48" selection-start-line="63" selection-start-column="48" selection-end-line="63" selection-end-column="48" />
+        <state relative-caret-position="363">
+          <caret line="65" column="86" selection-start-line="65" selection-start-column="86" selection-end-line="65" selection-end-column="86" />
           <folding>
             <element signature="e#31#71#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/ShuffledPairs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
+        <state relative-caret-position="266">
+          <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
           <folding>
             <element signature="e#31#55#0#PHP" expanded="true" />
           </folding>
@@ -611,27 +627,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        <state relative-caret-position="146">
+          <caret line="48" column="8" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="63" />
           <folding>
             <element signature="e#34#74#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/ShuffledPairs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="22" column="25" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
+        <state relative-caret-position="400">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="39" />
           <folding>
-            <element signature="e#31#60#0#PHP" expanded="true" />
+            <element signature="e#31#71#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

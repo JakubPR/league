@@ -63,6 +63,8 @@ class ScoreTableBuilder
 
     public function getTableDataForCurrentGame()
     {
-        return $this->em->getRepository(ScoreTable::class)->findLastAddedId();
+        $lastAddedId = $this->em->getRepository(ScoreTable::class)->findLastAddedId();
+        /** @var $lastAddedId ScoreTable */
+        return $this->em->getRepository(ScoreTable::class)->findAllCurrentData($lastAddedId[0]->getGameId());
     }
 }
