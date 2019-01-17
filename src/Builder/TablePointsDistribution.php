@@ -26,7 +26,8 @@ class TablePointsDistribution
                 /** @var ScoreTable $data */
                 $tablePlayer = $data->getPlayer()->getId();
                 if ($tablePlayer === $playerId) {
-                    $player = $this->em->getRepository(ScoreTable::class)->find($data->getId());
+                    $data->setPoints($score);
+                    dump($data->getPoints());
                 }
             }
         }
