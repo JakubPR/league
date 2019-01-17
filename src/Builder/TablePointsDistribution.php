@@ -2,8 +2,9 @@
 
 namespace App\Builder;
 
-use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\EntityManager;
 use App\Entity\ScoreTable;
+use Doctrine\ORM\EntityManagerInterface;
 
 class TablePointsDistribution
 {
@@ -18,18 +19,32 @@ class TablePointsDistribution
 
     public function updateScoreTable($request)
     {
-        dump($request);
+        $biggest = (max($request));
+        $smallest = (min($request));
+
+        $winner = (array_search($biggest, $request));
+        $loser = (array_search($smallest, $request));
 
         $tableData = $this->scoreTable->getTableDataForCurrentGame();
         foreach ($request as $playerId => $score) {
             foreach ($tableData as $data) {
+
                 /** @var ScoreTable $data */
                 $tablePlayer = $data->getPlayer()->getId();
+
                 if ($tablePlayer === $playerId) {
-                    $data->setPoints($score);
-                    dump($data->getPoints());
+
+                    $points = 1;
+                    if ($playerId === $winner && $winner != $loser) {
+                        $points = 2;
+                    } elseif ($playerId === $loser && $loser != $winner) {
+                        $points = 0;
+                    }
+                    $data->setPoints($points);
+                    $this->em->persist($data);
                 }
             }
         }
+        //$this->em->flush();
     }
 }
