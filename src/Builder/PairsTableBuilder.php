@@ -6,7 +6,6 @@ use App\Entity\ScoreTable;
 use App\Entity\ShuffledPairs;
 use App\Repository\ScoreTableRepository;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Builder\SettingsTableBuilder;
 
 class PairsTableBuilder
 {
@@ -61,7 +60,7 @@ class PairsTableBuilder
 
     public function getPairWithoutDuel()
     {
-        return $this->em->getRepository(ShuffledPairs::class)->findOneBy(['played' => 0]);
+        return $this->em->getRepository(ShuffledPairs::class)->findBy(['played' => 0]);
     }
 
     public function deleteDataFromPairsTable()

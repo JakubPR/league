@@ -49,7 +49,7 @@ class RenderTableController extends AbstractController
         $tableData = $scoreTable->getTableDataForCurrentGame();
 
         if ($settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES) != 0) {
-            $pairs = $pairsTable->getDataFromPairsTable();
+            $pairs = $pairsTable->getPairWithoutDuel();
             $duel = $pairsTable->getPairWithoutDuel();
 
             return $this->render('render_table/index.html.twig', [
@@ -71,6 +71,6 @@ class RenderTableController extends AbstractController
     public function getScore(Request $request)
     {
         $this->distribution->updateScoreTable($request->request->all());
-        //return $this->redirectToRoute('render_table');
+       // return $this->redirectToRoute('render_table');
     }
 }

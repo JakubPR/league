@@ -2,7 +2,6 @@
 
 namespace App\Builder;
 
-use Doctrine\ORM\EntityManager;
 use App\Entity\ScoreTable;
 use Doctrine\ORM\EntityManagerInterface;
 
