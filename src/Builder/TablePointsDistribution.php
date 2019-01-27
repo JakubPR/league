@@ -55,5 +55,6 @@ class TablePointsDistribution
     {
         $duel = $this->em->getRepository('App:ShuffledPairs')->find(['id' => $duelId]);
         $duel->setPlayed(1);
+        $this->em->persist($duel);
     }
 }

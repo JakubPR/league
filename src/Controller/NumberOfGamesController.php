@@ -21,7 +21,7 @@ class NumberOfGamesController extends AbstractController
      **/
     function saveNumberOfGames(Request $request, SettingsTableBuilder $settingsTable)
     {
-        $settingsTable->changeStatusState(SettingsTableBuilder::NUMBER_OF_GAMES,$request->get('number'));
+        $settingsTable->changeStatusState(SettingsTableBuilder::NUMBER_OF_GAMES, $request->get('number'));
         return $this->redirectToRoute('welcome');
     }
 }
