@@ -18,6 +18,9 @@ class TablePointsDistribution
 
     public function updateScoreTable($request)
     {
+        $duelId = $request['duelId'];
+        unset($request['duelId']);
+
         $biggest = (max($request));
         $smallest = (min($request));
 
@@ -44,6 +47,13 @@ class TablePointsDistribution
                 }
             }
         }
+        $this->setDuelAsPlayed($duelId);
         //$this->em->flush();
+    }
+
+    private function setDuelAsPlayed($duelId)
+    {
+        $duel = $this->em->getRepository('App:ShuffledPairs')->find(['id' => $duelId]);
+        $duel->setPlayed(1);
     }
 }

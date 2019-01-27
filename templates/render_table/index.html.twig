@@ -31,6 +31,7 @@
         {{ duel[0].player1.name }} <input type="text" name= {{ duel[0].player1.id }} />
         vs
         {{ duel[0].player2.name }} <input type="text" name= {{ duel[0].player2.id }} />
+        <input type="hidden" name="duelId" value= {{ duel[0].id }} />
             <input class="input_button" type="submit" value="Submit" />
     </table>
     </form>
