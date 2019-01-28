@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller;
 
 use App\Builder\SettingsTableBuilder;
@@ -11,7 +12,7 @@ class NumberOfGamesController extends AbstractController
     /**
      * @Route("/numberofgames", name="games-number")
      */
-    function show()
+    public function show()
     {
         return $this->render('number of games/index.html.twig');
     }
@@ -19,9 +20,10 @@ class NumberOfGamesController extends AbstractController
     /**
      * @Route("/numberofgames/getnumber", name="get_number")
      **/
-    function saveNumberOfGames(Request $request, SettingsTableBuilder $settingsTable)
+    public function saveNumberOfGames(Request $request, SettingsTableBuilder $settingsTable)
     {
         $settingsTable->changeStatusState(SettingsTableBuilder::NUMBER_OF_GAMES, $request->get('number'));
+
         return $this->redirectToRoute('welcome');
     }
 }

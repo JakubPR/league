@@ -13,24 +13,27 @@ class ManagePlayersController extends AbstractController
 {
     /**
      * @Route("/manage-players", name="manage-players")
-     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(Request $request)
     {
-            $player = new Player();
-            $addPlayerForm = $this->createForm(ManagePlayersType::class, $player);
-            $this->getFormData($request, $addPlayerForm, $player);
+        $player = new Player();
+        $addPlayerForm = $this->createForm(ManagePlayersType::class, $player);
+        $this->getFormData($request, $addPlayerForm, $player);
 
-            return $this->render('manage players/index.html.twig', [
+        return $this->render(
+                'manage players/index.html.twig', [
                 'addPlayerForm' => $addPlayerForm->createView(),
-                'allPlayers' => $this->getPlayers()
-            ]);
+                'allPlayers' => $this->getPlayers(),
+                ]
+            );
     }
 
     /**
      * @Route("/manage-players/remove/{id}", name="manage-players-remove")
+     * @param int $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function removePlayer($id)
+    public function removePlayer(int $id)
     {
         $player = $this->getDoctrine()
             ->getRepository(Player::class)
@@ -47,9 +50,7 @@ class ManagePlayersController extends AbstractController
     {
         $addPlayerForm->handleRequest($request);
 
-        if ($addPlayerForm->isSubmitted())
-        {
-            /** @var  $formData Player */
+        if ($addPlayerForm->isSubmitted()) {
             $formData = $addPlayerForm->getData();
             $this->savePlayer($formData->getName(), $player);
         }

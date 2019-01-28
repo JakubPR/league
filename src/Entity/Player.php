@@ -20,6 +20,7 @@ class Player
      * @ORM\Column(type="string", length=20)
      */
     private $name;
+    private $TablesOfMatches;
 
     public function getId(): ?int
     {
@@ -38,15 +39,15 @@ class Player
         return $this;
     }
 
-//    public function getTablesOfMatches(): ?array
-//    {
-//        return $this->TablesOfMatches;
-//    }
-//
-//    public function setTablesOfMatches(?array $TablesOfMatches): self
-//    {
-//        $this->TablesOfMatches = $TablesOfMatches;
-//
-//        return $this;
-//    }
+    public function getTablesOfMatches(): ?array
+    {
+        return $this->TablesOfMatches;
+    }
+
+    public function setTablesOfMatches(?array $TablesOfMatches): self
+    {
+        $this->TablesOfMatches = $TablesOfMatches;
+
+        return $this;
+    }
 }

@@ -7,8 +7,6 @@ use App\Builder\PairsTableBuilder;
 use App\Builder\ScoreTableBuilder;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Builder\SessionManager;
-
 
 class StartGameController extends AbstractController
 {
@@ -17,10 +15,11 @@ class StartGameController extends AbstractController
      */
     public function index(ScoreTableBuilder $scoreTableBuilder, PairsTableBuilder $pairsTableBuilder, SettingsTableBuilder $settingsTable)
     {
-        if ($settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES) === 0) {
+        if (0 === $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES)) {
             $pairsTableBuilder->setDataToPairsTable();
             $scoreTableBuilder->buildTable();
         }
+
         return $this->redirectToRoute('render_table');
     }
 }

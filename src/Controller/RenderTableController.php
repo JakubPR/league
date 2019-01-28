@@ -22,15 +22,14 @@ class RenderTableController extends AbstractController
     private $pairsTable;
     private $distribution;
 
-    public function __construct
-    (
+    public function __construct(
         TablePointsDistribution $distribution,
         ScoreTableRepository $repo,
         SessionManager $sessionManager,
         ScoreTableBuilder $tableBuilder,
         EntityManagerInterface $em,
         PairsTableBuilder $pairsTable
-    ){
+    ) {
         $this->distribution = $distribution;
         $this->repo = $repo;
         $this->sessionManager = $sessionManager;
@@ -41,28 +40,31 @@ class RenderTableController extends AbstractController
 
     /**
      * @Route("/render/table", name="render_table")
-     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function index(SettingsTableBuilder $settingsTable, PairsTableBuilder $pairsTable, ScoreTableBuilder $scoreTable)
     {
         $numberOfGames = $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES);
         $tableData = $scoreTable->getTableDataForCurrentGame();
 
-        if ($settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES) != 0) {
+        if (0 != $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES)) {
             $pairs = $pairsTable->getPairWithoutDuel();
             $duel = $pairsTable->getPairWithoutDuel();
 
-            return $this->render('render_table/index.html.twig', [
+            return $this->render(
+                'render_table/index.html.twig', [
                 'numberOfGames' => $numberOfGames,
                 'tableData' => $tableData,
                 'pairs' => $pairs,
-                'duel' => $duel
-            ]);
+                'duel' => $duel,
+                ]
+            );
         }
 
-        return $this->render('render_table/endgame.html.twig', [
-            'tableData' => $tableData
-        ]);
+        return $this->render(
+            'render_table/endgame.html.twig', [
+            'tableData' => $tableData,
+            ]
+        );
     }
 
     /**
@@ -71,6 +73,6 @@ class RenderTableController extends AbstractController
     public function getScore(Request $request)
     {
         $this->distribution->updateScoreTable($request->request->all());
-       // return $this->redirectToRoute('render_table');
+        // return $this->redirectToRoute('render_table');
     }
 }

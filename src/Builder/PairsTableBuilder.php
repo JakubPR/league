@@ -15,13 +15,12 @@ class PairsTableBuilder
     private $settingsTable;
     private $em;
 
-    function __construct
-    (
+    public function __construct(
         ScoreTableBuilder $scoreTable,
         EntityManagerInterface $em,
         SettingsTableBuilder $settingsTable,
         ScoreTableRepository $scoreTableRepo
-    ){
+    ) {
         $this->tableBuilder = $scoreTable;
         $this->scoreTable = $scoreTable;
         $this->scoreTableRepo = $scoreTableRepo;
@@ -29,11 +28,13 @@ class PairsTableBuilder
         $this->settingsTable = $settingsTable;
     }
 
-    private function shuffleAndChunkData() : array
+    private function shuffleAndChunkData(): array
     {
-        $tableData = $this->scoreTableRepo->findAllCurrentData($this->scoreTable->getLastAddedGameId());
+        $tableData = $this->scoreTableRepo
+            ->findAllCurrentData($this->scoreTable->getLastAddedGameId());
         shuffle($tableData);
-        $shuffledData = array_chunk($tableData,2);
+        $shuffledData = array_chunk($tableData, 2);
+
         return $shuffledData;
     }
 
@@ -41,10 +42,9 @@ class PairsTableBuilder
     {
         $dataToSave = $this->shuffleAndChunkData();
 
-        foreach ($dataToSave as $array => $pair)
-        {
-            /** @var  $pair ScoreTable */
-            $newPair = New ShuffledPairs();
+        foreach ($dataToSave as $array => $pair) {
+            /** @var $pair ScoreTable */
+            $newPair = new ShuffledPairs();
             $newPair->setPlayer1($pair[0]->getPlayer());
             $newPair->setPlayer2($pair[1]->getPlayer());
             $newPair->setPlayed(0);
@@ -65,10 +65,8 @@ class PairsTableBuilder
 
     public function deleteDataFromPairsTable()
     {
-        if (!empty($this->getDataFromPairsTable()))
-        {
-            foreach ($this->getDataFromPairsTable() as $dataToRemove)
-            {
+        if (!empty($this->getDataFromPairsTable())) {
+            foreach ($this->getDataFromPairsTable() as $dataToRemove) {
                 $this->em->remove($dataToRemove);
             }
             $this->em->flush();

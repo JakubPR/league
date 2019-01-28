@@ -46,7 +46,6 @@ class ScoreTable
         $this->gameId = $gameId;
     }
 
-
     public function getPoints()
     {
         return $this->points;

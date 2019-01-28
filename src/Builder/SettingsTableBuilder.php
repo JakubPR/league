@@ -26,8 +26,7 @@ class SettingsTableBuilder
 
     public function buildStatusTable()
     {
-        if (empty($this->em->getRepository('App:Settings')->findAll()))
-        {
+        if (empty($this->em->getRepository('App:Settings')->findAll())) {
             foreach (SettingsTableBuilder::$states as $name => $value) {
                 $status = new Settings();
                 $status->setName($name);
@@ -49,11 +48,12 @@ class SettingsTableBuilder
 
     public function getStatusState(string $statusName)
     {
-       $status =  $this->getStatusByName($statusName);
-       return $status->getState();
+        $status = $this->getStatusByName($statusName);
+
+        return $status->getState();
     }
 
-    public function getStatusByName(string $statusName) : Settings
+    public function getStatusByName(string $statusName): Settings
     {
         return $this->em->getRepository('App:Settings')->findOneBy(['name' => $statusName]);
     }

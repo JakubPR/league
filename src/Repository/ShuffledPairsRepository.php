@@ -27,5 +27,4 @@ class ShuffledPairsRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
-
 }
