@@ -30,12 +30,10 @@ class TablePointsDistribution
         $tableData = $this->scoreTable->getTableDataForCurrentGame();
         foreach ($request as $playerId => $score) {
             foreach ($tableData as $data) {
-
                 /** @var ScoreTable $data */
                 $tablePlayer = $data->getPlayer()->getId();
 
                 if ($tablePlayer === $playerId) {
-
                     $points = 1;
                     if ($playerId === $winner && $winner != $loser) {
                         $points = 2;

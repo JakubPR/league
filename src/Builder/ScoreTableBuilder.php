@@ -26,7 +26,6 @@ class ScoreTableBuilder
         $gameId = $this->calculateNewGameId();
 
         foreach ($allPlayers as $player) {
-
             $table = new ScoreTable();
             $table->setDate($this->date);
             $table->setPlayer($player);
