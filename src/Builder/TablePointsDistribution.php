@@ -16,7 +16,7 @@ class TablePointsDistribution
         $this->scoreTable = $scoreTable;
     }
 
-    public function updateScoreTable($request)
+    public function updateScoreTable(array $request)
     {
         $duelId = $request['duelId'];
         unset($request['duelId']);
@@ -49,10 +49,11 @@ class TablePointsDistribution
         //$this->em->flush();
     }
 
-    private function setDuelAsPlayed($duelId)
+    private function setDuelAsPlayed(int $duelId)
     {
         $duel = $this->em->getRepository('App:ShuffledPairs')->find(['id' => $duelId]);
         $duel->setPlayed(1);
         $this->em->persist($duel);
+        //$this->em->flush();
     }
 }

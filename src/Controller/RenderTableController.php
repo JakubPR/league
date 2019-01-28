@@ -73,6 +73,6 @@ class RenderTableController extends AbstractController
     public function getScore(Request $request)
     {
         $this->distribution->updateScoreTable($request->request->all());
-        // return $this->redirectToRoute('render_table');
+        return $this->redirectToRoute('render_table');
     }
 }
