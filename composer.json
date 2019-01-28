@@ -5,6 +5,7 @@
         "php": "^7.2",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "friendsofphp/php-cs-fixer": "^2.14",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/console": "*",
         "symfony/flex": "^1.1",
@@ -15,7 +16,6 @@
         "symfony/yaml": "*"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "*",
         "symfony/dotenv": "*",
         "symfony/maker-bundle": "^1.9",
         "symfony/profiler-pack": "^1.0",

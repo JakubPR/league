@@ -1,12 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SPLITTER_PROPORTION" value="0.5859031" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/office-league.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/office-league.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/ManagePlayersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/ManagePlayersController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/RenderTableController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/RenderTableController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Player.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,11 +98,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Builder/PairsTableBuilder.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+            <state relative-caret-position="391">
+              <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
               <folding>
                 <element signature="e#31#57#0#PHP" expanded="true" />
               </folding>
@@ -97,7 +110,37 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
+              <folding>
+                <element signature="e#31#71#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/composer.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>php-cs-fixer.phar</find>
+      <find>php-cs-fixer</find>
+    </findStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -146,11 +189,11 @@
         <option value="$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
         <option value="$PROJECT_DIR$/src/Controller/RenderTableController.php" />
-        <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
         <option value="$PROJECT_DIR$/templates/render_table/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" />
+        <option value="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" />
+        <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
       </list>
     </option>
   </component>
@@ -217,7 +260,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/profiler-pack" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
-      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -252,6 +294,11 @@
               <item name="league" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="league" type="b2602c69:ProjectViewProjectNode" />
+              <item name="league" type="462c0819:PsiDirectoryNode" />
+              <item name="vendor" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -337,12 +384,12 @@
       <workItem from="1547995045549" duration="857000" />
       <workItem from="1548000209656" duration="2039000" />
       <workItem from="1548611078173" duration="3180000" />
-      <workItem from="1548665705240" duration="1882000" />
+      <workItem from="1548665705240" duration="3277000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78777000" />
+    <option name="totallyTimeSpent" value="80172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="27" width="1920" height="1173" extended-state="6" />
@@ -350,7 +397,7 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15651709" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Inspection Results" visible="true" weight="0.32935324" />
+      <window_info anchor="bottom" id="Inspection Results" weight="0.32935324" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290398" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -362,7 +409,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" weight="0.5721393" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.38905472" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.29308325" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -454,16 +501,6 @@
     <entry file="file://$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php" />
     <entry file="file://$PROJECT_DIR$/src/Entity/ShuffledPairs.php" />
     <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php" />
-    <entry file="file://$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-840">
-          <caret line="17" column="28" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-          <folding>
-            <element signature="e#31#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Repository/ScoreTableRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -484,22 +521,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php" />
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Builder/PairsTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+        <state relative-caret-position="-546">
+          <caret line="35" column="51" lean-forward="true" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
           <folding>
             <element signature="e#31#57#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+          <folding>
+            <element signature="e#31#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="e#31#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.php_cs.dist">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
         </state>
       </provider>
     </entry>

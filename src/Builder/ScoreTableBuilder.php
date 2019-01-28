@@ -25,10 +25,9 @@ class ScoreTableBuilder
         $allPlayers = $this->getAllPlayers();
         $gameId = $this->calculateNewGameId();
 
-        foreach ($allPlayers as $player)
-        {
-            $table = new ScoreTable();
+        foreach ($allPlayers as $player) {
 
+            $table = new ScoreTable();
             $table->setDate($this->date);
             $table->setPlayer($player);
             $table->setPoints(0);
@@ -45,26 +44,28 @@ class ScoreTableBuilder
 
     public function calculateNewGameId()
     {
-        return $this->getLastAddedGameId() +1;
+        return $this->getLastAddedGameId() + 1;
     }
 
     public function getLastAddedGameId()
     {
         $tableData = $this->repo->findLastAddedId();
 
-        /** @var ScoreTable $tableData */
+        /** @var ScoreTable */
         $gameId = $tableData[0]->getGameId();
 
         if (!$gameId) {
             return 1;
         }
+
         return $gameId;
     }
 
     public function getTableDataForCurrentGame()
     {
         $lastAddedId = $this->em->getRepository(ScoreTable::class)->findLastAddedId();
-        /** @var $lastAddedId ScoreTable */
+
+        /* @var $lastAddedId ScoreTable */
         return $this->em->getRepository(ScoreTable::class)->findAllCurrentData($lastAddedId[0]->getGameId());
     }
 }

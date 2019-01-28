@@ -10,7 +10,7 @@ class SessionManager
 
     public function __construct()
     {
-        $this->session = New Session();
+        $this->session = new Session();
         $this->startSession();
     }
 

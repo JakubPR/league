@@ -14,6 +14,7 @@ class WelcomeController extends AbstractController
     public function index(SettingsTableBuilder $settingsTable)
     {
         $settingsTable->buildStatusTable();
+
         return $this->render('welcome/welcome.html.twig');
     }
 }
