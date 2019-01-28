@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +16,7 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <executablePath>composer</executablePath>
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -83,50 +84,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="354">
-                  <caret line="75" column="1" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
-                  <folding>
-                    <element signature="e#34#74#0#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="354">
-                  <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-                  <folding>
-                    <element signature="e#31#57#0#PHP" expanded="true" />
-                    <element signature="e#1727#1746#1#PHP" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/templates/render_table/index.html.twig">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="378">
-                  <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Builder/PairsTableBuilder.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
+              <folding>
+                <element signature="e#31#57#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -136,7 +107,6 @@
       <list>
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/config/routes.yaml" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/phpdocker/nginx/nginx.conf" />
         <option value="$PROJECT_DIR$/src/Form/ManagePlayersType.php" />
         <option value="$PROJECT_DIR$/src/Repository/PlayerRepository.php" />
@@ -175,11 +145,12 @@
         <option value="$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" />
         <option value="$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php" />
         <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
-        <option value="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" />
         <option value="$PROJECT_DIR$/src/Controller/RenderTableController.php" />
         <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
         <option value="$PROJECT_DIR$/templates/render_table/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" />
       </list>
     </option>
   </component>
@@ -250,8 +221,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="width" value="1920" />
-    <option name="height" value="1015" />
+    <option name="x" value="1464" />
+    <option name="y" value="222" />
+    <option name="width" value="1221" />
+    <option name="height" value="686" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -266,52 +239,19 @@
         <subPane>
           <expand>
             <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
+              <item name="league" type="b2602c69:ProjectViewProjectNode" />
+              <item name="league" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
+              <item name="league" type="b2602c69:ProjectViewProjectNode" />
+              <item name="league" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
+              <item name="league" type="b2602c69:ProjectViewProjectNode" />
+              <item name="league" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Builder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Repository" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="office-league" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="render_table" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
           <select />
@@ -323,7 +263,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -396,18 +337,20 @@
       <workItem from="1547995045549" duration="857000" />
       <workItem from="1548000209656" duration="2039000" />
       <workItem from="1548611078173" duration="3180000" />
+      <workItem from="1548665705240" duration="1882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76895000" />
+    <option name="totallyTimeSpent" value="78777000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1015" extended-state="6" />
+    <frame x="1366" y="27" width="1920" height="1173" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21878335" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15651709" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" visible="true" weight="0.32935324" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3290398" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -419,12 +362,12 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.3114754" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" weight="0.5721393" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.29308325" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.13927428" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.09775641" />
       <window_info anchor="right" id="Key Promoter X" order="4" />
     </layout>
   </component>
@@ -447,16 +390,7 @@
       </provider>
     </entry>
     <entry file="das://44d81520-cfc4-49b4-b2fe-e89f885f2f8e/schema/ole/table/status_manager" />
-    <entry file="file://$PROJECT_DIR$/templates/number of games/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/number of games/index.html.twig" />
     <entry file="file://$PROJECT_DIR$/src/Builder/Year.php" />
     <entry file="file://$PROJECT_DIR$/src/Entity/Year.php" />
     <entry file="file://$PROJECT_DIR$/src/Year.php" />
@@ -478,13 +412,7 @@
         <state relative-caret-position="-1272" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/NumberOfGamesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/NumberOfGamesController.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -495,13 +423,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/render_table/endgame.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="1" column="16" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/render_table/endgame.html.twig" />
     <entry file="das://44d81520-cfc4-49b4-b2fe-e89f885f2f8e/schema/ole/table/settings" />
     <entry file="das://44d81520-cfc4-49b4-b2fe-e89f885f2f8e/schema/ole/table/score_table" />
     <entry file="file://$PROJECT_DIR$/src/Controller/StartGameController.php">
@@ -518,13 +440,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Builder/SessionManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Builder/SessionManager.php" />
     <entry file="file://$PROJECT_DIR$/src/Entity/ScoreTable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-144">
@@ -535,27 +451,9 @@
     <entry file="file://$PROJECT_DIR$/src/Repository/PlayerRepository.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/ShuffledPairs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="38" column="20" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/ShuffledPairsRepository.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/ShuffledPairs.php" />
+    <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php" />
     <entry file="file://$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-840">
@@ -576,43 +474,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Repository/SettingsRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="18" column="56" selection-start-line="18" selection-start-column="56" selection-end-line="18" selection-end-column="56" />
-          <folding>
-            <element signature="e#34#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="829">
-          <caret line="51" column="54" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
-          <folding>
-            <element signature="e#31#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Builder/PairsTableBuilder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="62" column="70" selection-start-line="62" selection-start-column="70" selection-end-line="62" selection-end-column="70" />
-          <folding>
-            <element signature="e#31#57#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/render_table/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Repository/SettingsRepository.php" />
+    <entry file="file://$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" />
+    <entry file="file://$PROJECT_DIR$/templates/render_table/index.html.twig" />
     <entry file="das://44d81520-cfc4-49b4-b2fe-e89f885f2f8e/schema/ole/table/shuffled_pairs">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -620,23 +484,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
+    <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php" />
+    <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php" />
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="58" column="5" selection-start-line="58" selection-start-column="5" selection-end-line="58" selection-end-column="5" />
-          <folding>
-            <element signature="e#31#57#0#PHP" expanded="true" />
-            <element signature="e#1727#1746#1#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="184">
+          <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php">
+    <entry file="file://$PROJECT_DIR$/src/Builder/PairsTableBuilder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="75" column="1" selection-start-line="75" selection-start-column="1" selection-end-line="75" selection-end-column="1" />
+        <state relative-caret-position="390">
+          <caret line="40" column="41" lean-forward="true" selection-start-line="40" selection-start-column="41" selection-end-line="40" selection-end-column="41" />
           <folding>
-            <element signature="e#34#74#0#PHP" expanded="true" />
+            <element signature="e#31#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

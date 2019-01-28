@@ -21,7 +21,7 @@ class PairsTableBuilder
         EntityManagerInterface $em,
         SettingsTableBuilder $settingsTable,
         ScoreTableRepository $scoreTableRepo
-    ){
+    ) {
         $this->tableBuilder = $scoreTable;
         $this->scoreTable = $scoreTable;
         $this->scoreTableRepo = $scoreTableRepo;
@@ -31,9 +31,10 @@ class PairsTableBuilder
 
     private function shuffleAndChunkData() : array
     {
-        $tableData = $this->scoreTableRepo->findAllCurrentData($this->scoreTable->getLastAddedGameId());
+        $tableData = $this->scoreTableRepo
+            ->findAllCurrentData($this->scoreTable->getLastAddedGameId());
         shuffle($tableData);
-        $shuffledData = array_chunk($tableData,2);
+        $shuffledData = array_chunk($tableData, 2);
         return $shuffledData;
     }
 
