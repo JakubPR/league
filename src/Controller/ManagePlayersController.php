@@ -30,8 +30,10 @@ class ManagePlayersController extends AbstractController
 
     /**
      * @Route("/manage-players/remove/{id}", name="manage-players-remove")
+     * @param int $id
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function removePlayer($id)
+    public function removePlayer(int $id)
     {
         $player = $this->getDoctrine()
             ->getRepository(Player::class)
