@@ -47,6 +47,7 @@ class Player
     public function setTablesOfMatches(?array $TablesOfMatches): self
     {
         $this->TablesOfMatches = $TablesOfMatches;
+
         return $this;
     }
 }

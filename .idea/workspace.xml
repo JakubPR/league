@@ -101,15 +101,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-253">
+            <state relative-caret-position="-529">
               <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
               <folding>
                 <element signature="e#31#57#0#PHP" expanded="true" />
                 <element signature="e#1558#1577#1#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Controller/ManagePlayersController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entity/Player.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="140">
+              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -161,7 +179,6 @@
         <option value="$PROJECT_DIR$/src/Controller/NumberOfGamesController.php" />
         <option value="$PROJECT_DIR$/src/Controller/WelcomeController.php" />
         <option value="$PROJECT_DIR$/templates/render_table/endgame.html.twig" />
-        <option value="$PROJECT_DIR$/src/Entity/Player.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/src/Controller/StartGameController.php" />
         <option value="$PROJECT_DIR$/src/Entity/ScoreTable.php" />
@@ -177,6 +194,7 @@
         <option value="$PROJECT_DIR$/src/Builder/ScoreTableBuilder.php" />
         <option value="$PROJECT_DIR$/src/Controller/ManagePlayersController.php" />
         <option value="$PROJECT_DIR$/src/Controller/RenderTableController.php" />
+        <option value="$PROJECT_DIR$/src/Entity/Player.php" />
       </list>
     </option>
   </component>
@@ -397,12 +415,12 @@
       <workItem from="1547995045549" duration="857000" />
       <workItem from="1548000209656" duration="2039000" />
       <workItem from="1548611078173" duration="3180000" />
-      <workItem from="1548665705240" duration="4274000" />
+      <workItem from="1548665705240" duration="5119000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81169000" />
+    <option name="totallyTimeSpent" value="82014000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1366" y="27" width="1920" height="1173" extended-state="6" />
@@ -544,23 +562,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Player.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="577">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/NumberOfGamesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-138" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/ManagePlayersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Builder/PairsTableBuilder.php">
@@ -585,12 +589,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Builder/TablePointsDistribution.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-253">
+        <state relative-caret-position="-529">
           <caret line="7" column="29" lean-forward="true" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
           <folding>
             <element signature="e#31#57#0#PHP" expanded="true" />
             <element signature="e#1558#1577#1#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Entity/Player.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/ManagePlayersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
         </state>
       </provider>
     </entry>
