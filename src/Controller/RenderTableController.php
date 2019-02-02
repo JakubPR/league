@@ -46,6 +46,12 @@ class RenderTableController extends AbstractController
         $numberOfGames = $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES);
         $tableData = $scoreTable->getTableDataForCurrentGame();
 
+        if (empty($pairsTable->getPairWithoutDuel())) {
+            $pairsTable->deleteDataFromPairsTable();
+            $pairsTable->setDataToPairsTable();
+            $settingsTable->changeStatusState(SettingsTableBuilder::NUMBER_OF_GAMES, $numberOfGames - 1);
+        }
+
         if (0 != $settingsTable->getStatusState(SettingsTableBuilder::NUMBER_OF_GAMES)) {
             $pairs = $pairsTable->getPairWithoutDuel();
             $duel = $pairsTable->getPairWithoutDuel();

@@ -46,7 +46,7 @@ class TablePointsDistribution
             }
         }
         $this->setDuelAsPlayed($duelId);
-        //$this->em->flush();
+        $this->em->flush();
     }
 
     private function setDuelAsPlayed(int $duelId)
@@ -54,6 +54,6 @@ class TablePointsDistribution
         $duel = $this->em->getRepository('App:ShuffledPairs')->find(['id' => $duelId]);
         $duel->setPlayed(1);
         $this->em->persist($duel);
-        //$this->em->flush();
+        $this->em->flush();
     }
 }

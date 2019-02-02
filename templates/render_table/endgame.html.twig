@@ -1,5 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block body %}
+    <p>End of the game :P</p>
 <table>
     {% for tableRow in tableData %}
         <tr>
@@ -8,5 +9,5 @@
     {% endfor %}
     </tr>
 </table>
+    <td><a href="{{ path('welcome') }}">Start again</a></td>
 {% endblock %}
-
