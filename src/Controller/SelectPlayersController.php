@@ -7,45 +7,40 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Form\FormInterface;
 use App\Entity\Player;
-use App\Form\ManagePlayersType;
+use App\Form\SelectPlayersType;
 
-class ManagePlayersController extends AbstractController
+class SelectPlayersController extends AbstractController
 {
     /**
-     * @Route("/manage-players", name="manage-players")
+     * @Route("/select", name="select_players")
      */
-    public function index(Request $request)
+    public function showPlayers(Request $request)
     {
         $player = new Player();
-        $addPlayerForm = $this->createForm(ManagePlayersType::class, $player);
+        $addPlayerForm = $this->createForm(SelectPlayersType::class, $player);
         $this->getFormData($request, $addPlayerForm, $player);
 
         return $this->render(
-                'manage players/index.html.twig', [
+            'select_players/select.html.twig', [
                 'addPlayerForm' => $addPlayerForm->createView(),
                 'allPlayers' => $this->getPlayers(),
-                ]
-            );
+            ]
+        );
     }
 
     /**
-     * @Route("/manage-players/remove/{id}", name="manage-players-remove")
-     *
-     * @param int $id
-     *
+     * @Route("/select/remove/{id}", name="select_remove")
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @param int $id
      */
     public function removePlayer(int $id)
     {
-        $player = $this->getDoctrine()
-            ->getRepository(Player::class)
-            ->find($id);
+        $player = $this->getDoctrine()->getRepository(Player::class)->find($id);
 
         $em = $this->getDoctrine()->getManager();
         $em->remove($player);
         $em->flush();
-
-        return $this->redirectToRoute('manage-players');
+        return $this->redirectToRoute('select_players');
     }
 
     public function getFormData(Request $request, FormInterface $addPlayerForm, Player $player)
@@ -58,21 +53,17 @@ class ManagePlayersController extends AbstractController
         }
     }
 
-    public function savePlayer($playerName, Player $player)
+    public function savePlayer(int $playerName, Player $player)
     {
         $player->setName($playerName);
-        $player->setTablesOfMatches(null);
         $em = $this->getDoctrine()->getManager();
         $em->persist($player);
         $em->flush();
     }
 
-    public function getPlayers()
+    private function getPlayers(): array
     {
-        $players = $this->getDoctrine()
-            ->getRepository(Player::class)
-            ->findAll();
-
+        $players = $this->getDoctrine()->getRepository(Player::class)->findAll();
         return $players;
     }
 }
