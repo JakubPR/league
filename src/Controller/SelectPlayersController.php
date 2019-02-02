@@ -13,6 +13,8 @@ class SelectPlayersController extends AbstractController
 {
     /**
      * @Route("/select", name="select_players")
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @param Request $request
      */
     public function showPlayers(Request $request)
     {
@@ -53,7 +55,7 @@ class SelectPlayersController extends AbstractController
         }
     }
 
-    public function savePlayer(int $playerName, Player $player)
+    public function savePlayer(string $playerName, Player $player)
     {
         $player->setName($playerName);
         $em = $this->getDoctrine()->getManager();

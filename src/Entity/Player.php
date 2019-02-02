@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -20,34 +22,23 @@ class Player
      * @ORM\Column(type="string", length=20)
      */
     private $name;
-    private $TablesOfMatches;
 
-    public function getId(): ?int
+    public function getId()
     {
         return $this->id;
     }
 
+    /**
+     * @return string
+     */
     public function getName(): ?string
     {
         return $this->name;
     }
 
-    public function setName(string $name): self
+    public function setName(string $name): Player
     {
         $this->name = $name;
-
-        return $this;
-    }
-
-    public function getTablesOfMatches(): ?array
-    {
-        return $this->TablesOfMatches;
-    }
-
-    public function setTablesOfMatches(?array $TablesOfMatches): self
-    {
-        $this->TablesOfMatches = $TablesOfMatches;
-
         return $this;
     }
 }
