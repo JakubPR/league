@@ -2,6 +2,7 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="SPLITTER_PROPORTION" value="0.5859031" />
+    <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="">
