@@ -5,7 +5,7 @@
     <h3>Press 'next' button to continue.</h3>
 <table style="width:20%">
     <tr>
-        {{ form_start(addPlayerForm) }}
+        {{ form_start(addPlayerForm, {'attr': {'novalidate': 'novalidate'}}) }}
         {{ form_widget(addPlayerForm) }}
         {{ form_end(addPlayerForm) }}
     </tr>

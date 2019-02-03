@@ -42,6 +42,7 @@ class SelectPlayersController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->remove($player);
         $em->flush();
+
         return $this->redirectToRoute('select_players');
     }
 
@@ -49,7 +50,7 @@ class SelectPlayersController extends AbstractController
     {
         $addPlayerForm->handleRequest($request);
 
-        if ($addPlayerForm->isSubmitted()) {
+        if ($addPlayerForm->isSubmitted() && $addPlayerForm->isValid()) {
             $formData = $addPlayerForm->getData();
             $this->savePlayer($formData->getName(), $player);
         }
