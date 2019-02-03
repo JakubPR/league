@@ -10,11 +10,11 @@ use Symfony\Component\Routing\Annotation\Route as Route;
 class NumberOfGamesController extends AbstractController
 {
     /**
-     * @Route("/numberofgames", name="games-number")
+     * @Route("/numberofgames", name="games_number")
      */
-    public function show()
+    public function showNumberOfGames()
     {
-        return $this->render('number of games/index.html.twig');
+        return $this->render('number_of_games/numberofgames.html.twig');
     }
 
     /**
@@ -24,6 +24,6 @@ class NumberOfGamesController extends AbstractController
     {
         $settingsTable->changeStatusState(SettingsTableBuilder::NUMBER_OF_GAMES, $request->get('number'));
 
-        return $this->redirectToRoute('welcome');
+        return $this->redirectToRoute('games_number');
     }
 }

@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+{% block body %}
+    <h2>Set number of games.</h2>
+    <h3>Press 'next' button to continue.</h3>
+    <form action="{{ path('get_number') }}" method="post">
+        <input type="text" name=number>
+        <input class="input_button" type="submit" value="Submit" />
+    </form>
+    <button type="button" onclick="window.location='{{ url("select_players") }}'"><--- back</button>
+    <button type="button" onclick="window.location='{{ url("games_number") }}'">next ---></button>
+{% endblock %}
+
