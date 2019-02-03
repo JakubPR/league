@@ -39,6 +39,7 @@ class Player
     public function setName(string $name): Player
     {
         $this->name = $name;
+
         return $this;
     }
 }

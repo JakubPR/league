@@ -13,7 +13,9 @@ class SelectPlayersController extends AbstractController
 {
     /**
      * @Route("/select", name="select_players")
+     *
      * @return \Symfony\Component\HttpFoundation\Response
+     *
      * @param Request $request
      */
     public function showPlayers(Request $request)
@@ -32,7 +34,9 @@ class SelectPlayersController extends AbstractController
 
     /**
      * @Route("/select/remove/{id}", name="select_remove")
+     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     *
      * @param int $id
      */
     public function removePlayer(int $id)
@@ -67,6 +71,7 @@ class SelectPlayersController extends AbstractController
     private function getPlayers(): array
     {
         $players = $this->getDoctrine()->getRepository(Player::class)->findAll();
+
         return $players;
     }
 }

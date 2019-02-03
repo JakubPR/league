@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+{% block title %}{% endblock %}
+{% block body %}
+    <h2>Set parameters.</h2>
+    <h3>Press 'next' button to continue.</h3>
+    <p>Number of games: {{ numberOfGames }}</p>
+    <form action="{{ path('get_number') }}" method="post">
+        <input type="number" name=number min="1" max="10">
+        <input type="submit" value="Submit" />
+    </form>
+    {% set answer = 'yes' %}
+    {% if revenges == 0 %}
+        {% set answer = 'no' %}
+    {% endif %}
+    <p>Revenges: {{ answer }}</p>
+    <form action="{{ path('get_answer') }}" method="post">
+    <input type="submit" name=answer value="yes" />
+    <input type="submit" name=answer value="no"/>
+    </form>
+    <p></p>
+    <button type="button" onclick="window.location='{{ url("select_players") }}'"><--- back</button>
+    <button type="button" onclick="window.location='{{ url("games_number") }}'">next ---></button>
+{% endblock %}
+

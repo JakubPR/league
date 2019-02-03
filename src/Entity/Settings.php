@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -17,12 +19,12 @@ class Settings
     private $id;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $state;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string")
      */
     private $name;
 
@@ -36,20 +38,17 @@ class Settings
         return $this->state;
     }
 
-    public function setState(int $state): self
+    public function setState(int $state): Settings
     {
         $this->state = $state;
 
         return $this;
     }
 
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    public function setName($name): void
+    public function setName($name): Settings
     {
         $this->name = $name;
+
+        return $this;
     }
 }
