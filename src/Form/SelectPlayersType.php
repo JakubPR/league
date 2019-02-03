@@ -9,7 +9,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
-use Symfony\Component\Validator\Constraints\Type;
 
 class SelectPlayersType extends AbstractType
 {
@@ -18,6 +17,7 @@ class SelectPlayersType extends AbstractType
         $builder
             ->add('name', TextType::class, [
                 'constraints' => [
+                    new NotBlank(),
                     new Regex([
                         'pattern' => '[A-Za-z]',
                         'message' => 'Please use only letters.',
