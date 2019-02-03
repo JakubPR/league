@@ -4,19 +4,7 @@
     <option name="SPLITTER_PROPORTION" value="0.5859031" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/SetSettingsController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/set_settings/setsettings.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/44d81520-cfc4-49b4-b2fe-e89f885f2f8e.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/44d81520-cfc4-49b4-b2fe-e89f885f2f8e.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/NumberOfGamesController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SelectPlayersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SelectPlayersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Player.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Player.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/number_of_games/numberofgames.html.twig" beforeDir="false" />
-    </list>
+    <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +87,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Service/SettingsManager.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="145">
+                <state relative-caret-position="720">
                   <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
                   <folding>
                     <element signature="e#878#892#1#PHP" expanded="true" />
@@ -133,10 +121,10 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Controller/SetSettingsController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="66" column="10" lean-forward="true" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+                <state relative-caret-position="480">
+                  <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
                   <folding>
-                    <element signature="e#605#642#0#PHP" expanded="true" />
+                    <element signature="e#605#641#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -145,8 +133,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Controller/SelectPlayersController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="96">
-                  <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+                <state relative-caret-position="240">
+                  <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="45" />
                   <folding>
                     <element signature="e#34#79#0#PHP" expanded="true" />
                   </folding>
@@ -337,6 +325,12 @@
               <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
               <item name="office-league" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Builder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
+              <item name="office-league" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -458,18 +452,17 @@
       <workItem from="1549137922234" duration="19598000" />
       <workItem from="1549220518304" duration="3823000" />
       <workItem from="1549226912626" duration="5957000" />
-      <workItem from="1549232886167" duration="3035000" />
+      <workItem from="1549232886167" duration="3683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124997000" />
+    <option name="totallyTimeSpent" value="125645000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1015" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24012807" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24012807" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -483,7 +476,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32935324" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.42740047" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.42740047" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.29308325" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3290398" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32935324" />
@@ -718,16 +711,6 @@
       </provider>
     </entry>
     <entry file="das://44d81520-cfc4-49b4-b2fe-e89f885f2f8e/schema/ole/table/settings" />
-    <entry file="file://$PROJECT_DIR$/src/Controller/SelectPlayersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="9" column="31" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="e#34#79#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -814,7 +797,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/SettingsManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
+        <state relative-caret-position="720">
           <caret line="31" column="57" selection-start-line="31" selection-start-column="57" selection-end-line="31" selection-end-column="57" />
           <folding>
             <element signature="e#878#892#1#PHP" expanded="true" />
@@ -829,12 +812,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SelectPlayersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="27" column="12" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="45" />
+          <folding>
+            <element signature="e#34#79#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/SetSettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="66" column="10" lean-forward="true" selection-start-line="66" selection-start-column="10" selection-end-line="66" selection-end-column="10" />
+        <state relative-caret-position="480">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
-            <element signature="e#605#642#0#PHP" expanded="true" />
+            <element signature="e#605#641#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
