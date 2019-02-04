@@ -19,7 +19,7 @@ class CleanUpTablesController extends AbstractController
      */
     public function cleanAndPrepareTables(RemoveDataFromTables $remove)
     {
-        $remove->removeData();
+       $remove->removeData();
 
         return $this->redirectToRoute('select_players');
     }

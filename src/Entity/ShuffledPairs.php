@@ -26,14 +26,14 @@ class ShuffledPairs
     /**
      * @ORM\Column(type="object")
      */
-    private $player2;
+    private $player0;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $played;
 
-    public function getId(): int
+    public function getId()
     {
         return $this->id;
     }
@@ -50,14 +50,14 @@ class ShuffledPairs
         return $this;
     }
 
-    public function getPlayer2(): Player
+    public function getPlayer0(): Player
     {
-        return $this->player2;
+        return $this->player0;
     }
 
-    public function setPlayer2(Player $player2)
+    public function setPlayer0(Player $player0)
     {
-        $this->player2 = $player2;
+        $this->player0 = $player0;
 
         return $this;
     }
