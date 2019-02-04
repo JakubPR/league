@@ -7,6 +7,7 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\SettingsManager;
+use App\Entity\Settings;
 use Symfony\Component\Routing\Annotation\Route as Route;
 
 class SetSettingsController extends AbstractController
@@ -24,10 +25,10 @@ class SetSettingsController extends AbstractController
             'set_settings/setsettings.html.twig',
             [
                 'numberOfGames' => $setMan->getSettingValue(
-                    SettingsManager::$NUMBER_OF_GAMES
+                    Settings::$NUMBER_OF_GAMES
                 ),
                 'revenges' => $setMan->getSettingValue(
-                    SettingsManager::$REVENGES
+                    Settings::$REVENGES
                 ),
             ]
         );
@@ -46,7 +47,7 @@ class SetSettingsController extends AbstractController
         SettingsManager $setMan
     ) {
         $setMan->changeSettings(
-            SettingsManager::$NUMBER_OF_GAMES,
+            Settings::$NUMBER_OF_GAMES,
             $request->request->getInt('number')
         );
 
@@ -64,7 +65,7 @@ class SetSettingsController extends AbstractController
     public function saveRevengeSetting(Request $request, SettingsManager $setMan)
     {
         $setMan->changeSettings(
-            SettingsManager::$REVENGES,
+            Settings::$REVENGES,
             $this->changeToInt($request->get('answer'))
         );
 

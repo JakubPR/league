@@ -11,6 +11,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Settings
 {
+    public static $NUMBER_OF_GAMES = 'number_of_games';
+    public static $REVENGES = 'revenges';
+
+    public static $settings = [
+      'number_of_games', 'revenges',
+    ];
+
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()

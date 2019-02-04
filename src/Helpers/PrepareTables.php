@@ -6,16 +6,20 @@ namespace App\Helpers;
 
 use App\Entity\Player;
 use App\Entity\ScoreTable;
+use App\Entity\Settings;
 use App\Entity\ShuffledPairs;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Service\SettingsManager;
 
 class PrepareTables
 {
     private $em;
+    private $setMan;
 
-    public function __construct(EntityManagerInterface $em)
+    public function __construct(EntityManagerInterface $em, SettingsManager $setMan)
     {
         $this->em = $em;
+        $this->setMan = $setMan;
     }
 
     public function setData()
@@ -24,6 +28,7 @@ class PrepareTables
 
         $this->setPairsTable($players);
         $this->setScoreTable($players);
+        $this->setSettingsTable();
     }
 
     private function setScoreTable(array $players)
@@ -50,6 +55,21 @@ class PrepareTables
             $this->em->persist($tableRow);
         }
         $this->em->flush();
+    }
+
+    private function setSettingsTable()
+    {
+        $settings = $this->em->getRepository('App:Settings')->findAll();
+
+        if (null == $settings) {
+            foreach (Settings::$settings as $setting) {
+                $tableRow = new Settings();
+                $tableRow->setName($setting);
+                $tableRow->setState(0);
+                $this->em->persist($tableRow);
+            }
+            $this->em->flush();
+        }
     }
 
     private function sortPlayers(array $players): array

@@ -9,9 +9,6 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class SettingsManager
 {
-    public static $NUMBER_OF_GAMES = 'numberOfGames';
-    public static $REVENGES = 'revenges';
-
     private $em;
 
     public function __construct(EntityManagerInterface $em)
