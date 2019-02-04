@@ -12,22 +12,4 @@ class ScoreTableRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ScoreTable::class);
     }
-
-    public function findLastAddedId()
-    {
-        return $this->createQueryBuilder('st')
-            ->orderBy('st.gameId', 'DESC')
-            ->setMaxResults(1)
-            ->getQuery()
-            ->getResult();
-    }
-
-    public function findAllCurrentData(int $tableId)
-    {
-        return $this->createQueryBuilder('td')
-            ->where('td.gameId ='.$tableId)
-            ->orderBy('td.points', 'DESC')
-            ->getQuery()
-            ->getResult();
-    }
 }
