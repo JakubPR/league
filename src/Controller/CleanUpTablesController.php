@@ -11,7 +11,7 @@ use App\Helpers\RemoveDataFromTables;
 class CleanUpTablesController extends AbstractController
 {
     /**
-     * @Route("/cleanandprepare", name="clean_and_prepare")
+     * @Route("/dataremove", name="data_remove")
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
