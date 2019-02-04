@@ -35,6 +35,22 @@ class SelectPlayersController extends AbstractController
     }
 
     /**
+     * @Route("/select/check", name="check_players")
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function checkNumberOfPlayers()
+    {
+        if (0 != count($this->getPlayers()) % 2) {
+            $this->addFlash('notice', 'The number of players must be even.');
+
+            return $this->redirectToRoute('select_players');
+        }
+
+        return $this->redirectToRoute('data_setup');
+    }
+
+    /**
      * @Route("/select/remove/{id}", name="select_remove")
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse

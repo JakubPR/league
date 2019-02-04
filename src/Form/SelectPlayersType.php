@@ -19,7 +19,7 @@ class SelectPlayersType extends AbstractType
                 'constraints' => [
                     new NotBlank(),
                     new Regex([
-                        'pattern' => '[A-Za-z]',
+                        'pattern' => '/^([A-Za-z]+)$/',
                         'message' => 'Please use only letters.',
                     ]),
                     new Length([

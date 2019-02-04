@@ -21,6 +21,6 @@ class SetUpTablesController extends AbstractController
     {
         $prepare->setData();
 
-        return $this->redirectToRoute('games_number');
+        return $this->redirectToRoute('settings');
     }
 }

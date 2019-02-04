@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SelectPlayersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SelectPlayersController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/SetSettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SetSettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Settings.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Settings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Helpers/PrepareTables.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Helpers/PrepareTables.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/SettingsManager.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/SettingsManager.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/SetUpTablesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SetUpTablesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/SelectPlayersType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/SelectPlayersType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/select_players/select.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/select_players/select.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/set_settings/setsettings.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/set_settings/setsettings.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -87,51 +89,44 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5429293">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/Controller/SelectPlayersController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="336">
+                  <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php">
+            <entry file="file://$PROJECT_DIR$/src/Form/SelectPlayersType.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="351">
-                  <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Service/SettingsManager.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="816">
-                  <caret line="34" column="90" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
+                <state relative-caret-position="288">
+                  <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
                   <folding>
-                    <element signature="e#57#81#0#PHP" expanded="true" />
+                    <element signature="e#28#68#0#PHP" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controller/SetSettingsController.php">
+            <entry file="file://$PROJECT_DIR$/templates/set_settings/setsettings.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="840">
-                  <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
-                  <folding>
-                    <element signature="e#60#125#0#PHP" expanded="true" />
-                    <element signature="e#605#641#0#PHP" expanded="true" />
-                  </folding>
+                <state relative-caret-position="371">
+                  <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="26" selection-end-column="16" />
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Controller/SetUpTablesController.php">
+            <entry file="file://$PROJECT_DIR$/templates/select_players/select.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="400">
-                  <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
-                  <folding>
-                    <element signature="e#60#125#0#PHP" expanded="true" />
-                  </folding>
+                <state>
+                  <caret column="11" selection-start-column="11" selection-end-column="11" />
                 </state>
               </provider>
             </entry>
@@ -141,22 +136,13 @@
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Helpers/PrepareTables.php">
+            <entry file="file://$PROJECT_DIR$/src/Controller/SetSettingsController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+                <state relative-caret-position="324">
+                  <caret line="46" column="62" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="62" />
                   <folding>
-                    <element signature="e#57#79#0#PHP" expanded="true" />
+                    <element signature="e#60#125#0#PHP" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="das://44d81520-cfc4-49b4-b2fe-e89f885f2f8e/schema/ole/table/settings">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
                 </state>
               </provider>
             </entry>
@@ -183,7 +169,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/src/Builder/SessionBuilder.php" />
         <option value="$PROJECT_DIR$/src/Builder/SessionManager.php" />
@@ -209,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/Builder/PairsTableBuilder.php" />
         <option value="$PROJECT_DIR$/templates/select_players/index.html.twig" />
         <option value="$PROJECT_DIR$/src/Entity/Player.php" />
-        <option value="$PROJECT_DIR$/src/Form/SelectPlayersType.php" />
         <option value="$PROJECT_DIR$/templates/number of games/index.html.twig" />
         <option value="$PROJECT_DIR$/config/services.yaml" />
         <option value="$PROJECT_DIR$/src/Service/SettingsChanger.php" />
@@ -217,23 +201,25 @@
         <option value="$PROJECT_DIR$/templates/number_of_games/numberofgames.html.twig" />
         <option value="$PROJECT_DIR$/src/Controller/RenderTableController.php" />
         <option value="$PROJECT_DIR$/src/Controller/sssController.php" />
-        <option value="$PROJECT_DIR$/src/Controller/SelectPlayersController.php" />
         <option value="$PROJECT_DIR$/src/Controller/StartGameController.php" />
         <option value="$PROJECT_DIR$/src/Controller/WelcomeController.php" />
         <option value="$PROJECT_DIR$/src/Helpers/RemoveDataFromTables.php" />
         <option value="$PROJECT_DIR$/src/Controller/CleanUpAndPrepareTablesController.php" />
         <option value="$PROJECT_DIR$/templates/welcome/welcome.html.twig" />
-        <option value="$PROJECT_DIR$/templates/select_players/select.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/SetUpTablesController.php" />
         <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
         <option value="$PROJECT_DIR$/src/Entity/ScoreTable.php" />
         <option value="$PROJECT_DIR$/src/Entity/ShuffledPairs.php" />
         <option value="$PROJECT_DIR$/src/Controller/CleanUpTablesController.php" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
-        <option value="$PROJECT_DIR$/src/Controller/SetSettingsController.php" />
-        <option value="$PROJECT_DIR$/src/Service/SettingsManager.php" />
         <option value="$PROJECT_DIR$/src/Entity/Settings.php" />
         <option value="$PROJECT_DIR$/src/Helpers/PrepareTables.php" />
+        <option value="$PROJECT_DIR$/src/Service/SettingsManager.php" />
+        <option value="$PROJECT_DIR$/src/Controller/SetUpTablesController.php" />
+        <option value="$PROJECT_DIR$/templates/set_settings/setsettings.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/SetSettingsController.php" />
+        <option value="$PROJECT_DIR$/templates/select_players/select.html.twig" />
+        <option value="$PROJECT_DIR$/src/Controller/SelectPlayersController.php" />
+        <option value="$PROJECT_DIR$/src/Form/SelectPlayersType.php" />
       </list>
     </option>
   </component>
@@ -351,6 +337,12 @@
               <item name="office-league" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
+              <item name="office-league" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="office-league" type="b2602c69:ProjectViewProjectNode" />
@@ -492,17 +484,18 @@
       <workItem from="1549226912626" duration="5957000" />
       <workItem from="1549232886167" duration="10555000" />
       <workItem from="1549243507934" duration="7637000" />
-      <workItem from="1549281544707" duration="4252000" />
+      <workItem from="1549281544707" duration="12385000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="144406000" />
+    <option name="totallyTimeSpent" value="152539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1015" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25026682" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25026682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -516,14 +509,14 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32935324" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.19086652" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.16744731" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.29308325" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3290398" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32935324" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Database" order="3" visible="true" weight="0.11579509" />
+      <window_info anchor="right" id="Database" order="3" weight="0.11579509" />
       <window_info anchor="right" id="Key Promoter X" order="4" />
     </layout>
     <layout-to-restore>
@@ -589,16 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Form/SelectPlayersType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding>
-            <element signature="e#28#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/validator/Constraints/Type.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -623,39 +606,11 @@
     <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerHMfHReR/getDebug_ArgumentResolver_ServiceService.php" />
     <entry file="file://$PROJECT_DIR$/src/Builder/SettingsTableBuilder.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/RenderTableController.php" />
-    <entry file="file://$PROJECT_DIR$/templates/set_settings/setsettings.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="16" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/sssController.php" />
     <entry file="file://$PROJECT_DIR$/src/Controller/WelcomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="16" column="58" selection-start-line="16" selection-start-column="58" selection-end-line="16" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/StartGameController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SelectPlayersController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/select_players/select.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="22" column="96" selection-start-line="22" selection-start-column="96" selection-end-line="22" selection-end-column="96" />
         </state>
       </provider>
     </entry>
@@ -748,33 +703,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SetUpTablesController.php">
+    <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="21" column="22" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+        <state relative-caret-position="351">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/PrepareTables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding>
-            <element signature="e#60#125#0#PHP" expanded="true" />
+            <element signature="e#57#79#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controller/SetSettingsController.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/StartGameController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
-          <folding>
-            <element signature="e#60#125#0#PHP" expanded="true" />
-            <element signature="e#605#641#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="360">
+          <caret line="16" column="49" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Service/SettingsManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="34" column="90" selection-start-line="34" selection-start-column="90" selection-end-line="34" selection-end-column="90" />
+        <state relative-caret-position="264">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding>
             <element signature="e#57#81#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SetUpTablesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="23" column="50" selection-start-line="23" selection-start-column="50" selection-end-line="23" selection-end-column="50" />
+          <folding>
+            <element signature="e#60#125#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -786,19 +754,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Entity/Settings.php">
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/framework-bundle/Controller/ControllerTrait.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        <state relative-caret-position="1281">
+          <caret line="106" column="23" selection-start-line="106" selection-start-column="23" selection-end-line="106" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/PrepareTables.php">
+    <entry file="file://$PROJECT_DIR$/src/Controller/SetSettingsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="65" column="17" selection-start-line="65" selection-start-column="17" selection-end-line="65" selection-end-column="17" />
+        <state relative-caret-position="324">
+          <caret line="46" column="62" selection-start-line="46" selection-start-column="12" selection-end-line="46" selection-end-column="62" />
           <folding>
-            <element signature="e#57#79#0#PHP" expanded="true" />
+            <element signature="e#60#125#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/set_settings/setsettings.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="26" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/select_players/select.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="11" selection-start-column="11" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controller/SelectPlayersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Form/SelectPlayersType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="21" column="48" selection-start-line="21" selection-start-column="48" selection-end-line="21" selection-end-column="48" />
+          <folding>
+            <element signature="e#28#68#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

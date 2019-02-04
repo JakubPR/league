@@ -20,5 +20,10 @@
         {% endfor %}
 </table>
     <button type="button" onclick="window.location='{{ url("welcome") }}'"><--- back</button>
-    <button type="button" onclick="window.location='{{ url("data_setup") }}'">next ---></button>
+    <button type="button" onclick="window.location='{{ url("check_players") }}'">next ---></button>
+    {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            {{ message }}
+        </div>
+    {% endfor %}
 {% endblock %}

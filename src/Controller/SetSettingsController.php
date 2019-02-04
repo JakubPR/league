@@ -13,13 +13,13 @@ use Symfony\Component\Routing\Annotation\Route as Route;
 class SetSettingsController extends AbstractController
 {
     /**
-     * @Route("/settings", name="games_number")
+     * @Route("/settings", name="settings")
      *
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @param SettingsManager $setMan
      */
-    public function showNumberOfGames(SettingsManager $setMan)
+    public function showSettings(SettingsManager $setMan)
     {
         return $this->render(
             'set_settings/setsettings.html.twig',
@@ -32,6 +32,22 @@ class SetSettingsController extends AbstractController
                 ),
             ]
         );
+    }
+
+    /**
+     * @Route("/settings/check", name="settings_check")
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     *
+     * @param SettingsManager $setMan
+     */
+    public function checkSettings(SettingsManager $setMan)
+    {
+        if (0 == $setMan->getSettingValue(Settings::$NUMBER_OF_GAMES)) {
+            $this->addFlash('notice', 'Set number of games.');
+            return $this->redirectToRoute('settings');
+        }
+        return $this->redirectToRoute('render_table');
     }
 
     /**
@@ -51,7 +67,7 @@ class SetSettingsController extends AbstractController
             $request->request->getInt('number')
         );
 
-        return $this->redirectToRoute('games_number');
+        return $this->redirectToRoute('settings');
     }
 
     /**
@@ -69,7 +85,7 @@ class SetSettingsController extends AbstractController
             $this->changeToInt($request->get('answer'))
         );
 
-        return $this->redirectToRoute('games_number');
+        return $this->redirectToRoute('settings');
     }
 
     private function changeToInt(string $str): int
