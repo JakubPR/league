@@ -24,8 +24,8 @@ class SetSettingsController extends AbstractController
             'set_settings/setsettings.html.twig',
             [
                 'numberOfGames' => $setMan->getSettingValue(
-                SettingsManager::$NUMBER_OF_GAMES
-            ),
+                    SettingsManager::$NUMBER_OF_GAMES
+                ),
                 'revenges' => $setMan->getSettingValue(
                     SettingsManager::$REVENGES
                 ),
@@ -41,8 +41,10 @@ class SetSettingsController extends AbstractController
      * @param Request         $request
      * @param SettingsManager $setMan
      */
-    public function saveNumberOfGamesSetting(Request $request, SettingsManager $setMan)
-    {
+    public function saveNumberOfGamesSetting(
+        Request $request,
+        SettingsManager $setMan
+    ) {
         $setMan->changeSettings(
             SettingsManager::$NUMBER_OF_GAMES,
             $request->request->getInt('number')

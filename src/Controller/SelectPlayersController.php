@@ -50,8 +50,11 @@ class SelectPlayersController extends AbstractController
         return $this->redirectToRoute('select_players');
     }
 
-    public function getFormData(Request $request, FormInterface $addPlayerForm, Player $player)
-    {
+    public function getFormData(
+        Request $request,
+        FormInterface $addPlayerForm,
+        Player $player
+    ) {
         $addPlayerForm->handleRequest($request);
 
         if ($addPlayerForm->isSubmitted() && $addPlayerForm->isValid()) {
