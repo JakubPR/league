@@ -8,14 +8,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Helpers\RemoveDataFromTables;
 
-class CleanUpAndPrepareTablesController extends AbstractController
+class CleanUpTablesController extends AbstractController
 {
     /**
      * @Route("/cleanandprepare", name="clean_and_prepare")
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
-     *   * @param RemoveDataFromTables $remove
+     * @param RemoveDataFromTables $remove
      */
     public function cleanAndPrepareTables(RemoveDataFromTables $remove)
     {
