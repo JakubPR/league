@@ -48,7 +48,7 @@
                         <td> {{ duel.player1.name }} </td>
             </tr>
             <tr>
-                <form action="{{ path('send_score')}}"  method="POST">
+                <form action="{{ path('check_score')}}"  method="POST">
                     <td><input type="number" name="{{ duel.player0.id }}" min="1" max="8"></td>
                     <td>&nbsp</td>
                     <td><input type="number" name="{{ duel.player1.id }}" min="1" max="8"></td>
@@ -57,10 +57,14 @@
             </tr>
                     {% endfor %}
                 {% endif %}
-            </tr>
         </table>
     {% endblock %}
     {% block revengestable %}
     <h3>revenges: {{ revenges }}</h3>
     {% endblock %}
+    {% for message in app.flashes('notice') %}
+    <div class="flash-notice">
+        {{ message }}
+    </div>
+    {% endfor %}
 {% endblock %}

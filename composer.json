@@ -17,7 +17,8 @@
         "symfony/twig-bundle": "4.1.*",
         "symfony/validator": "4.1.*",
         "symfony/yaml": "*",
-      "ext-http": "*"
+        "ext-http": "*",
+        "ext-json": "*"
     },
     "require-dev": {
         "symfony/dotenv": "*",

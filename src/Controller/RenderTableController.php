@@ -8,14 +8,19 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Helpers\DataValidator;
 
 class RenderTableController extends AbstractController
 {
     private $em;
+    private $dv;
 
-    public function __construct(EntityManagerInterface $em)
-    {
+    public function __construct(
+        EntityManagerInterface $em,
+        DataValidator $dv
+    ) {
         $this->em = $em;
+        $this->dv = $dv;
     }
 
     /**
@@ -41,14 +46,26 @@ class RenderTableController extends AbstractController
     }
 
     /**
-     * @Route("/render/score", name="send_score")
+     * @Route("/render/score/check", name="check_score")
      *
      * @param Request $request
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function getScore(Request $request)
+    public function checkScore(Request $request)
     {
-        $answer = $request->request->all();
-        dump($answer);
+        $scores = $request->request->all();
+        foreach ($scores as $score) {
+            if ($this->dv->validateScore($score)) {
+                $this->addFlash('notice', $this->dv->validateScore($score));
+
+                return $this->redirectToRoute('render_table');
+            }
+        }
+
+        return $this->redirectToRoute('update_table', [
+            'scores' => json_encode($scores),
+        ]);
     }
 
     private function changeToStr(int $int): string
