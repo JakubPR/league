@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Settings;
 use App\Service\SettingsManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -37,6 +38,17 @@ class RenderTableController extends AbstractController
             'scoreTable' => $scoreTable,
             'duels' => $duels,
         ]);
+    }
+
+    /**
+     * @Route("/render/score", name="send_score")
+     *
+     * @param Request $request
+     */
+    public function getScore(Request $request)
+    {
+        $answer = $request->request->all();
+        dump($answer);
     }
 
     private function changeToStr(int $int): string

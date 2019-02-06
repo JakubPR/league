@@ -46,6 +46,15 @@
                         <td> {{ duel.player0.name }} </td>
                         <td> vs </td>
                         <td> {{ duel.player1.name }} </td>
+            </tr>
+            <tr>
+                <form action="{{ path('send_score')}}"  method="POST">
+                    <td><input type="number" name="{{ duel.player0.id }}" min="1" max="8"></td>
+                    <td>&nbsp</td>
+                    <td><input type="number" name="{{ duel.player1.id }}" min="1" max="8"></td>
+                    <td><input type="submit" value="Submit"></td>
+                </form>
+            </tr>
                     {% endfor %}
                 {% endif %}
             </tr>

@@ -16,7 +16,8 @@
         "symfony/orm-pack": "^1.0",
         "symfony/twig-bundle": "4.1.*",
         "symfony/validator": "4.1.*",
-        "symfony/yaml": "*"
+        "symfony/yaml": "*",
+      "ext-http": "*"
     },
     "require-dev": {
         "symfony/dotenv": "*",
