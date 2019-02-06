@@ -7,11 +7,19 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use App\Service\SettingsManager;
+use App\Service\DataTypeConverter;
 use App\Entity\Settings;
 use Symfony\Component\Routing\Annotation\Route as Route;
 
 class SetSettingsController extends AbstractController
 {
+    private $con;
+
+    public function __construct(DataTypeConverter $con)
+    {
+        $this->con = $con;
+    }
+
     /**
      * @Route("/settings", name="settings")
      *
@@ -45,8 +53,10 @@ class SetSettingsController extends AbstractController
     {
         if (0 == $setMan->getSettingValue(Settings::$NUMBER_OF_GAMES)) {
             $this->addFlash('notice', 'Set number of games.');
+
             return $this->redirectToRoute('settings');
         }
+
         return $this->redirectToRoute('render_table');
     }
 
@@ -82,18 +92,9 @@ class SetSettingsController extends AbstractController
     {
         $setMan->changeSettings(
             Settings::$REVENGES,
-            $this->changeToInt($request->get('answer'))
+            $this->con->changeToInt($request->get('answer'))
         );
 
         return $this->redirectToRoute('settings');
-    }
-
-    private function changeToInt(string $str): int
-    {
-        if ('yes' === $str) {
-            return 1;
-        }
-
-        return 0;
     }
 }

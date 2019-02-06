@@ -8,19 +8,23 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Helpers\DataValidator;
+use App\Service\DataValidator;
+use App\Service\DataTypeConverter;
 
 class RenderTableController extends AbstractController
 {
     private $em;
     private $dv;
+    private $con;
 
     public function __construct(
         EntityManagerInterface $em,
-        DataValidator $dv
+        DataValidator $dv,
+        DataTypeConverter $con
     ) {
         $this->em = $em;
         $this->dv = $dv;
+        $this->con = $con;
     }
 
     /**
@@ -39,7 +43,7 @@ class RenderTableController extends AbstractController
 
         return $this->render('render_table/render_table.html.twig', [
             'numberOfGames' => $numberOfGames,
-            'revenges' => $this->changeToStr($revenges),
+            'revenges' => $this->con->changeToStr($revenges),
             'scoreTable' => $scoreTable,
             'duels' => $duels,
         ]);
@@ -66,14 +70,5 @@ class RenderTableController extends AbstractController
         return $this->redirectToRoute('update_table', [
             'scores' => json_encode($scores),
         ]);
-    }
-
-    private function changeToStr(int $int): string
-    {
-        if (1 === $int) {
-            return 'on';
-        }
-
-        return 'off';
     }
 }
