@@ -1053,7 +1053,7 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="258" parent="243" name="player2">
+    <column id="258" parent="243" name="player0">
       <Position>3</Position>
       <Comment>(DC2Type:object)</Comment>
       <DataType>longtext|0s</DataType>
@@ -1063,6 +1063,7 @@
     <column id="259" parent="243" name="played">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <key id="260" parent="243" name="PRIMARY">

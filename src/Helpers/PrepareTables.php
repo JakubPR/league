@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Helpers;
 
-use App\Entity\Player;
 use App\Entity\ScoreTable;
 use App\Entity\Settings;
 use App\Entity\ShuffledPairs;
@@ -34,9 +33,10 @@ class PrepareTables
     private function setScoreTable(array $players)
     {
         foreach ($players as $player) {
-            /** @var Player $player */
+            /* @var $player \App\Entity\Player **/
             $tableRow = new ScoreTable();
-            $tableRow->setPlayer($player);
+            $tableRow->setPlayerName($player->getName());
+            $tableRow->setPlayerId($player->getId());
             $tableRow->setPoints(0);
             $this->em->persist($tableRow);
         }

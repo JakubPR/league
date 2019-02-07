@@ -7,14 +7,14 @@
         <input type="number" name=number min="1" max="10" value="1">
         <input type="submit" value="Submit" />
     </form>
-    {% set answer = 'yes' %}
+    {% set answer = 'on' %}
     {% if revenges == 0 %}
-        {% set answer = 'no' %}
+        {% set answer = 'off' %}
     {% endif %}
     <p>Revenges: {{ answer }}</p>
     <form action="{{ path('get_answer') }}" method="post">
-    <input type="submit" name=answer value="yes" />
-    <input type="submit" name=answer value="no"/>
+    <input type="submit" name=answer value="on" />
+    <input type="submit" name=answer value="off"/>
     </form>
     <p></p>
     <button type="button" onclick="window.location='{{ url("select_players") }}'"><--- back</button>

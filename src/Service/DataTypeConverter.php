@@ -6,21 +6,18 @@ namespace App\Service;
 
 class DataTypeConverter
 {
+    private static $data = [
+       0 => 'off',
+       1 => 'on',
+    ];
+
     public function changeToStr(int $int): string
     {
-        if (1 === $int) {
-            return 'on';
-        }
-
-        return 'off';
+        return DataTypeConverter::$data[$int];
     }
 
     public function changeToInt(string $str): int
     {
-        if ('yes' === $str) {
-            return 1;
-        }
-
-        return 0;
+        return array_search($str, DataTypeConverter::$data);
     }
 }

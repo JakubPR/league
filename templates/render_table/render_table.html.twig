@@ -3,6 +3,7 @@
     {% set position = 1 %}
     <h2>Let's play!</h2>
     <h3>number of games: {{ numberOfGames }}</h3>
+    <h3>revenges: {{ revenges }}</h3>
     {% block scoretable %}
         <table style="width :200px">
             <tr align="left">
@@ -13,7 +14,7 @@
             <tr align="left">
                 {% for player in scoreTable %}
                 <td> {{ position }} </td>
-                <td> {{ player.player.name }}</td>
+                <td> {{ player.playerName }}</td>
                 <td> {{ player.points }} </td>
             </tr>
             {% set position = position + 1 %}
@@ -60,7 +61,6 @@
         </table>
     {% endblock %}
     {% block revengestable %}
-    <h3>revenges: {{ revenges }}</h3>
     {% endblock %}
     {% for message in app.flashes('notice') %}
     <div class="flash-notice">

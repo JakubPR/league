@@ -26,11 +26,11 @@ class DataValidator
      */
     public function validateScore(string $score): string
     {
-        $message = false;
+        $message = '';
         $scoreConstraint = new Assert\NotBlank();
         $errors = $this->validator->validate(
-          $score,
-          $scoreConstraint
+            $score,
+            $scoreConstraint
         );
 
         if (0 != count($errors)) {

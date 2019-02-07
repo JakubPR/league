@@ -43,12 +43,14 @@ class RenderTableController extends AbstractController
         $scoreTable = $this->em->getRepository('App:ScoreTable')->findAll();
         $duels = $this->em->getRepository('App:ShuffledPairs')->findAll();
 
-        return $this->render('render_table/render_table.html.twig', [
+        return $this->render(
+            'render_table/render_table.html.twig', [
             'numberOfGames' => $numberOfGames,
             'revenges' => $this->con->changeToStr($revenges),
             'scoreTable' => $scoreTable,
             'duels' => $duels,
-        ]);
+            ]
+        );
     }
 
     /**
@@ -69,8 +71,10 @@ class RenderTableController extends AbstractController
             }
         }
 
-        return $this->redirectToRoute('update_table', [
+        return $this->redirectToRoute(
+            'update_table', [
             'scores' => json_encode($scores),
-        ]);
+            ]
+        );
     }
 }

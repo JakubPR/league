@@ -19,9 +19,14 @@ class ScoreTable
     private $id;
 
     /**
-     * @ORM\Column(type="object")
+     * @ORM\Column(type="string")
      */
-    private $player;
+    private $playerName;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $playerId;
 
     /**
      * @ORM\Column(type="integer")
@@ -33,7 +38,19 @@ class ScoreTable
         return $this->id;
     }
 
-    public function getPoints()
+    public function getPlayerId()
+    {
+        return $this->playerId;
+    }
+
+    public function setPlayerId(int $playerId): ScoreTable
+    {
+        $this->playerId = $playerId;
+
+        return $this;
+    }
+
+    public function getPoints(): int
     {
         return $this->points;
     }
@@ -45,15 +62,16 @@ class ScoreTable
         return $this;
     }
 
-    public function getPlayer(): Player
+    public function getPlayerName()
     {
-        return $this->player;
+        return $this->playerName;
     }
 
-    public function setPlayer(Player $player): ScoreTable
+    public function setPlayerName(string $playerName): ScoreTable
     {
-        $this->player = $player;
+        $this->playerName = $playerName;
 
         return $this;
     }
+
 }
