@@ -38,6 +38,7 @@ class PrepareTables
             $tableRow->setPlayerName($player->getName());
             $tableRow->setPlayerId($player->getId());
             $tableRow->setPoints(0);
+            $tableRow->setScore(0);
             $this->em->persist($tableRow);
         }
         $this->em->flush();

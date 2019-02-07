@@ -66,7 +66,6 @@ class RenderTableController extends AbstractController
         foreach ($scores as $score) {
             if ($this->dv->validateScore($score)) {
                 $this->addFlash('notice', $this->dv->validateScore($score));
-
                 return $this->redirectToRoute('render_table');
             }
         }

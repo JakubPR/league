@@ -19,6 +19,6 @@ class UpdateTableController
         string $scores,
         Calculate $calc
     ) {
-        $calc->calculatePoints(json_decode($scores));
+        $calc->calculatePoints(json_decode($scores, true));
     }
 }

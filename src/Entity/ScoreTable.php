@@ -33,6 +33,11 @@ class ScoreTable
      */
     private $points;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $score;
+
     public function getId()
     {
         return $this->id;
@@ -62,6 +67,18 @@ class ScoreTable
         return $this;
     }
 
+    public function getScore(): int
+    {
+        return $this->score;
+    }
+
+    public function setScore(int $score): ScoreTable
+    {
+        $this->score = $score;
+
+        return $this;
+    }
+
     public function getPlayerName()
     {
         return $this->playerName;
@@ -73,5 +90,4 @@ class ScoreTable
 
         return $this;
     }
-
 }
