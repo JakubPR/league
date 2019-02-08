@@ -35,7 +35,11 @@ class Calculate
             if ($loser[0] === $tableRow->getPlayerId()) {
                 $tableRow->setPoints(Calculate::$pointsTable['lose']);
             }
-            dump($tableRow);
+            if ($winner === $loser) {
+                $tableRow->setPoints(Calculate::$pointsTable['draw']);
+            }
+            $this->em->persist($tableRow);
         }
+        //$this->em->flush();
     }
 }

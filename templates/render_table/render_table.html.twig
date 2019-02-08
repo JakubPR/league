@@ -10,12 +10,14 @@
                 <th>Position</th>
                 <th>Name</th>
                 <th>Points</th>
+                <th>Score</th>
             </tr>
             <tr align="left">
                 {% for player in scoreTable %}
                 <td> {{ position }} </td>
                 <td> {{ player.playerName }}</td>
                 <td> {{ player.points }} </td>
+                <td> {{ player.score }} </td>
             </tr>
             {% set position = position + 1 %}
             {% endfor %}
