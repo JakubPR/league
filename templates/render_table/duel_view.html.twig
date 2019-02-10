@@ -1,0 +1,17 @@
+<h3>Incoming duels:</h3>
+{% block dueltable %}
+<table style="width :200px">
+    <tr align="left">
+        <th>Name</th>
+        <th>vs</th>
+        <th>Name</th>
+    </tr>
+    <tr align="left">
+        {% for duel in duelTable %}
+        <td> {{ duel.player0.name }} </td>
+        <td> - </td>
+        <td> {{ duel.player1.name }} </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

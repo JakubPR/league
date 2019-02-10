@@ -14,19 +14,19 @@ class PrepareTables
 {
     private $em;
     private $setMan;
+    private $repo;
 
     public function __construct(EntityManagerInterface $em, SettingsManager $setMan)
     {
         $this->em = $em;
         $this->setMan = $setMan;
+        $this->repo = $this->em->getRepository('App:Player')->findAll();
     }
 
     public function setData()
     {
-        $players = $this->em->getRepository('App:Player')->findAll();
-
-        $this->setPairsTable($players);
-        $this->setScoreTable($players);
+        $this->setPairsTable();
+        $this->setScoreTable($this->repo);
         $this->setSettingsTable();
     }
 
@@ -44,15 +44,16 @@ class PrepareTables
         $this->em->flush();
     }
 
-    private function setPairsTable(array $players)
+    public function setPairsTable()
     {
-        $pairs = $this->sortPlayers($players);
+        $pairs = $this->sortPlayers($this->repo);
 
         foreach ($pairs as $pair) {
             $tableRow = new ShuffledPairs();
             $tableRow->setPlayer0($pair[0]);
             $tableRow->setPlayer1($pair[1]);
-            $tableRow->setPlayed(0);
+            $tableRow->setDuel(0);
+            $tableRow->setRevenge(0);
             $this->em->persist($tableRow);
         }
         $this->em->flush();

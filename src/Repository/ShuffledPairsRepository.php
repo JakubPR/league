@@ -13,11 +13,18 @@ class ShuffledPairsRepository extends ServiceEntityRepository
         parent::__construct($registry, ShuffledPairs::class);
     }
 
-    public function findPairById(int $pairId)
+    public function findNotPlayedDuels()
     {
         return $this->createQueryBuilder('td')
-            ->where('td.gameId ='.$pairId)
-            ->orderBy('td.points', 'DESC')
+            ->where('td.duel != 1')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findNotPlayedRevenges()
+    {
+        return $this->createQueryBuilder('td')
+            ->where('td.revenge != 1')
             ->getQuery()
             ->getResult();
     }

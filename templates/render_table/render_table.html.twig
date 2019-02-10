@@ -23,41 +23,22 @@
             {% endfor %}
         </table>
     {% endblock %}
-    <h3>Incoming duels:</h3>
-    {% block dueltable %}
-        <table style="width :200px">
-            <tr align="left">
-                <th>Name</th>
-                <th>vs</th>
-                <th>Name</th>
-            </tr>
-            <tr align="left">
-                {% for duel in duels %}
-                <td> {{ duel.player0.name }} </td>
-                <td> - </td>
-                <td> {{ duel.player1.name }} </td>
-            </tr>
-                {% endfor %}
-        </table>
-    {% endblock %}
+    {% if selector == 'revenges' %}
+        {% include 'render_table/revenge_view.html.twig' %}
+    {% else %}
+        {% include 'render_table/duel_view.html.twig' %}
+    {% endif %}
     {% block duel %}
         <h3>Playing players:</h3>
         <table style="width :200px">
             <tr align="left">
                 {% if scoreTable | length %}
-                    {% for duel in duels | slice(0, 1) %}
-                        <td> {{ duel.player0.name }} </td>
-                        <td> vs </td>
-                        <td> {{ duel.player1.name }} </td>
-            </tr>
-            <tr>
-                <form action="{{ path('check_score')}}"  method="POST">
-                    <td><input type="number" name="{{ duel.player0.id }}" min="1" max="8"></td>
-                    <td>&nbsp</td>
-                    <td><input type="number" name="{{ duel.player1.id }}" min="1" max="8"></td>
-                    <td><input type="submit" value="Submit"></td>
-                </form>
-            </tr>
+                    {% for duel in duelTable | slice(0, 1) %}
+                        {% if selector == 'revenges' %}
+                            {% include 'render_table/revenge_play.html.twig' %}
+                        {% else %}
+                            {% include 'render_table/duel_play.html.twig' %}
+                        {% endif %}
                     {% endfor %}
                 {% endif %}
         </table>

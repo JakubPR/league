@@ -17,7 +17,12 @@ class RemoveDataFromTables
 
     public function removeData()
     {
+        $this->deletePairTable();
         $this->remove($this->em->getRepository('App:ShuffledPairs')->findAll());
+    }
+
+    public function deletePairTable()
+    {
         $this->remove($this->em->getRepository('App:ScoreTable')->findAll());
     }
 

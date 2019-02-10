@@ -31,7 +31,12 @@ class ShuffledPairs
     /**
      * @ORM\Column(type="integer")
      */
-    private $played;
+    private $duel;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $revenge;
 
     public function getId()
     {
@@ -62,14 +67,26 @@ class ShuffledPairs
         return $this;
     }
 
-    public function getPlayed(): int
+    public function getDuel(): int
     {
-        return $this->played;
+        return $this->duel;
     }
 
-    public function setPlayed(int $played)
+    public function setDuel(int $duel)
     {
-        $this->played = $played;
+        $this->duel = $duel;
+
+        return $this;
+    }
+
+    public function getRevenge(): int
+    {
+        return $this->revenge;
+    }
+
+    public function setRevenge(int $revenge)
+    {
+        $this->revenge = $revenge;
 
         return $this;
     }

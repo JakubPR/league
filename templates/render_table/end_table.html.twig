@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <h2>The end!</h2>
+    {% block scoretable %}
+        <table style="width :200px">
+            <tr align="left">
+                <th>Position</th>
+                <th>Name</th>
+                <th>Points</th>
+                <th>Score</th>
+            </tr>
+            <tr align="left">
+                {% for player in scoreTable %}
+                <td> {{ position }} </td>
+                <td> {{ player.playerName }}</td>
+                <td> {{ player.points }} </td>
+                <td> {{ player.score }} </td>
+            </tr>
+            {% set position = position + 1 %}
+            {% endfor %}
+        </table>
+    {% endblock %}
+{% endblock %}

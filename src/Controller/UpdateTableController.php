@@ -6,24 +6,29 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route as Route;
-use App\Helpers\Calculate;
+use App\Helpers\UpdateTables;
 
 class UpdateTableController extends AbstractController
 {
     /**
-     * @Route("/render/table/update/{scores}", name="update_table")
+     * @Route("/render/table/update/{scores}/{selector}/{duelId}", name="update_table")
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
-     * @param string    $scores
-     * @param Calculate $calc
+     * @param string       $scores
+     * @param string       $selector
+     * @param string       $duelId
+     * @param UpdateTables $update
      */
     public function updateTable(
         string $scores,
-        Calculate $calc
+        string $selector,
+        string $duelId,
+        UpdateTables $update
     ) {
-        $calc->calculatePoints(json_decode($scores, true));
+        $update->updatePairsTable(json_decode($selector, true), json_decode($duelId, true));
+        $update->updateScoreTable(json_decode($scores, true));
 
-        //return $this->redirectToRoute('render_table');
+        return $this->redirectToRoute('render_table');
     }
 }
