@@ -55,8 +55,9 @@ class RenderTableController extends AbstractController
                     'scoreTable' => $scoreTable,
                 ]
             );
-        } elseif (('end' === $duelTable[0]) && 0 != $numberOfGames) {
+        } elseif ('duels' === $duelTable[0] && empty($duelTable[1])) {
             $setMan->changeSettings(Settings::$NUMBER_OF_GAMES, $numberOfGames - 1);
+
         }
 
         $selector = $duelTable[0];

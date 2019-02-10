@@ -47,7 +47,7 @@ class SelectPlayersController extends AbstractController
             return $this->redirectToRoute('select_players');
         }
 
-        return $this->redirectToRoute('data_setup');
+        return $this->redirectToRoute('score_table_setup');
     }
 
     /**

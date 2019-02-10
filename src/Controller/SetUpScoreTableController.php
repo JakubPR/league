@@ -8,10 +8,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Helpers\PrepareTables;
 
-class SetUpTablesController extends AbstractController
+class SetUpScoreTableController extends AbstractController
 {
     /**
-     * @Route("/datasetup", name="data_setup")
+     * @Route("/score-table-setup", name="score_table_setup")
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
@@ -19,7 +19,8 @@ class SetUpTablesController extends AbstractController
      */
     public function PrepareTables(PrepareTables $prepare)
     {
-        $prepare->setData();
+        $prepare->setScoreTable();
+        $prepare->setSettingsTable();
 
         return $this->redirectToRoute('settings');
     }

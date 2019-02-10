@@ -23,16 +23,9 @@ class PrepareTables
         $this->repo = $this->em->getRepository('App:Player')->findAll();
     }
 
-    public function setData()
+    public function setScoreTable()
     {
-        $this->setPairsTable();
-        $this->setScoreTable($this->repo);
-        $this->setSettingsTable();
-    }
-
-    private function setScoreTable(array $players)
-    {
-        foreach ($players as $player) {
+        foreach ($this->repo as $player) {
             /* @var $player \App\Entity\Player **/
             $tableRow = new ScoreTable();
             $tableRow->setPlayerName($player->getName());
@@ -59,7 +52,7 @@ class PrepareTables
         $this->em->flush();
     }
 
-    private function setSettingsTable()
+    public function setSettingsTable()
     {
         $settings = $this->em->getRepository('App:Settings')->findAll();
 

@@ -51,13 +51,13 @@ class SetSettingsController extends AbstractController
      */
     public function checkSettings(SettingsManager $setMan)
     {
-        if (0 == $setMan->getSettingValue(Settings::$NUMBER_OF_GAMES)) {
+        if (0 === $setMan->getSettingValue(Settings::$NUMBER_OF_GAMES)) {
             $this->addFlash('notice', 'Set number of games.');
 
             return $this->redirectToRoute('settings');
         }
 
-        return $this->redirectToRoute('render_table');
+        return $this->redirectToRoute('pairs_table_setup');
     }
 
     /**
