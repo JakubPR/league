@@ -17,11 +17,10 @@ class RemoveDataFromTables
 
     public function removeData()
     {
-        $this->deletePairTable();
-        $this->remove($this->em->getRepository('App:ShuffledPairs')->findAll());
+        $this->deleteScoreTable();
     }
 
-    public function deletePairTable()
+    private function deleteScoreTable()
     {
         $this->remove($this->em->getRepository('App:ScoreTable')->findAll());
     }
@@ -32,5 +31,10 @@ class RemoveDataFromTables
             $this->em->remove($record);
             $this->em->flush();
         }
+    }
+
+    public function deletePairsTable()
+    {
+        $this->remove($this->em->getRepository('App:ShuffledPairs')->findAll());
     }
 }

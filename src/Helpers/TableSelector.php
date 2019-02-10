@@ -22,7 +22,7 @@ class TableSelector
         $dTable = $this->em->getRepository('App:ShuffledPairs')->findNotPlayedDuels();
         $rTable = $this->em->getRepository('App:ShuffledPairs')->findNotPlayedRevenges();
 
-        if (0 === $revenges && empty($dTable) && 0 === $numberOfGames || 1 === $revenges && empty($rTable)) {
+        if (0 === $revenges && empty($dTable) && 1 === $numberOfGames || 1 === $revenges && empty($rTable)) {
             $duelTable = ['end'];
         } elseif (1 === $revenges && empty($dTable)) {
             $duelTable = ['revenges', $rTable];

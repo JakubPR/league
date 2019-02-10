@@ -30,7 +30,7 @@ class SetSettingsController extends AbstractController
     public function showSettings(SettingsManager $setMan)
     {
         return $this->render(
-            'set_settings/setsettings.html.twig',
+            'set_settings/set_settings.html.twig',
             [
                 'numberOfGames' => $setMan->getSettingValue(
                     Settings::$NUMBER_OF_GAMES

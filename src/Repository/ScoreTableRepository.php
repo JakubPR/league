@@ -12,4 +12,12 @@ class ScoreTableRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, ScoreTable::class);
     }
+
+    public function findAllAndSort()
+    {
+        return $this->createQueryBuilder('sc')
+            ->add('orderBy', 'sc.points DESC, sc.score DESC')
+            ->getQuery()
+            ->getResult();
+    }
 }

@@ -45,11 +45,11 @@ class RenderTableController extends AbstractController
     ) {
         $numberOfGames = $setMan->getSettingValue(Settings::$NUMBER_OF_GAMES);
         $revenges = $setMan->getSettingValue(Settings::$REVENGES);
-        $scoreTable = $this->em->getRepository('App:ScoreTable')->findAll();
+        $scoreTable = $this->em->getRepository('App:ScoreTable')->findAllAndSort();
 
         $duelTable = $this->selector->selectTable($revenges, $numberOfGames);
 
-        if (('end' === $duelTable[0]) && 0 === $numberOfGames) {
+        if (('end' === $duelTable[0]) && 1 === $numberOfGames) {
             return $this->render(
                 'render_table/end_table.html.twig', [
                     'scoreTable' => $scoreTable,
@@ -57,7 +57,7 @@ class RenderTableController extends AbstractController
             );
         } elseif ('duels' === $duelTable[0] && empty($duelTable[1])) {
             $setMan->changeSettings(Settings::$NUMBER_OF_GAMES, $numberOfGames - 1);
-
+            return $this->redirectToRoute('pairs_table_setup');
         }
 
         $selector = $duelTable[0];

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Helpers\RemoveDataFromTables;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Helpers\PrepareTables;
@@ -15,10 +16,12 @@ class SetUpPairsTableController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      *
-     * @param PrepareTables $prepare
+     * @param PrepareTables        $prepare
+     * @param RemoveDataFromTables $remove
      */
-    public function PrepareTables(PrepareTables $prepare)
+    public function PreparePairTable(PrepareTables $prepare, RemoveDataFromTables $remove)
     {
+        $remove->deletePairsTable();
         $prepare->setPairsTable();
 
         return $this->redirectToRoute('render_table');
