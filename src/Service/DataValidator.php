@@ -4,13 +4,14 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @method addFlash(string $string, $getMessage)
  */
-class DataValidator
+class DataValidator extends AbstractController
 {
     private $validator;
 
@@ -38,7 +39,23 @@ class DataValidator
         return $message;
     }
 
-    public function validatePlayerNameRegex(string $name)
+    public function validateName($playerName)
+    {
+        $this->validatePlayerNameNotBlank($playerName);
+        if ($this->validatePlayerNameNotBlank($playerName)) {
+            $this->addFlash('notice', $this->validatePlayerNameNotBlank($playerName));
+            return false;
+        }
+
+        $this->validatePlayerNameRegex($playerName);
+        if ($this->validatePlayerNameRegex($playerName)) {
+            $this->addFlash('notice', $this->validatePlayerNameRegex($playerName));
+            return false;
+        }
+        return true;
+    }
+
+    private function validatePlayerNameRegex(string $name)
     {
         $message = '';
         $regexConstraint = new Assert\Regex([
@@ -57,7 +74,7 @@ class DataValidator
         return $message;
     }
 
-    public function validatePlayerNameNotBlank($name)
+    private function validatePlayerNameNotBlank($name)
     {
         $message = '';
         $notBlankConstraint = new Assert\NotBlank();

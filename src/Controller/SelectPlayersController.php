@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controller;
 
 use App\Service\DataValidator;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -74,18 +75,18 @@ class SelectPlayersController extends AbstractController
         FormInterface $addPlayerForm,
         Player $player,
         DataValidator $validator
-    ) {
+    ): RedirectResponse {
         $addPlayerForm->handleRequest($request);
 
         if ($addPlayerForm->isSubmitted()) {
             $formData = $addPlayerForm->getData();
 
-            if (!$this->validate($formData->getname(), $validator)) {
+            if ($validator->validateName($formData->getname())) {
                 $this->savePlayer($formData->getName(), $player);
             }
+            return $this->redirectToRoute('select_players');
         }
-
-        return null;
+        return $this->redirectToRoute('select_players');
     }
 
     public function savePlayer(string $playerName, Player $player)
@@ -94,25 +95,6 @@ class SelectPlayersController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($player);
         $em->flush();
-    }
-
-    private function validate($playerName, DataValidator $validator)
-    {
-        $validator->validatePlayerNameNotBlank($playerName);
-        if ($validator->validatePlayerNameNotBlank($playerName)) {
-            $this->addFlash('notice', $validator->validatePlayerNameNotBlank($playerName));
-
-            return $this->redirectToRoute('select_players');
-        }
-
-        $validator->validatePlayerNameRegex($playerName);
-        if ($validator->validatePlayerNameRegex($playerName)) {
-            $this->addFlash('notice', $validator->validatePlayerNameRegex($playerName));
-
-            return $this->redirectToRoute('select_players');
-        }
-
-        return false;
     }
 
     private function getPlayers(): array
