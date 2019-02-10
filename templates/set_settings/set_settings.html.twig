@@ -17,7 +17,6 @@
     <input type="submit" name=answer value="off"/>
     </form>
     <p></p>
-    <button type="button" onclick="window.location='{{ url("select_players") }}'"><--- back</button>
     <button type="button" onclick="window.location='{{ url("settings_check") }}'">next ---></button>
     {% for message in app.flashes('notice') %}
         <div class="flash-notice">
