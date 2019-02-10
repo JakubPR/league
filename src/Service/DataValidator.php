@@ -20,23 +20,57 @@ class DataValidator
     }
 
     /**
-     * @return string
-     *
      * @param string $score
+     * @return string
      */
     public function validateScore(string $score): string
     {
         $message = '';
-        $scoreConstraint = new Assert\NotBlank();
+        $rangeConstraint = new Assert\Range(['min' => 0, 'max' => 8]);
         $errors = $this->validator->validate(
             $score,
-            $scoreConstraint
+            $rangeConstraint
         );
 
         if (0 != count($errors)) {
             $message = $errors[0]->getMessage();
         }
+        return $message;
+    }
 
+    public function validatePlayerNameRegex(string $name)
+    {
+        $message = '';
+        $regexConstraint = new Assert\Regex([
+            'pattern' => '/^([A-Za-z]+)$/',
+        ]);
+        $regexConstraint->message = 'Please use letters.';
+
+        $errors = $this->validator->validate(
+            $name,
+            $regexConstraint
+        );
+
+        if (0 != count($errors)) {
+            $message = $errors[0]->getMessage();
+        }
+        return $message;
+    }
+
+    public function validatePlayerNameNotBlank($name)
+    {
+        $message = '';
+        $notBlankConstraint = new Assert\NotBlank();
+        $notBlankConstraint->message = 'Name can not be blank.';
+
+        $errors = $this->validator->validate(
+            $name,
+            $notBlankConstraint
+        );
+
+        if (0 != count($errors)) {
+            $message = $errors[0]->getMessage();
+        }
         return $message;
     }
 }

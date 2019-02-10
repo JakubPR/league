@@ -15,19 +15,7 @@ class SelectPlayersType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', TextType::class, [
-                'constraints' => [
-                    new NotBlank(),
-                    new Regex([
-                        'pattern' => '/^([A-Za-z]+)$/',
-                        'message' => 'Please use only letters.',
-                    ]),
-                    new Length([
-                        'min' => 4,
-                        'max' => 10,
-                    ]),
-                ],
-            ])
+            ->add('name', TextType::class)
             ->add('add', SubmitType::class)
             ->getForm();
     }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Service\DataValidator;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -20,11 +21,11 @@ class SelectPlayersController extends AbstractController
      *
      * @param Request $request
      */
-    public function showPlayers(Request $request)
+    public function showPlayers(Request $request, DataValidator $validator)
     {
         $player = new Player();
         $addPlayerForm = $this->createForm(SelectPlayersType::class, $player);
-        $this->getFormData($request, $addPlayerForm, $player);
+        $this->getFormData($request, $addPlayerForm, $player, $validator);
 
         return $this->render(
             'select_players/select.html.twig', [
@@ -71,14 +72,20 @@ class SelectPlayersController extends AbstractController
     public function getFormData(
         Request $request,
         FormInterface $addPlayerForm,
-        Player $player
+        Player $player,
+        DataValidator $validator
     ) {
         $addPlayerForm->handleRequest($request);
 
-        if ($addPlayerForm->isSubmitted() && $addPlayerForm->isValid()) {
+        if ($addPlayerForm->isSubmitted()) {
             $formData = $addPlayerForm->getData();
-            $this->savePlayer($formData->getName(), $player);
+
+            if (!$this->validate($formData->getname(), $validator)) {
+                $this->savePlayer($formData->getName(), $player);
+            }
         }
+
+        return null;
     }
 
     public function savePlayer(string $playerName, Player $player)
@@ -87,6 +94,25 @@ class SelectPlayersController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($player);
         $em->flush();
+    }
+
+    private function validate($playerName, DataValidator $validator)
+    {
+        $validator->validatePlayerNameNotBlank($playerName);
+        if ($validator->validatePlayerNameNotBlank($playerName)) {
+            $this->addFlash('notice', $validator->validatePlayerNameNotBlank($playerName));
+
+            return $this->redirectToRoute('select_players');
+        }
+
+        $validator->validatePlayerNameRegex($playerName);
+        if ($validator->validatePlayerNameRegex($playerName)) {
+            $this->addFlash('notice', $validator->validatePlayerNameRegex($playerName));
+
+            return $this->redirectToRoute('select_players');
+        }
+
+        return false;
     }
 
     private function getPlayers(): array
