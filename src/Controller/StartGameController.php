@@ -10,7 +10,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class StartGameController extends AbstractController
 {
     /**
-     * @Route("/start", name="start-game")
+     * @Route("/start", name="start_game")
      */
     public function index()
     {

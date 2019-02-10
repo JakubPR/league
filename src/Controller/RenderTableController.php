@@ -55,8 +55,9 @@ class RenderTableController extends AbstractController
                     'scoreTable' => $scoreTable,
                 ]
             );
-        } elseif ('duels' === $duelTable[0] && empty($duelTable[1])) {
+        } elseif ('duels' === $duelTable[0] && empty($duelTable[1]) || 'revenges' === $duelTable[0] && empty($duelTable[1])) {
             $setMan->changeSettings(Settings::$NUMBER_OF_GAMES, $numberOfGames - 1);
+
             return $this->redirectToRoute('pairs_table_setup');
         }
 
