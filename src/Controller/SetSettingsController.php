@@ -13,19 +13,12 @@ use Symfony\Component\Routing\Annotation\Route as Route;
 
 class SetSettingsController extends AbstractController
 {
-    private $con;
-
-    public function __construct(DataTypeConverter $con)
-    {
-        $this->con = $con;
-    }
-
     /**
      * @Route("/settings", name="settings")
      *
-     * @return \Symfony\Component\HttpFoundation\Response
-     *
      * @param SettingsManager $setMan
+     *
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showSettings(SettingsManager $setMan)
     {
@@ -45,9 +38,9 @@ class SetSettingsController extends AbstractController
     /**
      * @Route("/settings/check", name="settings_check")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     *
      * @param SettingsManager $setMan
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function checkSettings(SettingsManager $setMan)
     {
@@ -63,10 +56,10 @@ class SetSettingsController extends AbstractController
     /**
      * @Route("/settings/getnumber", name="get_number")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     *
      * @param Request         $request
      * @param SettingsManager $setMan
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function saveNumberOfGamesSetting(
         Request $request,
@@ -83,16 +76,17 @@ class SetSettingsController extends AbstractController
     /**
      * @Route("/settings/getanswer", name="get_answer")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @param Request           $request
+     * @param SettingsManager   $setMan
+     * @param DataTypeConverter $converter
      *
-     * @param Request         $request
-     * @param SettingsManager $setMan
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function saveRevengeSetting(Request $request, SettingsManager $setMan)
+    public function saveRevengeSetting(Request $request, SettingsManager $setMan, DataTypeConverter $converter)
     {
         $setMan->changeSettings(
             Settings::$REVENGES,
-            $this->con->changeToInt($request->get('answer'))
+            $converter->changeToInt($request->get('answer'))
         );
 
         return $this->redirectToRoute('settings');

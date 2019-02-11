@@ -13,12 +13,12 @@ class UpdateTableController extends AbstractController
     /**
      * @Route("/render/table/update/{scores}/{selector}/{duelId}", name="update_table")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     *
      * @param string       $scores
      * @param string       $selector
      * @param string       $duelId
      * @param UpdateTables $update
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function updateTable(
         string $scores,

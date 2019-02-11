@@ -16,34 +16,27 @@ use App\Helpers\TableSelector;
 
 class RenderTableController extends AbstractController
 {
-    private $con;
-    private $selector;
-
-    public function __construct(
-        DataTypeConverter $con,
-        TableSelector $selector
-    ) {
-        $this->con = $con;
-        $this->selector = $selector;
-    }
-
     /**
      * @Route("/render", name="render_table")
      *
      * @param SettingsManager        $setMan
      * @param EntityManagerInterface $em
+     * @param DataTypeConverter      $converter
+     * @param TableSelector          $selector
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function renderTable(
         SettingsManager $setMan,
-        EntityManagerInterface $em
+        EntityManagerInterface $em,
+        DataTypeConverter $converter,
+        TableSelector $selector
     ) {
         $numberOfGames = $setMan->getSettingValue(Settings::$NUMBER_OF_GAMES);
         $revenges = $setMan->getSettingValue(Settings::$REVENGES);
         $scoreTable = $em->getRepository('App:ScoreTable')->findAllAndSort();
 
-        $duelTable = $this->selector->selectTable($revenges, $numberOfGames);
+        $duelTable = $selector->selectTable($revenges, $numberOfGames);
 
         if (('end' === $duelTable[0]) && $numberOfGames <= 1) {
             return $this->render(
@@ -61,7 +54,7 @@ class RenderTableController extends AbstractController
         return $this->render(
             'render_table/render_table.html.twig', [
             'numberOfGames' => $numberOfGames,
-            'revenges' => $this->con->changeToStr($revenges),
+            'revenges' => $converter->changeToStr($revenges),
             'scoreTable' => $scoreTable,
             'duelTable' => $duelTable[1],
             'selector' => $selector,

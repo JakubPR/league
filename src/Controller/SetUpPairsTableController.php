@@ -14,10 +14,10 @@ class SetUpPairsTableController extends AbstractController
     /**
      * @Route("/pairs-table-setup", name="pairs_table_setup")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     *
      * @param PrepareTables        $prepare
      * @param RemoveDataFromTables $remove
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function PreparePairTable(PrepareTables $prepare, RemoveDataFromTables $remove)
     {

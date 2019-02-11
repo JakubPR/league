@@ -56,9 +56,9 @@ class SelectPlayersController extends AbstractController
     /**
      * @Route("/select/remove/{id}", name="select_remove")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     *
      * @param int $id
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function removePlayer(int $id)
     {

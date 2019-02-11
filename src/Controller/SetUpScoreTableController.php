@@ -13,9 +13,9 @@ class SetUpScoreTableController extends AbstractController
     /**
      * @Route("/score-table-setup", name="score_table_setup")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     *
      * @param PrepareTables $prepare
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function PrepareTables(PrepareTables $prepare)
     {
