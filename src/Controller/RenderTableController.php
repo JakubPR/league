@@ -57,7 +57,7 @@ class RenderTableController extends AbstractController
             return $this->redirectToRoute('pairs_table_setup');
         }
         $selector = $duelTable[0];
-        //dump($duelTable);
+
         return $this->render(
             'render_table/render_table.html.twig', [
             'numberOfGames' => $numberOfGames,
@@ -79,11 +79,11 @@ class RenderTableController extends AbstractController
      */
     public function getScore(Request $request, DataValidator $validator)
     {
-        $scores = $request->request->all();
-        $duelId = $scores['duelId'];
-        $selector = $scores['selector'];
-        array_pop($scores);
-        array_pop($scores);
+        $chunk = array_chunk($request->request->all(), 2, true);
+
+        $duelId = $chunk[1]['duelId'];
+        $selector = $chunk[1]['selector'];
+        $scores = $chunk[0];
 
         foreach ($scores as $score) {
             if (!$validator->validateScore($score)) {
