@@ -9,11 +9,10 @@ use Doctrine\ORM\EntityManagerInterface;
 class UpdateTables
 {
     private $em;
-    private static $pointsTable =
-        [
-          'win' => 2,
-          'draw' => 1,
-          'lose' => 0,
+    private static $pointsTable = [
+        'win' => 2,
+        'draw' => 1,
+        'lose' => 0,
         ];
 
     public function __construct(EntityManagerInterface $em)
@@ -27,15 +26,24 @@ class UpdateTables
         $loser = array_keys($scores, min($scores));
 
         foreach ($scores as $id => $score) {
-            $tableRow = $this->em->getRepository('App:ScoreTable')->findOneBy(['playerId' => $id]);
+            $tableRow = $this->em->getRepository('App:ScoreTable')->findOneBy(
+                ['playerId' => $id]
+            );
+
             $tableRow->setScore((int) $score);
 
             if ($winner === $loser) {
-                $tableRow->setPoints($tableRow->getPoints() + UpdateTables::$pointsTable['draw']);
+                $tableRow->setPoints(
+                    $tableRow->getPoints() + UpdateTables::$pointsTable['draw']
+                );
             } elseif ($winner[0] === $tableRow->getPlayerId()) {
-                $tableRow->setPoints($tableRow->getPoints() + UpdateTables::$pointsTable['win']);
+                $tableRow->setPoints(
+                    $tableRow->getPoints() + UpdateTables::$pointsTable['win']
+                );
             } else ($loser[0] === $tableRow->getPlayerId()) {
-                $tableRow->setPoints($tableRow->getPoints() + UpdateTables::$pointsTable['lose'])
+                $tableRow->setPoints(
+                    $tableRow->getPoints() + UpdateTables::$pointsTable['lose']
+                )
             };
 
             $this->em->persist($tableRow);

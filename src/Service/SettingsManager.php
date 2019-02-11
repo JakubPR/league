@@ -32,6 +32,8 @@ class SettingsManager
 
     private function findSetting(string $settingName): Settings
     {
-        return $this->em->getRepository('App:Settings')->findOneBy(['name' => $settingName]);
+        return $this->em->getRepository('App:Settings')->findOneBy(
+            ['name' => $settingName]
+        );
     }
 }

@@ -24,7 +24,10 @@ class DataValidator extends AbstractController
     {
         $this->validatePlayerNameNotBlank($playerName);
         if ($this->validatePlayerNameNotBlank($playerName)) {
-            $this->addFlash('notice', $this->validatePlayerNameNotBlank($playerName));
+            $this->addFlash(
+                'notice',
+                $this->validatePlayerNameNotBlank($playerName)
+            );
 
             return false;
         }

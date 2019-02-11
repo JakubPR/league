@@ -17,8 +17,15 @@ class TableSelector
 
     public function selectTable(int $revenges, int $numberOfGames): array
     {
-        $dTable = $this->em->getRepository('App:ShuffledPairs')->findNotPlayedDuels();
-        $rTable = $this->em->getRepository('App:ShuffledPairs')->findNotPlayedRevenges();
+        $dTable = $this
+            ->em
+            ->getRepository('App:ShuffledPairs')
+            ->findNotPlayedDuels();
+
+        $rTable = $this
+            ->em
+            ->getRepository('App:ShuffledPairs')
+            ->findNotPlayedRevenges();
 
         if (0 === $numberOfGames) {
             $duelTable = ['end'];

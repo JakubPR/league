@@ -19,8 +19,10 @@ class SetUpPairsTableController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function PreparePairTable(PrepareTables $prepare, RemoveDataFromTables $remove)
-    {
+    public function PreparePairTable(
+        PrepareTables $prepare,
+        RemoveDataFromTables $remove
+    ) {
         $remove->deletePairsTable();
         $prepare->setPairsTable();
 

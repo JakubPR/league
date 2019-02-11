@@ -11,6 +11,8 @@ class StartGameController extends AbstractController
 {
     /**
      * @Route("/start", name="start_game")
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function index()
     {

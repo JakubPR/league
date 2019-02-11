@@ -82,8 +82,11 @@ class SetSettingsController extends AbstractController
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function saveRevengeSetting(Request $request, SettingsManager $setMan, DataTypeConverter $converter)
-    {
+    public function saveRevengeSetting(
+        Request $request,
+        SettingsManager $setMan,
+        DataTypeConverter $converter
+    ) {
         $setMan->changeSettings(
             Settings::$REVENGES,
             $converter->changeToInt($request->get('answer'))

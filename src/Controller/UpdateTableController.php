@@ -26,7 +26,9 @@ class UpdateTableController extends AbstractController
         string $duelId,
         UpdateTables $update
     ) {
-        $update->updatePairsTable(json_decode($selector, true), json_decode($duelId, true));
+        $update->updatePairsTable(
+            json_decode($selector, true), json_decode($duelId, true)
+        );
         $update->updateScoreTable(json_decode($scores, true));
 
         return $this->redirectToRoute('render_table');
