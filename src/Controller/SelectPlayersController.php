@@ -44,8 +44,8 @@ class SelectPlayersController extends AbstractController
      */
     public function checkNumberOfPlayers()
     {
-        if (0 != count($this->getPlayers()) % 2) {
-            $this->addFlash('notice', 'The number of players must be even.');
+        if (0 != count($this->getPlayers()) % 2 || empty($this->getPlayers())) {
+            $this->addFlash('notice', 'The number of players is not even, or list is empty.');
 
             return $this->redirectToRoute('select_players');
         }

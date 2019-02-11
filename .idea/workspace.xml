@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70b73381-2ac2-4c0c-9a93-1b1257c9d399" name="Default Changelist" comment="cr">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/office-league.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/office-league.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -84,15 +85,30 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Controller/CleanUpTablesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-              <folding>
-                <element signature="e#60#125#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="337">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/welcome/welcome.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="96">
+              <caret line="4" column="98" selection-start-line="4" selection-start-column="98" selection-end-line="4" selection-end-column="98" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Helpers/RemoveDataFromTables.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="840">
+              <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -158,7 +174,6 @@
         <option value="$PROJECT_DIR$/src/Repository/ScoreTableRepository.php" />
         <option value="$PROJECT_DIR$/templates/render_table/end_table.html.twig" />
         <option value="$PROJECT_DIR$/templates/welcome/welcome.html.twig" />
-        <option value="$PROJECT_DIR$/src/Controller/CleanUpTablesController.php" />
         <option value="$PROJECT_DIR$/templates/set_settings/set_settings.html.twig" />
         <option value="$PROJECT_DIR$/templates/render_table/duel_play.html.twig" />
         <option value="$PROJECT_DIR$/templates/render_table/revenge_play.html.twig" />
@@ -177,6 +192,7 @@
         <option value="$PROJECT_DIR$/src/Service/DataValidator.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Controller/CleanUpTablesController.php" />
       </list>
     </option>
   </component>
@@ -249,6 +265,8 @@
       <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -265,6 +283,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -355,14 +374,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bbbotman" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.uml" />
@@ -474,17 +492,18 @@
       <workItem from="1549663865230" duration="686000" />
       <workItem from="1549667677229" duration="1400000" />
       <workItem from="1549744273674" duration="16143000" />
-      <workItem from="1549816524786" duration="31137000" />
+      <workItem from="1549816524786" duration="31592000" />
+      <workItem from="1549891393903" duration="21000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238718000" />
+    <option name="totallyTimeSpent" value="239194000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1015" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17929563" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1814301" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -498,7 +517,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32935324" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.06323185" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4994664" visible="true" weight="0.31381732" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50053364" side_tool="true" weight="0.29308325" />
       <window_info anchor="bottom" id="Inspection Results" order="13" weight="0.3290398" />
       <window_info anchor="bottom" id="Messages" order="14" weight="0.32935324" />
@@ -781,16 +800,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/welcome/welcome.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="47" lean-forward="true" selection-start-line="2" selection-start-column="47" selection-end-line="2" selection-end-column="47" />
-          <folding>
-            <element signature="e#12#26#0#Twig" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/render_table/end_table.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
@@ -904,13 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="74" column="23" lean-forward="true" selection-start-line="74" selection-start-column="23" selection-end-line="74" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Helpers/RemoveDataFromTables.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -1070,11 +1072,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Controller/CleanUpTablesController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="15" column="42" lean-forward="true" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
-          <folding>
-            <element signature="e#60#125#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="337">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/welcome/welcome.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="4" column="98" selection-start-line="4" selection-start-column="98" selection-end-line="4" selection-end-column="98" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Helpers/RemoveDataFromTables.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
         </state>
       </provider>
     </entry>
