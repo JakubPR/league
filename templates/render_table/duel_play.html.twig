@@ -3,7 +3,7 @@
 <td> {{ duel.player1.name }} </td>
 </tr>
 <tr>
-    <form action="{{ path('check_score')}}"  method="POST" novalidate>
+    <form action="{{ path('get_score')}}"  method="POST" novalidate>
         <td><input type="number" name="{{ duel.player0.id }}" min="0" max="8"></td>
         <td>&nbsp</td>
         <td><input type="number" name="{{ duel.player1.id }}" min="0" max="8"></td>

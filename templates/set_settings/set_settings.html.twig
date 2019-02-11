@@ -3,7 +3,7 @@
     <h2>Set parameters.</h2>
     <h3>Press 'next' button to continue.</h3>
     <p>Number of games: {{ numberOfGames }}</p>
-    <form action="{{ path('get_number') }}" method="post">
+    <form action="{{ path('get_number') }}" method="POST" novalidate>
         <input type="number" name=number min="1" max="10" value="1">
         <input type="submit" value="Submit" />
     </form>
@@ -12,7 +12,7 @@
         {% set answer = 'off' %}
     {% endif %}
     <p>Revenges: {{ answer }}</p>
-    <form action="{{ path('get_answer') }}" method="post">
+    <form action="{{ path('get_answer') }}" method="POST">
     <input type="submit" name=answer value="on" />
     <input type="submit" name=answer value="off"/>
     </form>

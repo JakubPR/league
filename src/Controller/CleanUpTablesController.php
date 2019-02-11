@@ -13,9 +13,9 @@ class CleanUpTablesController extends AbstractController
     /**
      * @Route("/dataremove", name="data_remove")
      *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     *
      * @param RemoveDataFromTables $remove
+     *
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function cleanAndPrepareTables(RemoveDataFromTables $remove)
     {

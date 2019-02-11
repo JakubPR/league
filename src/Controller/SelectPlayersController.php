@@ -18,9 +18,10 @@ class SelectPlayersController extends AbstractController
     /**
      * @Route("/select", name="select_players")
      *
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @param Request       $request
+     * @param DataValidator $validator
      *
-     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function showPlayers(Request $request, DataValidator $validator)
     {
@@ -84,8 +85,10 @@ class SelectPlayersController extends AbstractController
             if ($validator->validateName($formData->getname())) {
                 $this->savePlayer($formData->getName(), $player);
             }
+
             return $this->redirectToRoute('select_players');
         }
+
         return $this->redirectToRoute('select_players');
     }
 

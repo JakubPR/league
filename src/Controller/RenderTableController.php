@@ -16,19 +16,13 @@ use App\Helpers\TableSelector;
 
 class RenderTableController extends AbstractController
 {
-    private $em;
-    private $dv;
     private $con;
     private $selector;
 
     public function __construct(
-        EntityManagerInterface $em,
-        DataValidator $dv,
         DataTypeConverter $con,
         TableSelector $selector
     ) {
-        $this->em = $em;
-        $this->dv = $dv;
         $this->con = $con;
         $this->selector = $selector;
     }
@@ -36,20 +30,22 @@ class RenderTableController extends AbstractController
     /**
      * @Route("/render", name="render_table")
      *
-     * @param SettingsManager $setMan
+     * @param SettingsManager        $setMan
+     * @param EntityManagerInterface $em
      *
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function renderTable(
-        SettingsManager $setMan
+        SettingsManager $setMan,
+        EntityManagerInterface $em
     ) {
         $numberOfGames = $setMan->getSettingValue(Settings::$NUMBER_OF_GAMES);
         $revenges = $setMan->getSettingValue(Settings::$REVENGES);
-        $scoreTable = $this->em->getRepository('App:ScoreTable')->findAllAndSort();
+        $scoreTable = $em->getRepository('App:ScoreTable')->findAllAndSort();
 
         $duelTable = $this->selector->selectTable($revenges, $numberOfGames);
 
-        if (('end' === $duelTable[0]) && 1 === $numberOfGames) {
+        if (('end' === $duelTable[0]) && $numberOfGames <= 1) {
             return $this->render(
                 'render_table/end_table.html.twig', [
                     'scoreTable' => $scoreTable,
@@ -60,9 +56,8 @@ class RenderTableController extends AbstractController
 
             return $this->redirectToRoute('pairs_table_setup');
         }
-
         $selector = $duelTable[0];
-
+        //dump($duelTable);
         return $this->render(
             'render_table/render_table.html.twig', [
             'numberOfGames' => $numberOfGames,
@@ -75,13 +70,14 @@ class RenderTableController extends AbstractController
     }
 
     /**
-     * @Route("/render/score/check", name="check_score")
+     * @Route("/render/score/get", name="get_score")
      *
-     * @param Request $request
+     * @param Request       $request
+     * @param DataValidator $validator
      *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
-    public function checkScore(Request $request)
+    public function getScore(Request $request, DataValidator $validator)
     {
         $scores = $request->request->all();
         $duelId = $scores['duelId'];
@@ -90,9 +86,7 @@ class RenderTableController extends AbstractController
         array_pop($scores);
 
         foreach ($scores as $score) {
-            if ($this->dv->validateScore($score)) {
-                $this->addFlash('notice', $this->dv->validateScore($score));
-
+            if (!$validator->validateScore($score)) {
                 return $this->redirectToRoute('render_table');
             }
         }
