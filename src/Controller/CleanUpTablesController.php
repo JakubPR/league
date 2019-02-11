@@ -11,7 +11,7 @@ use App\Helpers\RemoveDataFromTables;
 class CleanUpTablesController extends AbstractController
 {
     /**
-     * @Route("/dataremove", name="data_remove")
+     * @Route("/data-remove", name="data_remove")
      *
      * @param RemoveDataFromTables $remove
      *
