@@ -1,28 +1,78 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h2>Add or remove players.</h2>
-    <h3>Press 'next' button to continue.</h3>
-<table style="width:20%">
-    <tr>
-        {{ form_start(addPlayerForm, {'attr': {'novalidate': 'novalidate'}}) }}
-        {{ form_widget(addPlayerForm) }}
-        {{ form_end(addPlayerForm) }}
-    </tr>
-    <tr>
-        {% for player in allPlayers %}
-    <tr>
-        <td>
-            {{ player.name }}
-        </td>
-        <td><a href="{{ path('select_remove', {'id': player.id}) }}">click to remove</a></td>
-    </tr>
-        {% endfor %}
-</table>
-    <button type="button" onclick="window.location='{{ url("welcome") }}'"><--- back</button>
-    <button type="button" onclick="window.location='{{ url("check_players") }}'">next ---></button>
-    {% for message in app.flashes('notice') %}
-        <div class="flash-notice">
-            {{ message }}
+    <div class="ui two column centered grid">
+        <div class="column"></div>
+        <div class="column centered row">
+            <div class="content">
+                <h2 class="ui icon header">
+                    <i class="users icon"></i>
+                    Welcome in The Great League Generator
+                    <div class="sub header">Add or remove players.</div>
+                </h2>
+                <div class="ui divider"></div>
+            </div>
         </div>
-    {% endfor %}
+        <div class="four column centered row">
+            <div class="column">
+                <table class="ui small striped table">
+                    <tbody>
+                    <tr>
+                        <div class="column centered row"></div>
+                        {% for player in allPlayers %}
+                    <tr>
+                        <td class="left aligned">
+                            {{ player.name }}
+                        </td>
+                        <td class="right aligned">
+                            <button class="negative small ui button" type="button"
+                                    onclick="window.location='{{ path('select_remove', {'id': player.id}) }}'">
+                                <i class="left arrow icon"></i>
+                                Remove
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="column">
+                <p></p>
+                <p></p>
+                {{ form_start(addPlayerForm, {'attr': {'novalidate': 'novalidate'}}) }}
+                <div class="ui left icon input">
+                    {{ form_widget(addPlayerForm.name, {'attr': {'class': 'ui left icon input'}, 'attr': {'placeholder': 'Name...'}, 'attr': {'autocomplete': 'off'}}) }}
+                    <i class="users icon"></i>
+                    {{ form_row(addPlayerForm.add, {'attr': {'class': 'positive ui button'}}) }}
+                    <i class="left arrow icon"></i>
+                </div>
+                {{ form_end(addPlayerForm) }}
+                <div class="column">
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <button class="ui labeled icon button" type="button"
+                            onclick="window.location='{{ url("welcome") }}'">
+                        <i class="left arrow icon"></i>
+                        Back
+                    </button>
+                    <button class="ui right labeled icon button" type="button"
+                            onclick="window.location='{{ url("check_players") }}'">
+                        <i class="right arrow icon"></i>
+                        Next
+                    </button>
+                </div>
+                <div class="ui divider"></div>
+                <p>Select 'Next' to continue, or go 'Back' to the start page.</p>
+                {% for message in app.flashes('notice') %}
+                <div class="flash-notice">
+                    <div class="ui compact warning message">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block javascripts %}
+    {% endblock %}
 {% endblock %}

@@ -8,19 +8,24 @@
                     <h2 class="ui icon header">
                         <i class="handshake outline icon"></i>
                         Welcome in The Great League Generator
-                        <div class="sub header">Select button to start new, or continue.</div>
+                        <div class="sub header">Select button to start new, or to continue.</div>
                     </h2>
                 </div>
             </div>
             <div class="ui divider"></div>
+            <div class="column"></div>
             <div class="column centered row"></div>
-            <p></p>
-            <p></p>
             <div class="ui huge buttons">
-                <button class="ui button" type="button" onclick="window.location='{{ url("data_remove") }}'">New Game</button>
+                <button class="ui button" type="button" onclick="window.location='{{ url("data_remove") }}'">New Game
+                </button>
                 <div class="or"></div>
-                <button class="ui button" type="button" onclick="window.location='{{ url("render_table") }}'">Continue</button>
+                <button class="ui button" type="button" onclick="window.location='{{ url("render_table") }}'">Continue
+                </button>
             </div>
         </div>
     </div>
+    <script>
+    </script>
+    {% block javascripts %}
+    {% endblock %}
 {% endblock %}

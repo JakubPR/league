@@ -2,6 +2,10 @@
 /public/bundles/
 /var/
 /vendor/
+/node_modules/
+/.semantic.json
+/semantic/
+
 ###< symfony/framework-bundle ###
 
 ###> friendsofphp/php-cs-fixer ###
