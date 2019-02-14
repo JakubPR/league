@@ -1,27 +1,58 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h2>Set parameters.</h2>
-    <h3>Press 'next' button to continue.</h3>
-    <p>Number of games: {{ numberOfGames }}</p>
-    <form action="{{ path('get_number') }}" method="POST" novalidate>
-        <input type="number" name=number min="1" max="10" value="1">
-        <input type="submit" value="Submit" />
-    </form>
-    {% set answer = 'on' %}
-    {% if revenges == 0 %}
-        {% set answer = 'off' %}
-    {% endif %}
-    <p>Revenges: {{ answer }}</p>
-    <form action="{{ path('get_answer') }}" method="POST">
-    <input type="submit" name=answer value="on" />
-    <input type="submit" name=answer value="off"/>
-    </form>
-    <p></p>
-    <button type="button" onclick="window.location='{{ url("settings_check") }}'">next ---></button>
-    {% for message in app.flashes('notice') %}
-        <div class="flash-notice">
-            {{ message }}
+    <div class="ui column doubling stackable grid container">
+        <div class="column row"></div>
+        <div class="column centered row">
+            <div class="content">
+                <h2 class="ui icon header">
+                    <i class="cogs icon"></i>
+                    Welcome in The Great League Generator
+                    <div class="sub header">Select parameters of the game.</div>
+                </h2>
+            </div>
+            <div class="ui divider"></div>
         </div>
-    {% endfor %}
+    </div>
+    <div class="ui two column doubling stackable grid container">
+    <div class="right aligned column">
+        <h3>
+            {% set answer = 'yellow lightbulb icon' %}
+            {% if revenges == 0 %}
+                {% set answer = 'lightbulb icon outline' %}
+            {% endif %}
+            <p>Revenges: <i class="{{ answer }}"></i></p>
+        </h3>
+        <form action="{{ path('get_answer') }}" method="POST">
+            <input class="ui green button" type="submit" name=answer value="On"/>
+            <input class="ui red button" type="submit" name=answer value="Off"/>
+        </form>
+    </div>
+    <div class="left aligned column">
+        <h3>
+            Number of games: {{ numberOfGames }}
+        </h3>
+        <form action="{{ path('get_number') }}" method="POST" novalidate>
+            <div class="ui small left icon input">
+                <input type="number" name=number min="1" max="10" value="1" autocomplete="off">
+                <i class="sort numeric up icon"></i>
+            </div>
+            <input class="positive ui small button" type="submit" value="Change"/>
+        </form>
+        <p></p>
+        <p></p>
+        <button class="ui right labeled icon button" type="button"
+                onclick="window.location='{{ url("settings_check") }}'">
+            <i class="right arrow icon"></i>
+            Next
+        </button>
+        <div class="ui divider"></div>
+        <p>Select 'Next' to continue, or go 'Back' to the start page.</p>
+        {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            <div class="ui compact warning message">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}
-

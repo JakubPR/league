@@ -1,36 +1,64 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    {% set position = 1 %}
-    <h2>Let's play!</h2>
-    <h3>number of games: {{ numberOfGames }}</h3>
-    <h3>revenges: {{ revenges }}</h3>
-    {% block scoretable %}
-        <table style="width :200px">
-            <tr align="left">
-                <th>Position</th>
-                <th>Name</th>
-                <th>Points</th>
-                <th>Score</th>
-            </tr>
-            <tr align="left">
-                {% for player in scoreTable %}
-                <td> {{ position }} </td>
-                <td> {{ player.playerName }}</td>
-                <td> {{ player.points }} </td>
-                <td> {{ player.score }} </td>
-            </tr>
-            {% set position = position + 1 %}
-            {% endfor %}
+    <div class="ui column doubling stackable grid container">
+        <div class="column row"></div>
+        <div class="column centered row">
+            <div class="content">
+                <h2 class="ui icon header">
+                    <i class="basketball ball icon"></i>
+                    Welcome in The Great League Generator
+                    <div class="sub header">Let's play!</div>
+                </h2>
+            </div>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+    <div class="ui two column doubling stackable grid container">
+        <div class="column">
+            <h3>Games left: {{ numberOfGames }}</h3>
+            <div class="ui divider"></div>
+        </div>
+        <div class="column">
+            <h3>Revenges: {{ revenges }}</h3>
+            <div class="ui divider"></div>
+        </div>
+    </div>
+    <div class="ui two column doubling stackable grid container">
+    <div class="column">
+        {% set position = 1 %}
+        {% block scoretable %}
+            <table class="ui small striped table">
+                <tr align="left">
+                    <th>Position</th>
+                    <th>Name</th>
+                    <th>Points</th>
+                    <th>Score</th>
+                </tr>
+                <tr align="left">
+                    {% for player in scoreTable %}
+                    <td> {{ position }} </td>
+                    <td> {{ player.playerName }}</td>
+                    <td> {{ player.points }} </td>
+                    <td> {{ player.score }} </td>
+                </tr>
+                {% set position = position + 1 %}
+                {% endfor %}
+            </table>
+        {% endblock %}
+    </div>
+    <div class="four wide column">
+        <table class="ui small striped table">
+            {% if selector == 'revenges' %}
+                {% include 'render_table/revenge_view.html.twig' %}
+            {% else %}
+                {% include 'render_table/duel_view.html.twig' %}
+            {% endif %}
+            {% block duel %}
         </table>
-    {% endblock %}
-    {% if selector == 'revenges' %}
-        {% include 'render_table/revenge_view.html.twig' %}
-    {% else %}
-        {% include 'render_table/duel_view.html.twig' %}
-    {% endif %}
-    {% block duel %}
-        <h3>Playing players:</h3>
-        <table style="width :200px">
+    </div>
+    <div class="four wide column">
+        <h3>Current duel:</h3>
+        <table class="ui small striped table">
             <tr align="left">
                 {% if scoreTable | length %}
                     {% for duel in duelTable | slice(0, 1) %}
@@ -42,12 +70,17 @@
                     {% endfor %}
                 {% endif %}
         </table>
-    {% endblock %}
-    {% block revengestable %}
-    {% endblock %}
-    {% for message in app.flashes('notice') %}
-    <div class="flash-notice">
-        {{ message }}
+        {% endblock %}
+        {% block revengestable %}
+        {% endblock %}
+        <div class="ui divider"></div>
+        <p>Enter the result ( 0 - 8 ), and press the 'Submit" button.</p>
+        {% for message in app.flashes('notice') %}
+        <div class="flash-notice">
+            <div class="ui compact warning message">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
 {% endblock %}

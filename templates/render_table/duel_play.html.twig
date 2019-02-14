@@ -1,14 +1,14 @@
 <td> {{ duel.player0.name }} </td>
-<td> vs </td>
+<td> vs</td>
 <td> {{ duel.player1.name }} </td>
 </tr>
 <tr>
-    <form action="{{ path('get_score')}}"  method="POST" novalidate>
+    <form action="{{ path('get_score') }}" method="POST" novalidate>
         <td><input type="number" name="{{ duel.player0.id }}" min="0" max="8"></td>
         <td>&nbsp</td>
         <td><input type="number" name="{{ duel.player1.id }}" min="0" max="8"></td>
-        <input type="hidden" value={{ selector }} name="selector" />
-        <input type="hidden" value={{ duel.id }} name="duelId" />
-        <td><input type="submit" value="Submit"></td>
+        <input type="hidden" value={{ selector }} name="selector"/>
+        <input type="hidden" value={{ duel.id }} name="duelId"/>
+        <td><input class="positive ui small button" type="submit" value="Submit"></td>
     </form>
 </tr>

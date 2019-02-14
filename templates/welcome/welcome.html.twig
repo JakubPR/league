@@ -1,20 +1,20 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <div class="ui two column centered grid">
-        <div class="column centered"></div>
-        <div class="four column centered row">
-            <div class="column centered row">
-                <div class="content">
-                    <h2 class="ui icon header">
-                        <i class="handshake outline icon"></i>
-                        Welcome in The Great League Generator
-                        <div class="sub header">Select button to start new, or to continue.</div>
-                    </h2>
-                </div>
+    <div class="ui column doubling stackable grid container">
+        <div class="column row"></div>
+        <div class="column centered row">
+            <div class="content">
+                <h2 class="ui icon header">
+                    <i class="handshake outline icon"></i>
+                    Welcome in The Great League Generator
+                    <div class="sub header">Select button to start new, or to continue.</div>
+                </h2>
             </div>
             <div class="ui divider"></div>
-            <div class="column"></div>
-            <div class="column centered row"></div>
+        </div>
+    </div>
+    <div class="ui column doubling stackable grid container">
+        <div class="column centered row">
             <div class="ui huge buttons">
                 <button class="ui button" type="button" onclick="window.location='{{ url("data_remove") }}'">New Game
                 </button>
@@ -24,8 +24,4 @@
             </div>
         </div>
     </div>
-    <script>
-    </script>
-    {% block javascripts %}
-    {% endblock %}
 {% endblock %}
